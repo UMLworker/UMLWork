@@ -1,0 +1,110 @@
+.container {
+    width: 980px;
+    margin: 0 auto;
+}
+.line{
+	height: 40px;
+}
+
+
+.content {
+    width: 980px;
+}
+.content-left{
+	width: 730px;
+	float: left;
+}
+.content-right{
+	width: 250px;
+	float: right;
+}
+
+
+.box{
+	width: 330px;
+	height: 280px;
+	float: left;
+	padding: 0 10px;
+}
+.tag {
+    border-left: 6px solid red;
+    height: 30px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+}
+.tag a{
+	color: gray;
+	font-size: 20px;
+    line-height: 30px;
+}
+.box .text{
+	height: 230px;
+	padding: 10px;
+	background-color: white;
+	border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+}
+.box p{
+    line-height: 24px;
+    color: #333;
+    font-size: 12px;
+    text-indent: 2em;
+}
+.box img{
+	width: 100px;
+    height: 110px;
+    float: left;
+    margin-right: 15px;
+}
+
+
+/*列表样式*/
+.rows{
+	height:250px;
+	background-color: white;
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+}
+.rows ul{
+	list-style: square inside url(../images/arrow.gif);  
+}
+.rows li{
+	font-size: 13px;
+	line-height: 24px;
+	padding: 5px 10px;
+}
+
+
+.resource-links ul{
+	background-color: white;
+	border-top: 1px solid lightgray;
+	border-left: 1px solid lightgray;
+	border-right: 2px solid lightgray;
+	border-bottom: 2px solid lightgray;
+}
+.resource-links li{
+	/*font-family: '宋体';*/
+	font-size: 14px;
+	border-bottom: 1px solid lightgray;
+	padding: 8px 10px;
+}
+
+
+/*link2*/
+.link2{ width:250px; height:200px; float:left; background-color: white; 
+	border-top: 1px solid lightgray;
+	border-left: 1px solid lightgray;
+	border-right: 2px solid lightgray;
+	border-bottom: 2px solid lightgray;
+}
+.link2-title{ width:250px; height:75px;text-align:center;}
+.link2-title span{width:250px; height:75px; line-height:75px;  font-size:18px; font-family:\5FAE\8F6F\96C5\9ED1;}
+.link2-content{width:250px; height:125px; float:left; padding:0 20px;}
+.link2-content1{ width:209px; height:42px; }
+.link2-content2{ width:209px; height:42px;  margin-top:12px;}
+.link2-content select{ width:190px; margin:10px 10px;}
+/*link2*/
