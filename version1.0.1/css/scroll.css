@@ -1,0 +1,39 @@
+/*图片滚动 css*/
+#scrollDiv{
+    width: 680px;
+    height: 230px;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+#scrollDiv ul{
+    position:absolute;
+    left:0;
+    top:0;
+    overflow: hidden;
+    background-color: lightgrey;
+}
+#scrollDiv ul li{
+    float: left;
+    width: 200px;
+    height: 200px;
+    list-style: none;
+}
+#scrollDiv img{
+    width: 180px;
+    height: 200px;
+}
+#scrollDiv .teacher-name{
+    width: 180px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    font-size: 14px;
+    bottom: 30px;
+}
+/*图片滚动 css*/
