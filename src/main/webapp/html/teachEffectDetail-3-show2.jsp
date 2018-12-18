@@ -44,9 +44,9 @@
                         </nav>
                         <h1>教师自我评价</h1>
                     </header>
-                    <section class="article">
-                        <img src="/images/teachEffect/study.png" alt="" width="550">
-                    </section>
+                    <%--<section class="article">--%>
+                        <%--<img src="/images/teachEffect/study.png" alt="" width="550">--%>
+                    <%--</section>--%>
 
                 </article>
             </div>
