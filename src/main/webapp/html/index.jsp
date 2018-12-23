@@ -7,6 +7,7 @@
 	<meta charset="utf-8">
 	<link rel="icon" href="/images/dgut.jpg">
 	<link rel="stylesheet" type="text/css" href="<../style/normal.css">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
 	<link rel="stylesheet" type="text/css" href="../style/index/index.css">
 	<script type="text/javascript" src="../js/normal.js"></script>
 </head>
@@ -15,7 +16,7 @@
 	<!-- 通过js渲染，js代码在normal.js里 -->
 	<div id="top"></div>
 	<a href="<c:url value='/EvalatorServlet?method=login' />">test</a>
-    
+
 	<div id="banner">
 		<!--<div class="bannerImg"><img src="../images/index/bigimg.jpg">-->
 			<div class="summary">
