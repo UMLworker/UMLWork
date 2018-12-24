@@ -8,17 +8,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
-	<link rel="Bookmark" href="/favicon.ico" >
-	<link rel="Shortcut Icon" href="/favicon.ico" />
 <!--[if lt IE 9]>
-<script type="text/javascript" src="lib/html5shiv.js"></script>
-<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="<c:url value='/admin/lib/html5shiv.js'/>"></script>
+<script type="text/javascript" src="<c:url value='lib/respond.min.js'/>"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
-<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
-<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui/css/H-ui.min.css'/>" />
+<link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/H-ui.admin.css'/>" />
+<link rel="stylesheet" type="text/css" href="<c:url value='/admin/lib/Hui-iconfont/1.0.8/iconfont.css'/>" />
+<link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/skin/default/skin.css'/>" id="skin" />
+<link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/style.css'/>" />
 <!--[if IE 6]>
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
@@ -163,7 +161,6 @@
 						<li><a data-href="_blank.html" data-title="品牌管理" href="javascript:void(0)">校外专家评价</a></li>
 						<li><a data-href="_blank.html" data-title="分类管理" href="javascript:void(0)">校内督导评价</a></li>
 						<li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教师自我评价</a></li>
-
 						<li><a data-href="_blank.html" data-title="产品管理" href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></li>
 						<li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">社会评价</a></li>
 						<li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
@@ -200,7 +197,7 @@
 			<div class="Hui-tabNav-wp">
 				<ul id="min_title_list" class="acrossTab cl">
 					<li class="active">
-						<span title="我的桌面" data-href="welcome.html">我的桌面</span>
+						<span title="我的桌面" data-href="<c:url value='/admin/admin-evalator.jsp'/>">我的桌面</span>
 						<em></em></li>
 					</ul>
 				</div>
@@ -209,7 +206,7 @@
 			<div id="iframe_box" class="Hui-article">
 				<div class="show_iframe">
 					<div style="display:none" class="loading"></div>
-					<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+					<iframe scrolling="yes" frameborder="0" src="<c:url value='/admin/admin-evalator.jsp'/>"></iframe>
 				</div>
 			</div>
 		</section>
@@ -221,13 +218,13 @@
 			</ul>
 		</div>
 		<!--_footer 作为公共模版分离出去-->
-		<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
-		<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
-		<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
-		<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+		<script type="text/javascript" src="<c:url value='/admin/lib/jquery/1.9.1/jquery.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/admin/lib/layer/2.4/layer.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/admin/static/h-ui/js/H-ui.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/admin/static/h-ui.admin/js/H-ui.admin.js'/>"></script> <!--/_footer 作为公共模版分离出去-->
 
 		<!--请在下方写此页面业务相关的脚本-->
-		<script type="text/javascript" src="lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
+		<script type="text/javascript" src="<c:url value='/admin/lib/jquery.contextmenu/jquery.contextmenu.r2.js'/>"></script>
 		<script type="text/javascript">
 			$(function(){
 	/*$("#min_title_list li").contextMenu('Huiadminmenu', {
