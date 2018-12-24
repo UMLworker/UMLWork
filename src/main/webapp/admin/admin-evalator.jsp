@@ -27,15 +27,11 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 学生评价管理</nav>
 <div class="page-container">
-    <a
-            class="btn btn-primary radius" href="javascript:;"
-            onclick="admin_role_add('添加评论','<c:url value='admin-evalator-add.jsp'/>','800')"><i class="Hui-iconfont">&#xe600;</i>
-        添加评价</a> </span>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" data-title="添加评价" data-href="<c:url value='/admin/admin-evalator-add.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加评价</a></span></div>
 </div>
 <table class="table table-border table-bordered table-hover table-bg">
     <thead>
     <tr class="text-c">
-        <th width="80">ID</th>
         <th width="80">教师名</th>
         <th width="150">时间</th>
         <th width="150">课程名称</th>
@@ -48,68 +44,38 @@
     <tbody>
     <c:forEach items="${EvalatorpageQuery.items}" var="evalator">
         <tr class="text-c">
-            <td>${evalator.evalator_id}</td>
             <td>${evalator.course_teacher_name}</td>
             <td>${evalator.course_time}</td>
             <td>${evalator.course_name}</td>
             <td>${evalator.course_property}</td>
             <td>${evalator.course_grade}</td>
             <td>${evalator.course_level}</td>
-            <td class="f-14"><a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5"
+            <td class="f-14"><a title="删除" href="<c:url value='/EvalatorServlet?method=Delete_Evalator&evalator_id=${evalator.evalator_id}'/>"class="ml-5"
                                 style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
     </c:forEach>
-    <div class="pagination">
-        <ul style="margin: auto">
-            <c:if test="${EvalatorpageQuery.currentPage!=1}">
-                <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></li>
-                <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></li>
-            </c:if>
-            <c:if test="${EvalatorpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
-                <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></li>
-                <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></li>
-            </c:if>
-        </ul>
-    </div>
     </tbody>
 </table>
+<div class="pagination" style="margin: auto">
+    <ul style="margin: auto">
+        <c:if test="${EvalatorpageQuery.currentPage!=1}">
+            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></li>
+            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></li>
+        </c:if>
+        <c:if test="${EvalatorpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
+            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></li>
+            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></li>
+        </c:if>
+    </ul>
+</div>
+<div style="color: red">${info}</div>
 </div>
 <!--_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
-<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
-
+<script type="text/javascript" src="<c:url value='/admin/lib/jquery/1.9.1/jquery.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/admin/lib/layer/2.4/layer.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/admin/static/h-ui/js/H-ui.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/admin/static/h-ui.admin/js/H-ui.admin.js'/>"></script> <!--/_footer 作为公共模版分离出去-->
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript">
-    /*管理员-角色-添加*/
-    function admin_role_add(title, url, w, h) {
-        layer_show(title, url, w, h);
-    }
-
-    /*管理员-角色-编辑*/
-    function admin_role_edit(title, url, id, w, h) {
-        layer_show(title, url, w, h);
-    }
-
-    /*管理员-角色-删除*/
-    function admin_role_del(obj, id) {
-        layer.confirm('角色删除须谨慎，确认要删除吗？', function (index) {
-            $.ajax({
-                type: 'POST',
-                url: '',
-                dataType: 'json',
-                success: function (data) {
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!', {icon: 1, time: 1000});
-                },
-                error: function (data) {
-                    console.log(data.msg);
-                },
-            });
-        });
-    }
-</script>
+<script type="text/javascript" src="<c:url value='/admin/lib/datatables/1.10.0/jquery.dataTables.min.js'/>"></script>
 </body>
 </html>

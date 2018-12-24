@@ -8,6 +8,7 @@ import Utils.PageQuery;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.UUID;
 
 @WebServlet("/EvalatorServlet")
 public class EvalatorServlet extends BaseServlet{
@@ -40,7 +41,52 @@ public class EvalatorServlet extends BaseServlet{
         EvalatorpageQuery.setItems(evalatorService.getEvalatorList(EvalatorpageQuery.getCurrentfirst()));
         EvalatorpageQuery.setTotalRows(evalatorService.getEvalatorTotal());
         request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
-        return "r:/admin/admin-evalators.jsp";
+        return "r:/admin/admin-evalator.jsp";
+    }
+    public String Add_Evalator(HttpServletRequest request, HttpServletResponse response){
+        String evalator_id= UUID.randomUUID().toString().replaceAll("-","");
+        String course_teacher_name=request.getParameter("course_teacher_name");
+        String course_time=request.getParameter("course_time");
+        String course_name=request.getParameter("course_name");
+        String course_property=request.getParameter("course_property");
+        String course_grade=request.getParameter("course_grade");
+        String course_level;
+        try{
+            Double grade=Double.parseDouble(course_grade);
+        }catch (Exception e){
+            request.setAttribute("info","分数必须是正数");
+            return "/admin/admin-evalator.jsp";
+        }
+        Double grade=Double.parseDouble(course_grade);
+        if(grade<0||grade>100){
+            request.getSession().setAttribute("info","分数必须介于0到100之间");
+        }
+        if(grade<20)
+            course_level="差";
+        else if(grade<40)
+            course_level="较差";
+        else if(grade<60)
+            course_level="一般";
+        else if(grade<80)
+            course_level="良";
+        else
+            course_level="优秀";
+        Online_Evalator evalator=new Online_Evalator();
+        evalator.setEvalator_id(evalator_id);
+        evalator.setCourse_level(course_level);
+        evalator.setCourse_property(course_property);
+        evalator.setCourse_time(course_time);
+        evalator.setCourse_teacher_name(course_teacher_name);
+        evalator.setCourse_grade(grade);
+        evalator.setCourse_name(course_name);
+        evalatorService.addEvalator(evalator);
+        return "r:/admin/admin-evalator.jsp";
     }
 
+    public String Delete_Evalator(HttpServletRequest request, HttpServletResponse response){
+        String evalator_id=request.getParameter("evalator_id")+"";
+        evalatorService.deleteEvalator(evalator_id);
+
+        return "r:/admin/admin-evalator.jsp";
+    }
 }
