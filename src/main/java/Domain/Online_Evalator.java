@@ -1,12 +1,34 @@
 package Domain;
 
 public class Online_Evalator {
+    private String evalator_id;
     private String course_teacher_name;
     private String course_time;
     private String course_name;
     private String course_property;
     private Double course_grade;
     private String course_level;
+
+    @Override
+    public String toString() {
+        return "Online_Evalator{" +
+                "evalator_id='" + evalator_id + '\'' +
+                ", course_teacher_name='" + course_teacher_name + '\'' +
+                ", course_time='" + course_time + '\'' +
+                ", course_name='" + course_name + '\'' +
+                ", course_property='" + course_property + '\'' +
+                ", course_grade=" + course_grade +
+                ", course_level='" + course_level + '\'' +
+                '}';
+    }
+
+    public String getEvalator_id() {
+        return evalator_id;
+    }
+
+    public void setEvalator_id(String evalator_id) {
+        this.evalator_id = evalator_id;
+    }
 
     public String getCourse_teacher_name() {
         return course_teacher_name;
@@ -54,17 +76,5 @@ public class Online_Evalator {
 
     public void setCourse_level(String course_level) {
         this.course_level = course_level;
-    }
-
-    @Override
-    public String toString() {
-        return "Online_Evalator{" +
-                "course_teacher_name='" + course_teacher_name + '\'' +
-                ", course_time='" + course_time + '\'' +
-                ", course_name='" + course_name + '\'' +
-                ", course_property='" + course_property + '\'' +
-                ", course_grade=" + course_grade +
-                ", course_level='" + course_level + '\'' +
-                '}';
     }
 }

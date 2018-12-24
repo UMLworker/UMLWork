@@ -20,6 +20,7 @@ public class EvalatorDao {
             List<Online_Evalator> evalators=new ArrayList<>();
             for(int i=0;i<list.size();i++){
                 Online_Evalator temp=new Online_Evalator();
+                temp.setEvalator_id((String)map.get("evalator_id"));
                 temp.setCourse_teacher_name((String)map.get("course_teacher_name"));
                 temp.setCourse_time((String)map.get("course_time"));
                 temp.setCourse_name((String)map.get("course_name"));
