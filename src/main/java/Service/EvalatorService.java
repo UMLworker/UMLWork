@@ -17,4 +17,11 @@ public class EvalatorService {
     public int getEvalatorTotal() {
         return evalatorDao.getEvalatorTotal();
     }
+
+    public void addEvalator(Online_Evalator evalator) {
+        evalatorDao.addEvalator(evalator);
+    }
+    public void deleteEvalator(String evalator_id){
+        evalatorDao.deleteEvalator(evalator_id);
+    }
 }
