@@ -5,7 +5,7 @@ public class Online_Evalator {
     private String course_time;
     private String course_name;
     private String course_property;
-    private String course_grade;
+    private Double course_grade;
     private String course_level;
 
     public String getCourse_teacher_name() {
@@ -40,11 +40,11 @@ public class Online_Evalator {
         this.course_property = course_property;
     }
 
-    public String getCourse_grade() {
+    public Double getCourse_grade() {
         return course_grade;
     }
 
-    public void setCourse_grade(String course_grade) {
+    public void setCourse_grade(Double course_grade) {
         this.course_grade = course_grade;
     }
 
@@ -54,5 +54,17 @@ public class Online_Evalator {
 
     public void setCourse_level(String course_level) {
         this.course_level = course_level;
+    }
+
+    @Override
+    public String toString() {
+        return "Online_Evalator{" +
+                "course_teacher_name='" + course_teacher_name + '\'' +
+                ", course_time='" + course_time + '\'' +
+                ", course_name='" + course_name + '\'' +
+                ", course_property='" + course_property + '\'' +
+                ", course_grade=" + course_grade +
+                ", course_level='" + course_level + '\'' +
+                '}';
     }
 }

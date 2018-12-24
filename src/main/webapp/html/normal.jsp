@@ -91,7 +91,7 @@ function out(num){
 function Rendering(){
 	document.getElementById("top").innerHTML="<div class=\"header\"><div class=\"topLine\"></div>\
 			<section class=\"topwrap\">\
-				<a href=\"index.html\" class=\"logo\"><img src=\"../images/logo.png\"><h2 class=\"title\">在线开放课程平台</h2></a>\
+				<a href=\"index.html\" class=\"logo\"><img src=\"<c:url value='/images/logo.png'/>\"><h2 class=\"title\">在线开放课程平台</h2></a>\
 			</section>\
 			<section class=\"logininAndUp\">\
 				<a href=\"login.html\">登录</a>\
@@ -149,24 +149,24 @@ function Rendering(){
     					</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('6')\" onmouseout=\"out('6')\">\
-						<a href=\"eduManageDetail-1.jsp\">教学管理</a>\
+						<a href=\"<c:url value = '/html/eduManageDetail-1.jsp'/>\">教学管理</a>\
 						<ul style=\"display: none; \" id=\"sixth\">\
-							<li class=\"detail\"><a href=\"eduManageDetail-1.jsp\" style=\"color: #fff;\">开课计划</a></li>\
-							<li class=\"detail\"><a href=\"eduManageDetail-2.jsp\" style=\"color: #fff;\">上课班级</a></li>\
-							<li class=\"detail\"><a href=\"eduManageDetail-3.jsp\" style=\"color: #fff;\">学生成绩</a></li>\
-							<li class=\"detail\"><a href=\"eduManageDetail-4.jsp\" style=\"color: #fff;\">班级名册</a></li>\
-							<li class=\"detail\"><a href=\"eduManageDetail-5.jsp\" style=\"color: #fff;\">学生作业案例</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-1.jsp'/>\" style=\"color: #fff;\">开课计划</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-2.jsp'/>\" style=\"color: #fff;\">上课班级</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-3.jsp'/>\" style=\"color: #fff;\">学生成绩</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-4.jsp'/>\" style=\"color: #fff;\">班级名册</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-5.jsp'/>\" style=\"color: #fff;\">学生作业案例</a></li>\
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('7')\" onmouseout=\"out('7')\">\
-						<a href=\"teachEffectDetail-1.jsp\">教学效果</a>\
+						<a href=\"<c:url value ='teachEffectDetail-1.jsp'/>\">教学效果</a>\
 						<ul style=\"display: none; \" id=\"seven\">\
-							<li class=\"detail\"><a href=\"teachEffectDetail-1.jsp\" style=\"color: #fff;\">校外专家评价</a></li>\
-							<li class=\"detail\"><a href=\"teachEffectDetail-2.jsp\" style=\"color: #fff;\">校内督导评价</a></li>\
-							<li class=\"detail\"><a href=\"teachEffectDetail-3.jsp\" style=\"color: #fff;\">教师自我评价</a></li>\
-							<li class=\"detail\"><a href=\"<c:url value='/EvalatorServlet?method=LoadStudentEvalator&page=1'/>\" style=\"color: #fff;\">校内学生评价</a></li>\
-							<li class=\"detail\"><a href=\"teachEffectDetail-5.jsp\" style=\"color: #fff;\">社会评价</a></li>\
-    						<li class=\"detail\"><a href=\"teachEffectDetail-6.jsp\" style=\"color: #fff;\">教学评估及相关文件</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/teachEffectDetail-1.jsp'/>\" style=\"color: #fff;\">校外专家评价</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/teachEffectDetail-2.jsp'/>\" style=\"color: #fff;\">校内督导评价</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/teachEffectDetail-3.jsp'/>\" style=\"color: #fff;\">教师自我评价</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>\" style=\"color: #fff;\">校内学生评价</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value ='/html/teachEffectDetail-5.jsp'/>\" style=\"color: #fff;\">社会评价</a></li>\
+    						<li class=\"detail\"><a href=\"<c:url value ='/html/teachEffectDetail-6.jsp'/>\" style=\"color: #fff;\">教学评估及相关文件</a></li>\
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('8')\" onmouseout=\"out('8')\">\
@@ -227,20 +227,21 @@ function Rendering(){
 				</li>\
 				<li><a href=\"admission.html\">教学管理</a>\
 					<div class=\"detail\">\
-						<div><a href=\"admissionDetail-1.html\">本科生招生</a></div>\
-						<div><a href=\"admissionDetail-2.html\">研究生招生</a></div>\
-						<div><a href=\"admissionDetail-3.html\">国际学生招生</a></div>\
-						<div><a href=\"admissionDetail-4.html\">学生职业发展</a></div>\
+						<div><a href=\"admissionDetail-1.html\">开课计划</a></div>\
+						<div><a href=\"admissionDetail-2.html\">上课班级</a></div>\
+						<div><a href=\"admissionDetail-3.html\">学生成绩</a></div>\
+						<div><a href=\"admissionDetail-4.html\">班级名册</a></div>\
+						<div><a href=\"<c:url value='admissionDetail-4.html'/>\">班级名册</a></div>\
 					</div>\
 				</li>\
-				<li><a href=\"employment.html\">教学效果</a>\
+				<li><a href=\"<c:url value ='employment.html'/>\">教学效果</a>\
 					<div class=\"detail\">\
-						<div><a href=\"teachEffectDetail-1.jsp\">校外专家评价</a></div>\
-    					<div><a href=\"teachEffectDetail-2.jsp\">校内督导评价</a></div>\
-    					<div><a href=\"teachEffectDetail-3.jsp\">教师自我评价</a></div>\
-    					<div><a href=\"<c:url value='/EvalatorServlet?method=LoadStudentEvalator&page=1'/>\">校内学生评价</a></div>\
-    					<div><a href=\"teachEffectDetail-1.jsp\">社会评价</a></div>\
-    					<div><a href=\"teachEffectDetail-2.jsp\">教学评估及相关文件</a></div>\
+						<div><a href=\"<c:url value ='/html/teachEffectDetail-1.jsp'/>\">校外专家评价</a></div>\
+    					<div><a href=\"<c:url value ='/html/teachEffectDetail-2.jsp'/>\">校内督导评价</a></div>\
+    					<div><a href=\"<c:url value ='/html/teachEffectDetail-3.jsp'/>\">教师自我评价</a></div>\
+    					<div><a href=\"<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>\">校内学生评价</a></div>\
+    					<div><a href=\"<c:url value ='/html/teachEffectDetail-1.jsp'/>\">社会评价</a></div>\
+    					<div><a href=\"<c:url value ='/html/teachEffectDetail-2.jsp'/>\">教学评估及相关文件</a></div>\
 					</div>\
 				</li>\
 				<li><a href=\"QQ.html\">教学互动</a>\
