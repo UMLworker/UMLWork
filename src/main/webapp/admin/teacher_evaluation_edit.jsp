@@ -50,38 +50,37 @@
 	});
 </script>
 
-<title>新增d专家评价</title>
+<title>新增教师自我评价</title>
 
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-article-add" action="${pageContext.request.contextPath}/Expert_EvaluationServlet" method="post">
-		<input type="hidden" name="method" value="getContent">
+	<form class="form form-horizontal" id="form-article-add" action="<c:url value='/teacher_evalution_servlet'/>" method="post">
+
+		<input type="hidden" name="method" value="addEvalution">
+
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>教师姓名：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="articletitle" name="articletitle">
+				<input type="text" class="input-text" value="" placeholder="" id="teacherName" name="teacherName">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="articlecolumn" class="select">
-					<option value="0">全部栏目</option>
-					<option value="1">校内专家评价</option>
-					<option value="2">校外专家评价</option>
-				</select>
-				</span> </div>
-		</div>
-
-
 
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">文章内容：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>评价标题：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<script id="Editor" type="text/plain" style="width:600px;height:300px;" ></script></div>
+				<input type="text" class="input-text" value="" placeholder="" id="articletitle" name="evalutionTitle">
+			</div>
 		</div>
+
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">评价内容：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<script id="Editor" type="text/plain" style="width:600px;height:300px;" ></script>
 				<textarea name="content" id="content" class="required span6" rows="6" title="* Please enter your message"></textarea>
+			</div>
+		</div>
+
 
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
@@ -90,6 +89,7 @@
 				<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
+
 	</form>
 </article>
 
@@ -272,7 +272,7 @@ $(function(){
 
 	
 });
-\
+
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>
