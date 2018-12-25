@@ -28,6 +28,7 @@ public class EvalatorDao {
                 temp.setCourse_grade((Double) map.get("course_grade"));
                 temp.setCourse_level((String)map.get("course_level"));
                 evalators.add(temp);
+                
             }
             return evalators;
         }catch (Exception e){
