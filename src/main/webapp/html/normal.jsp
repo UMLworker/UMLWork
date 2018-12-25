@@ -153,7 +153,7 @@ function Rendering(){
 						<ul style=\"display: none; \" id=\"sixth\">\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-1.jsp'/>\" style=\"color: #fff;\">开课计划</a></li>\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-2.jsp'/>\" style=\"color: #fff;\">上课班级</a></li>\
-							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-3.jsp'/>\" style=\"color: #fff;\">学生成绩</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>\" style=\"color: #fff;\">学生成绩</a></li>\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-4.jsp'/>\" style=\"color: #fff;\">班级名册</a></li>\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-5.jsp'/>\" style=\"color: #fff;\">学生作业案例</a></li>\
 						</ul>\
@@ -229,7 +229,7 @@ function Rendering(){
 					<div class=\"detail\">\
 						<div><a href=\"admissionDetail-1.html\">开课计划</a></div>\
 						<div><a href=\"admissionDetail-2.html\">上课班级</a></div>\
-						<div><a href=\"admissionDetail-3.html\">学生成绩</a></div>\
+						<div><a href=\"<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>\">学生成绩</a></div>\
 						<div><a href=\"admissionDetail-4.html\">班级名册</a></div>\
 						<div><a href=\"<c:url value='admissionDetail-4.html'/>\">班级名册</a></div>\
 					</div>\
