@@ -32,7 +32,7 @@
 <table class="table table-border table-bordered table-hover table-bg">
     <thead>
     <tr class="text-c">
-        <th width="80">班级ID</th>
+        <th width="80">班级ID1</th>
         <th width="150">班级名称</th>
         <th width="150">所属专业</th>
         <th width="80">课程</th>
