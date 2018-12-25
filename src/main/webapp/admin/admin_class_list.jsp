@@ -47,8 +47,8 @@
             <td>${class_list.class_name}</td>
             <td>${class_list.major}</td>
             <td>${class_list.course}</td>
-            <td>${class_list.}</td>
-            <td>${}</td>
+            <td>${class_list.class_file}</td>
+            <td>${class_list.grade_file}</td>
             <td class="f-14"><a title="删除" href="<c:url value='/EvalatorServlet?method=Delete_Evalator&evalator_id=${evalator.evalator_id}'/>"class="ml-5"
                                 style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>

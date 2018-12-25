@@ -22,7 +22,7 @@ public class class_list_Dao {
             for(int i=0;i<list.size();i++){
                 Map<String,Object> map=list.get(i);
                 Class_List temp=new Class_List();
-                temp.setClass_id((Integer)map.get("class_id"));
+                temp.setClass_id((Long)map.get("class_id"));
                 temp.setClass_name((String)map.get("class_name"));
                 temp.setMajor((String)map.get("major"));
                 temp.setCourse((String)map.get("course"));
