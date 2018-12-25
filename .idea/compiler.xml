@@ -9,5 +9,8 @@
         <module name="UMLWork" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="UMLWork" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
