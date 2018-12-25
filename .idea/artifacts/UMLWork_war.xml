@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="UMLWork:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="UMLWork.war">
-      <element id="artifact" artifact-name="UMLWork:war exploded" />
-    </root>
-  </artifact>
-</component>

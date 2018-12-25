@@ -11,10 +11,11 @@ public class JDBCutil {
     private static final String USERNAME = "root";
     //数据库密码
     private static final String PASSWORD = "";
+
     //驱动信息
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     //数据库地址
-    private static final String URL = "jdbc:mysql://localhost:3306/uml_open_course_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/uml_open_course_db?useUnicode=true&characterEncoding=utf8";
     private Connection connection;
     private PreparedStatement pstmt;
     private ResultSet resultSet;
