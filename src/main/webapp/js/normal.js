@@ -1,88 +1,77 @@
-﻿function extend(num){
-	
-	if(num==1)
-	{
-		var obj = document.getElementById('first');
-		obj.style.display = "block";
-	}
-	else if(num==2)
-	{
-		var obj = document.getElementById('second');
-		obj.style.display = "block";
-	}
-	else if(num==3)
-	{
-		var obj = document.getElementById('third');
-		obj.style.display = "block";
-	}
-	else if(num==4)
-	{
-		var obj = document.getElementById('fourth');
-		obj.style.display = "block";
-	}
-	else if(num==5)
-	{
-		var obj = document.getElementById('fifth');
-		obj.style.display = "block";
-	}
-	else if(num==6){
-		var obj = document.getElementById('sixth');
-		obj.style.display = "block";
-	}
-	else if(num==7){
-		var obj = document.getElementById('seven');
-		obj.style.display = "block";
-	}
-	else{
-		var obj = document.getElementById('eighth');
-		obj.style.display = "block";
-	}
+﻿function extend(num) {
+
+    if (num == 1) {
+        var obj = document.getElementById('first');
+        obj.style.display = "block";
+    }
+    else if (num == 2) {
+        var obj = document.getElementById('second');
+        obj.style.display = "block";
+    }
+    else if (num == 3) {
+        var obj = document.getElementById('third');
+        obj.style.display = "block";
+    }
+    else if (num == 4) {
+        var obj = document.getElementById('fourth');
+        obj.style.display = "block";
+    }
+    else if (num == 5) {
+        var obj = document.getElementById('fifth');
+        obj.style.display = "block";
+    }
+    else if (num == 6) {
+        var obj = document.getElementById('sixth');
+        obj.style.display = "block";
+    }
+    else if (num == 7) {
+        var obj = document.getElementById('seven');
+        obj.style.display = "block";
+    }
+    else {
+        var obj = document.getElementById('eighth');
+        obj.style.display = "block";
+    }
 
 }
 
-function out(num){
-	if(num==1)
-	{
-		var obj = document.getElementById('first');
-		obj.style.display = "none";
-	}
-	else if(num==2)
-	{
-		var obj = document.getElementById('second');
-		obj.style.display = "none";
-	}
-	else if(num==3)
-	{
-		var obj = document.getElementById('third');
-		obj.style.display = "none";
-	}
-	else if(num==4)
-	{
-		var obj = document.getElementById('fourth');
-		obj.style.display = "none";
-	}
-	else if(num==5)
-	{
-		var obj = document.getElementById('fifth');
-		obj.style.display = "none";
-	}
-	else if(num==6)
-	{
-		var obj = document.getElementById('sixth');
-		obj.style.display = "none";
-	}
-	else if(num==7){
-		var obj = document.getElementById('seven');
-		obj.style.display = "none";
-	}
-	else{
-		var obj = document.getElementById('eighth');
-		obj.style.display = "none";
-	}
+function out(num) {
+    if (num == 1) {
+        var obj = document.getElementById('first');
+        obj.style.display = "none";
+    }
+    else if (num == 2) {
+        var obj = document.getElementById('second');
+        obj.style.display = "none";
+    }
+    else if (num == 3) {
+        var obj = document.getElementById('third');
+        obj.style.display = "none";
+    }
+    else if (num == 4) {
+        var obj = document.getElementById('fourth');
+        obj.style.display = "none";
+    }
+    else if (num == 5) {
+        var obj = document.getElementById('fifth');
+        obj.style.display = "none";
+    }
+    else if (num == 6) {
+        var obj = document.getElementById('sixth');
+        obj.style.display = "none";
+    }
+    else if (num == 7) {
+        var obj = document.getElementById('seven');
+        obj.style.display = "none";
+    }
+    else {
+        var obj = document.getElementById('eighth');
+        obj.style.display = "none";
+    }
 }
 
-function Rendering(){
-	document.getElementById("top").innerHTML="<div class=\"header\"><div class=\"topLine\"></div>\
+function Rendering() {
+    document.getElementById("top").innerHTML = "<div class=\"header\"><div class=\"topLine\"></div>\
 			<section class=\"topwrap\">\
 				<a href=\"index.html\" class=\"logo\"><img src=\"../images/logo.png\"><h2 class=\"title\">在线开放课程平台</h2></a>\
 			</section>\
@@ -145,7 +134,7 @@ function Rendering(){
 						<a href=\"eduManageDetail-1.jsp\">教学管理</a>\
 						<ul style=\"display: none; \" id=\"sixth\">\
 							<li class=\"detail\"><a href=\"eduManageDetail-1.jsp\" style=\"color: #fff;\">开课计划</a></li>\
-							<li class=\"detail\"><a href=\"eduManageDetail-2.jsp\" style=\"color: #fff;\">上课班级</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value='/ClassInfoServlet?method=Admin_LoadClassInfo&classInfoPageQuery=1'/>\" style=\"color: #fff;\">上课班级</a></li>\
 							<li class=\"detail\"><a href=\"eduManageDetail-3.jsp\" style=\"color: #fff;\">学生成绩</a></li>\
 							<li class=\"detail\"><a href=\"eduManageDetail-4.jsp\" style=\"color: #fff;\">班级名册</a></li>\
 							<li class=\"detail\"><a href=\"eduManageDetail-5.jsp\" style=\"color: #fff;\">学生作业案例</a></li>\
@@ -174,7 +163,7 @@ function Rendering(){
 			</section>\
 		</div>";
 
-	document.getElementById("bottom").innerHTML="<div class=\"inner\">\
+    document.getElementById("bottom").innerHTML = "<div class=\"inner\">\
 			<ul>\
 				<li><a href=\"courseDetail-1.html\">课程概况</a>\
 					<div class=\"detail\">\
@@ -246,7 +235,7 @@ function Rendering(){
 			</ul>\
 		</div>";
 
-	document.getElementById("copyrights").innerHTML="<div class=\"mainWrap\">\
+    document.getElementById("copyrights").innerHTML = "<div class=\"mainWrap\">\
     		<div class=\"link\">\
     			<ul>\
 	        		<li>友情链接</li>\

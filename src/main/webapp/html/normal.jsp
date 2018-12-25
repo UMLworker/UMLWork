@@ -152,7 +152,7 @@ function Rendering(){
 						<a href=\"<c:url value = '/html/eduManageDetail-1.jsp'/>\">教学管理</a>\
 						<ul style=\"display: none; \" id=\"sixth\">\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-1.jsp'/>\" style=\"color: #fff;\">开课计划</a></li>\
-							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-2.jsp'/>\" style=\"color: #fff;\">上课班级</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>\" style=\"color: #fff;\">上课班级</a></li>\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-3.jsp'/>\" style=\"color: #fff;\">学生成绩</a></li>\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-4.jsp'/>\" style=\"color: #fff;\">班级名册</a></li>\
 							<li class=\"detail\"><a href=\"<c:url value ='/html/eduManageDetail-5.jsp'/>\" style=\"color: #fff;\">学生作业案例</a></li>\
@@ -228,7 +228,7 @@ function Rendering(){
 				<li><a href=\"admission.html\">教学管理</a>\
 					<div class=\"detail\">\
 						<div><a href=\"admissionDetail-1.html\">开课计划</a></div>\
-						<div><a href=\"admissionDetail-2.html\">上课班级</a></div>\
+						<div><a href=\"<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>\">上课班级</a></div>\
 						<div><a href=\"admissionDetail-3.html\">学生成绩</a></div>\
 						<div><a href=\"admissionDetail-4.html\">班级名册</a></div>\
 						<div><a href=\"<c:url value='admissionDetail-4.html'/>\">班级名册</a></div>\
