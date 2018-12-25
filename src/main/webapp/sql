@@ -1,0 +1,15 @@
+学生评价表
+CREATE TABLE `online_evalator` (
+  `evalator_id` varchar(50) NOT NULL,
+  `course_teacher_name` varchar(20) DEFAULT NULL,
+  `course_time` varchar(30) DEFAULT NULL,
+  `course_name` varchar(30) DEFAULT NULL,
+  `course_property` enum('专业课','任选课','必修课') DEFAULT NULL,
+  `course_grade` double DEFAULT NULL,
+  `course_level` enum('差','较差','一般','良','优秀') DEFAULT NULL,
+  PRIMARY KEY (`evalator_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `online_evalator` */
+
+insert  into `online_evalator`(`evalator_id`,`course_teacher_name`,`course_time`,`course_name`,`course_property`,`course_grade`,`course_level`) values ('5','侯爱民','2015——2016第二学期','面向对象分析与设计','必修课',93.47,'优秀');

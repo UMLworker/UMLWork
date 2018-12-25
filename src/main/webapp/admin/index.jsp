@@ -141,19 +141,80 @@
 				</dd>
 			</dl>
 
-			<dl id="menu-product">
-				<dt><i class="Hui-iconfont">&#xe620;</i> 教学管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-				<dd>
-					<ul>
-						<li><a data-href="_blank.html" data-title="开课计划" href="javascript:void(0)">开课计划</a></li>
-						<li><a data-href="<c:url value='/ClassInfoServlet?method=Admin_LoadClassInfo&classInfoPageQuery=1'/>" data-title="上课班级" href="javascript:void(0)">上课班级</a></li>
-						<li><a data-href="_blank.html" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
-						<li><a data-href="_blank.html" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
+        <dl id="menu-product">
+            <dt><i class="Hui-iconfont">&#xe620;</i> 教学管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="_blank.html" data-title="开课计划" href="javascript:void(0)">开课计划</a></li>
+                    <li><a data-href="<c:url value='/ClassInfoServlet?method=Admin_LoadClassInfo&classInfoPageQuery=1'/>" data-title="上课班级" href="javascript:void(0)">上课班级</a></li>
+                    <li><a data-href="_blank.html" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
+                    <li><a data-href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
 						<li><a data-href="_blank.html" data-title="学生作业案例" href="javascript:void(0)">学生作业案例</a></li>
-					</ul>
-				</dd>
-			</dl>
-
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-product">
+            <dt><i class="Hui-iconfont">&#xe620;</i> 教学效果<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="_blank.html" data-title="品牌管理" href="javascript:void(0)">校外专家评价</a></li>
+                    <li><a data-href="_blank.html" data-title="分类管理" href="javascript:void(0)">校内督导评价</a></li>
+                    <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教师自我评价</a></li>
+                    <li><a data-href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>" data-title="学生评价管理"
+                           href="javascript:void(0)">校内学生评价</a>
+                    </li>
+                    <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">社会评价</a></li>
+                    <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-product">
+            <dt><i class="Hui-iconfont">&#xe622;</i> 教学互动<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="feedback-list.html" data-title="微信群" href="javascript:void(0)">微信群</a></li>
+                    <li><a data-href="feedback-list.html" data-title="QQ群" href="javascript:void(0)">QQ群</a></li>
+                    <li><a data-href="feedback-list.html" data-title="网站内的师生互动" href="javascript:void(0)">网站内的师生互动</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-admin">
+            <dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a data-href="change-password.html" data-title="修改密码" href="javascript:void(0)">修改密码</a></li>
+                    <li><a data-href="admin-role.html" data-title="角色管理" href="javascript:void(0)">角色管理</a></li>
+                    <li><a data-href="admin-permission.html" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
+                    <li><a data-href="admin-list.html" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a>
+</div>
+<section class="Hui-article-box">
+    <div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
+        <div class="Hui-tabNav-wp">
+            <ul id="min_title_list" class="acrossTab cl">
+                <li class="active">
+                    <span title="我的桌面" data-href="welcome.html">我的桌面</span>
+                    <em></em></li>
+            </ul>
+        </div>
+        <div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S"
+                                                  href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a
+                id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a>
+        </div>
+    </div>
+    <div id="iframe_box" class="Hui-article">
+        <div class="show_iframe">
+            <div style="display:none" class="loading"></div>
+            <iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+        </div>
+    </div>
+</section>
 
 
 			<dl id="menu-product">
