@@ -11,7 +11,6 @@ import Utils.BeanUtil;
 import Utils.JDBCutil;
 
 public class class_list_Dao {
-    //testsss
 	JDBCutil jdbcutil=new JDBCutil();
 	public List<Class_List> getClassLists(int QueryPage) {
         String sql="select * from class_list limit ?,5";
