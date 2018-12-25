@@ -85,6 +85,7 @@
 				<dt><i class="Hui-iconfont">&#xe622;</i> 课程概况<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
+					<!-- data-title -->
 						<li><a data-href="picture-list.html" data-title="课程简介" href="javascript:void(0)">课程简介</a></li>
 						<li><a data-href="article-list.html" data-title="课程特色" href="javascript:void(0)">课程特色</a></li>
 						<li><a data-href="_blank.html" data-title="教材与参考资料" href="javascript:void(0)">教材与参考资料</a></li>
@@ -148,7 +149,7 @@
 						<li><a data-href="_blank.html" data-title="开课计划" href="javascript:void(0)">开课计划</a></li>
 						<li><a data-href="_blank.html" data-title="上课班级" href="javascript:void(0)">上课班级</a></li>
 						<li><a data-href="_blank.html" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
-						<li><a data-href="_blank.html" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
+						<li><a data-href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
 						<li><a data-href="_blank.html" data-title="学生作业案例" href="javascript:void(0)">学生作业案例</a></li>
 					</ul>
 				</dd>
