@@ -9,7 +9,7 @@ import Domain.Class_List;
 import Domain.Online_Evalator;
 import Utils.BeanUtil;
 import Utils.JDBCutil;
-
+//why
 public class class_list_Dao {
 	JDBCutil jdbcutil=new JDBCutil();
 	public List<Class_List> getClassLists(int QueryPage) {
