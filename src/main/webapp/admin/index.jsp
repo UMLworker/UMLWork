@@ -157,8 +157,8 @@
                     <li><a data-href="_blank.html" data-title="开课计划" href="javascript:void(0)">开课计划</a></li>
                     <li><a data-href="_blank.html" data-title="上课班级" href="javascript:void(0)">上课班级</a></li>
                     <li><a data-href="_blank.html" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
-                    <li><a data-href="_blank.html" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
-                    <li><a data-href="_blank.html" data-title="学生作业案例" href="javascript:void(0)">学生作业案例</a></li>
+                    <li><a data-href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
+						<li><a data-href="_blank.html" data-title="学生作业案例" href="javascript:void(0)">学生作业案例</a></li>
                 </ul>
             </dd>
         </dl>
@@ -199,7 +199,6 @@
                 </ul>
             </dd>
         </dl>
-
     </div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a>
