@@ -55,8 +55,10 @@
 						<section class="article">
 							<div class="itemDetail newItemContent">
 								<div class="bar6">
-									<form>
-										<input type="text" placeholder="请输入搜索班级" name="cname">
+									<form action="<c:url value='/ScoreServlet'/>" method="post">
+										<input type="hidden" name="method" value="selectStudent">
+										<input type="hidden" name="StudentpageQuery" value="1">
+										<input type="text" placeholder="请输入学生学号" name="studentNo">
 										<button type="submit"></button>
 									</form>
 								</div>

@@ -30,5 +30,10 @@ public class Student_ScoreService {
         return studentDao.modifyStudnt(StudentNo, score);
     }
 
-
+    public List<Student_Score> selectStudent(String studentNo,int pages){
+        return studentDao.selectStudent(studentNo,pages);
+    }
+    public int getOneStudentTotal(String studentNo){
+        return studentDao.getOneStudentTotal(studentNo);
+    }
 }

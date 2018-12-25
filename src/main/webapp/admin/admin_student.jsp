@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/lib/Hui-iconfont/1.0.8/iconfont.css'/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/skin/default/skin.css'/>" id="skin"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/style.css'/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/eduManageDetail.css'/>"/>
     <!--[if IE 6]>
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>
@@ -33,6 +34,14 @@
         <span class="l"><a class="btn btn-primary radius" data-title="添加记录" data-href="<c:url value='/admin/admin_student_add.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加记录</a></span>&nbsp;&nbsp;
         <span class="l"><a class="btn btn-primary radius" data-title="修改成绩" data-href="<c:url value='/admin/admin_student_modify.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 修改成绩</a></span>
     </div>
+</div>
+<div class="bar6">
+    <form action="<c:url value='/ScoreServlet'/>" method="post">
+        <input type="hidden" name="method" value="selectAddminStudent">
+        <input type="hidden" name="StudentpageQuery" value="1">
+        <input type="text" placeholder="请输入学生学号" name="studentNo">
+        <button type="submit"></button>
+    </form>
 </div>
 <table class="table table-border table-bordered table-hover table-bg">
     <thead>
@@ -61,7 +70,7 @@
             </td>
             <td class="f-14"><a title="删除" href="<c:url value='/ScoreServlet?method=Delete_Evalator&evalator_id=${evalator.studentNo}'/>"class="ml-5"
                                 style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
-            <td><a style="text-decoration:none"  href="javascript:;" title="修改成绩"><i class="Hui-iconfont">&#xe6de;</i></a></td>
+            <td><a style="text-decoration:none"  href="<c:url value='/admin/admin_student_modify.jsp?evalator_id=${evalator.studentNo}'/>" title="修改成绩"><i class="Hui-iconfont">&#xe6de;</i></a></td>
         </tr>
     </c:forEach>
     </tbody>
