@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>在线开放课程平台aaa</title>
+	<title>在线开放课程平台</title>
 	<meta charset="utf-8">
 	<link rel="icon" href="<c:url value='/images/dgut.jpg' />">
 	<link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
