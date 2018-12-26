@@ -92,7 +92,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="menu-product">
+			<dl id="menu-product1">
 				<dt><i class="Hui-iconfont">&#xe60d;</i> 教师队伍<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
@@ -103,7 +103,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="menu-product">
+			<dl id="menu-product2">
 				<dt><i class="Hui-iconfont">&#xe620;</i> 教学安排<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
@@ -116,7 +116,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="menu-product">
+			<dl id="menu-product3">
 				<dt><i class="Hui-iconfont">&#xe620;</i> 教学研究改革<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
@@ -127,7 +127,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="menu-product">
+			<dl id="menu-product4">
 				<dt><i class="Hui-iconfont">&#xe620;</i> 教学资源<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
@@ -141,7 +141,7 @@
 				</dd>
 			</dl>
 
-        <dl id="menu-product">
+        <dl id="menu-product5">
             <dt><i class="Hui-iconfont">&#xe620;</i> 教学管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
@@ -153,7 +153,7 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-product">
+        <dl id="menu-product6">
             <dt><i class="Hui-iconfont">&#xe620;</i> 教学效果<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
@@ -168,7 +168,7 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-product">
+        <dl id="menu-product7">
             <dt><i class="Hui-iconfont">&#xe622;</i> 教学互动<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
@@ -179,7 +179,7 @@
                 </ul>
             </dd>
         </dl>
-        <dl id="menu-admin">
+        <dl id="menu-admin8">
             <dt><i class="Hui-iconfont">&#xe62d;</i> 管理员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
@@ -195,20 +195,20 @@
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a>
 </div>
 <section class="Hui-article-box">
-    <div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
+    <div id="Hui-tabNav1" class="Hui-tabNav hidden-xs">
         <div class="Hui-tabNav-wp">
-            <ul id="min_title_list" class="acrossTab cl">
+            <ul id="min_title_list1" class="acrossTab cl">
                 <li class="active">
                     <span title="我的桌面" data-href="welcome.html">我的桌面</span>
                     <em></em></li>
             </ul>
         </div>
-        <div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S"
+        <div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev1" class="btn radius btn-default size-S"
                                                   href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a
-                id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a>
+                id="js-tabNav-next1" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a>
         </div>
     </div>
-    <div id="iframe_box" class="Hui-article">
+    <div id="iframe_box1" class="Hui-article">
         <div class="show_iframe">
             <div style="display:none" class="loading"></div>
             <iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
@@ -217,7 +217,7 @@
 </section>
 
 
-			<dl id="menu-product">
+			<dl id="menu-product9">
 				<dt><i class="Hui-iconfont">&#xe620;</i> 教学效果<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
