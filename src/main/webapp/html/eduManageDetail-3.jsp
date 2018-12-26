@@ -9,7 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="../style/eduManage/eduManageDetail.css">
 	<link rel="stylesheet" type="text/css" href="../style/eduManage/normal.css">
 	<%--<script type="text/javascript" src="../js/normal.js"></script>--%>
-	<script type="text/javascript" src="<c:url value='/html/normal.jsp'/>"></script>
 
 </head>
 <script type="text/javascript">
@@ -21,7 +20,9 @@
 </script>
 <body onload="Rendering()">
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="top"></div>
+	<div id="top">
+		<jsp:include page="/html/top.jsp" />
+	</div>
 
 	<article class="content">
 
@@ -143,8 +144,12 @@
 		</section>
 	</article>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp" />
+	</div>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp" />
+	</div>
 </body>
 </html>
