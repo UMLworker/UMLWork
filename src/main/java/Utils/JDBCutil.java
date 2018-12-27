@@ -10,6 +10,7 @@ public class JDBCutil {
     //数据库用户名
     private static final String USERNAME = "root";
     //数据库密码
+    
     private static final String PASSWORD = "313976009";
 
     //驱动信息
