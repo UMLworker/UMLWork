@@ -145,7 +145,7 @@
 				<dt><i class="Hui-iconfont">&#xe620;</i> 教学管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
-						<li><a data-href="_blank.html" data-title="开课计划" href="javascript:void(0)">开课计划</a></li>
+						<li><a data-href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showBack" data-title="开课计划" href="javascript:void(0)">开课计划</a></li>
 						<li><a data-href="_blank.html" data-title="上课班级" href="javascript:void(0)">上课班级</a></li>
 						<li><a data-href="_blank.html" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
 						<li><a data-href="_blank.html" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
