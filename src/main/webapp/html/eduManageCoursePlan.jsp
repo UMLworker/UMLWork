@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/normal.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/eduManage/eduManageDetail.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/eduManage/normal.css">
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/normal.js"></script>
 	<!-- 显示pdf容器样式 -->
 	<style>
 		.pdfobject-container {
@@ -19,11 +18,12 @@
 		}
 	</style>
 </head>
-</head>
 
 <body onload="Rendering();">
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="top"></div>
+	<div id="top">
+		<jsp:include page="/html/top.jsp"/>
+	</div>
 
 	<article class="content">
 	    <section id="banner">
@@ -69,9 +69,13 @@
 	</article>
 
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp"/>
+	</div>
 
 <!-- 引入jq -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
