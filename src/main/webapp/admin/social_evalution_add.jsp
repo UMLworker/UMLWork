@@ -50,21 +50,16 @@
 	});
 </script>
 
-<title>新增教师自我评价</title>
+<title>新增社会评价评价</title>
 
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-article-add" action="<c:url value='/teacher_evalution_servlet'/>" method="post">
+	<form class="form form-horizontal" id="form-article-add" action="<c:url value='/social_evalution_servlet'/>" method="post">
 
 		<input type="hidden" name="method" value="addEvalution">
 
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>教师姓名：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="teacherName" name="teacherName">
-			</div>
-		</div>
+
 
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>评价标题：</label>
@@ -76,7 +71,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">评价内容：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<script id="Editor" type="text/plain" style="width:600px;height:300px;" ></script>
+				<script id="Editor" type="text/plain" style="width:600px;height:300px" ></script>
 				<textarea name="content" id="content" class="required span6" rows="6" title="* Please enter your message"></textarea>
 			</div>
 		</div>

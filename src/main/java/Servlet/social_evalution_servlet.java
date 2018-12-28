@@ -1,23 +1,22 @@
 package Servlet;
 
 
-import Domain.teacher_evalution;
-import Service.teacher_evalutionService;
+import Domain.social_evalution;
+import Service.social_evalutionService;
 import Utils.BaseServlet;
 import Utils.PageQuery;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
-@WebServlet("/teacher_evalution_servlet")
-public class teacher_evalution_servlet extends BaseServlet {
+@WebServlet("/social_evalution_servlet")
+public class social_evalution_servlet extends BaseServlet {
 
-    protected teacher_evalutionService evalutionService = new teacher_evalutionService();
+    protected social_evalutionService evalutionService = new social_evalutionService();
 
     public String addEvalution(HttpServletRequest request, HttpServletResponse response){
 
@@ -27,15 +26,14 @@ public class teacher_evalution_servlet extends BaseServlet {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String evalutionTime = df.format(new Date());
 
-        teacher_evalution evalution = new teacher_evalution();
+        social_evalution evalution = new social_evalution();
         evalution.setEvalutionTitle(evalutionTitle);
-        evalution.setTeacherName(teacherName);
         evalution.setContent(content);
         evalution.setEvalutionTime(evalutionTime);
 
         evalutionService.addEvalution(evalution);
 
-        return "r:/admin/teacher_evaluation.jsp";
+        return "r:/admin/social_evalution.jsp";
     }
 
 
@@ -44,15 +42,12 @@ public class teacher_evalution_servlet extends BaseServlet {
         evalutionService.deleteEvalator(evalator_id);
 
 
-        return "r:/admin/teacher_evaluation.jsp";
+        return "r:/admin/social_evalution.jsp";
     }
 
+    public String LoadSocialEvalator(HttpServletRequest request, HttpServletResponse response){
 
-
-
-    public String LoadTeacherEvalator(HttpServletRequest request, HttpServletResponse response){
-
-        PageQuery<teacher_evalution> EvalatorpageQuery=new PageQuery<>();
+        PageQuery<social_evalution> EvalatorpageQuery=new PageQuery<>();
         //想要查询的页数
         String qp=request.getParameter("EvalatorpageQuery");
         EvalatorpageQuery.setCurrentPage(Integer.parseInt(qp));
@@ -64,15 +59,15 @@ public class teacher_evalution_servlet extends BaseServlet {
         request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
 
         System.out.println(EvalatorpageQuery);
-        return "r:/html/teachEffectDetail-3.jsp";
+        return "r:/html/teachEffectDetail-5.jsp";
     }
 
 
 
 
-    public String Admin_LoadTeacherEvalator(HttpServletRequest request, HttpServletResponse response){
+    public String Admin_LoadSocialEvalator(HttpServletRequest request, HttpServletResponse response){
 
-        PageQuery<teacher_evalution> EvalatorpageQuery=new PageQuery<>();
+        PageQuery<social_evalution> EvalatorpageQuery=new PageQuery<>();
         //想要查询的页数
         String qp=request.getParameter("EvalatorpageQuery");
         System.out.println(qp);
@@ -84,9 +79,7 @@ public class teacher_evalution_servlet extends BaseServlet {
         EvalatorpageQuery.setTotalRows(evalutionService.getEvalatorTotal());
         System.out.println(EvalatorpageQuery);
         request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
-        System.out.println("dlf");
-
-        return "r:/admin/teacher_evaluation.jsp";
+        return "r:/admin/social_evalution.jsp";
     }
 
     public String editStatus(HttpServletRequest request, HttpServletResponse response){
@@ -95,7 +88,7 @@ public class teacher_evalution_servlet extends BaseServlet {
         int status = Integer.parseInt(sta);
         int evalutionId = Integer.parseInt(id);
         evalutionService.editStatus(evalutionId,status);
-        return "r:/admin/teacher_evaluation.jsp";
+        return "r:/admin/social_evalution.jsp";
     }
 
 

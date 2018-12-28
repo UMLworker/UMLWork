@@ -1,10 +1,9 @@
 package Domain;
 
-public class teacher_evalution {
+public class social_evalution {
 
     private int evalutionId;
     private String evalutionTitle;
-    private String teacherName;
     private String content;
     private String evalutionTime;
     private int status;
@@ -31,14 +30,6 @@ public class teacher_evalution {
 
     public void setEvalutionTitle(String evalutionTitle) {
         this.evalutionTitle = evalutionTitle;
-    }
-
-    public String getTeacherName() {
-        return teacherName;
-    }
-
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
     }
 
     public String getContent() {

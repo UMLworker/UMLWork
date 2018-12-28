@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../style/normal.css">
     <link rel="stylesheet" type="text/css" href="../style/teachEffect/normal.css">
     <link rel="stylesheet" type="text/css" href="../style/teachEffect/teachEffectDetail.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/normal.js"></script>
 </head>
 <body onload="Rendering();">
@@ -28,7 +29,7 @@
                     <ul>
                         <li><a href="teachEffectDetail-1.jsp">校外专家评价</a></li>
                         <li><a href="teachEffectDetail-2.jsp">校内督导评价</a></li>
-                        <li class="current"><a href="teachEffectDetail-3.jsp">教师自我评价</a></li>
+                        <li class="current"><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></li>
                         <li><a href="teachEffectDetail-4.jsp">校内学生评价</a></li>
                         <li><a href="teachEffectDetail-5.jsp">社会评价</a></li>
                         <li><a href="teachEffectDetail-6.jsp">教学评估及相关文件</a></li>
@@ -45,9 +46,9 @@
                         </nav>
                         <h1>教师自我评价</h1>
                     </header>
-                    <%--<section class="article">--%>
-                        <%--<img src="/images/teachEffect/study.png" alt="" width="550">--%>
-                    <%--</section>--%>
+
+
+
 
                 </article>
             </div>
@@ -56,45 +57,53 @@
                 <table style="border-collapse:collapse;" border="1" bordercolor="#000000">
                     <tbody>
                     <tr>
-                        <td valign="top" width="112">
+                        <td valign="top" width="200">
                             <span>教师姓名</span>
                         </td>
-                        <td valign="top" width="188">
+                        <td valign="top" width="200">
                             <span>评价标题</span>
                         </td>
-                        <td valign="top" width="88">
-                            <span>评价内容</span>
-                        </td>
-                        <td valign="top" width="112">
+                        <td valign="top" width="200">
                             <span>评价时间</span>
                         </td>
-                    </tr>
-
-                <c:forEach items="${list}" var="evalator">
-                    <tr>
-                        <td valign="top">
-                            <span>${evalator.teacherName}</span>
-                        </td>
-                        <td valign="top">
-                            <span>${evalator.evalutionTitle}</span>
-                        </td>
-                        <td valign="top">
-                            <span>${evalator.content}</span>
-                        </td>
-                        <td valign="top">
-                            <span>${evalator.evalutionTime}</span>
+                        <td valign="top"  width="200">
+                            <span>评价内容</span>
                         </td>
                     </tr>
-                </c:forEach>
 
-
+                    <c:forEach items="${EvalatorpageQuery.items}" var="evalator">
+                        <tr>
+                            <td valign="top">
+                                <span>${evalator.teacherName}</span>
+                            </td>
+                            <td valign="top">
+                                <span>${evalator.evalutionTitle}</span>
+                            </td>
+                            <td valign="top">
+                                <span>${evalator.evalutionTime}</span>
+                            </td>
+                            <td valign="top">
+                                <%--<span>${evalator.content}</span>--%>
+                                    <span><a href="#" class="show">查看</a> </span>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
 
+                <div class="pagination" style="width:100%;">
+                    <ul style="margin: auto">
+                        <c:if test="${EvalatorpageQuery.currentPage!=1}">
 
-
-
-
+                            <li><a style="float:left;" class="btn btn-primary radius" href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">首页</a></li>
+                            <li><a style="float:left;" class="btn btn-primary radius" href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></li>
+                        </c:if>
+                        <c:if test="${EvalatorpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
+                            <li><a style="float:left;" class="btn btn-primary radius" href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></li>
+                            <li><a style="float:left;" class="btn btn-primary radius" href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></li>
+                        </c:if>
+                    </ul>
+                </div>
 
             </div>
         </div>
@@ -103,7 +112,15 @@
 
 <!-- 通过js渲染，js代码在normal.js里 -->
 <div id="bottom"></div>
-<!-- 通过js渲染，js代码在normal.js里 -->
 <div id="copyrights"></div>
 </body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        alert("dlha");
+        $('.show').click(function () {
+            confirm(${evalator.content}); //在页面上弹出确认对话框
+        });
+    });
+</script>
+
 </html>
