@@ -158,10 +158,10 @@
             <dt><i class="Hui-iconfont">&#xe620;</i> 教学效果<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="_blank.html" data-title="品牌管理" href="javascript:void(0)">校外专家评价</a></li>
-                    <li><a data-href="_blank.html" data-title="分类管理" href="javascript:void(0)">校内督导评价</a></li>
-                    <li><a data-href="<c:url value='/teacher_evalution_servlet?method=showInBackstage'/>" data-title="产品管理" href="">教师自我评价</a></li>
-                    <li><a data-href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>" data-title="学生评价管理"
+					<li><a data-href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=1&type=0'/>" data-title="校外专家评价" href="javascript:void(0)">校外专家评价</a></li>
+					<li><a data-href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnBackground'/>" data-title="校内督导评价" href="javascript:void(0)">校内督导评价</a></li>
+          <li><a data-href="<c:url value='/teacher_evalution_servlet?method=showInBackstage'/>" data-title="产品管理" href="">教师自我评价</a></li>
+          <li><a data-href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>" data-title="学生评价管理"
                            href="javascript:void(0)">校内学生评价</a>
                     </li>
                     
@@ -224,8 +224,8 @@
 				<dt><i class="Hui-iconfont">&#xe620;</i> 教学效果<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 				<dd>
 					<ul>
-						<li><a data-href="_blank.html" data-title="品牌管理" href="javascript:void(0)">校外专家评价</a></li>
-						<li><a data-href="_blank.html" data-title="分类管理" href="javascript:void(0)">校内督导评价</a></li>
+						<li><a data-href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnBackground'/>" data-title="校外专家评价" href="javascript:void(0)">校外专家评价</a></li>
+						<li><a data-href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnBackground'/>" data-title="校内督导评价" href="javascript:void(0)">校内督导评价</a></li>
 						<li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教师自我评价</a></li>
 
 						<li><a data-href="_blank.html" data-title="产品管理" href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></li>
