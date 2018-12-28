@@ -160,7 +160,7 @@
                 <ul>
                     <li><a data-href="_blank.html" data-title="品牌管理" href="javascript:void(0)">校外专家评价</a></li>
                     <li><a data-href="_blank.html" data-title="分类管理" href="javascript:void(0)">校内督导评价</a></li>
-                    <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教师自我评价</a></li>
+                    <li><a data-href="<c:url value='/teacher_evalution_servlet?method=showInBackstage'/>" data-title="产品管理" href="">教师自我评价</a></li>
                     <li><a data-href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>" data-title="学生评价管理"
                            href="javascript:void(0)">校内学生评价</a>
                     </li>

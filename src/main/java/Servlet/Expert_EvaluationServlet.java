@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Expert_EvaluationServlet extends BaseServlet {
     public String getContent(){
 
-        return "r:/admin/";
+        return "r:/admin/index.html";
     }
 
     public String addContent(HttpServletRequest request, HttpServletResponse response){
