@@ -27,17 +27,18 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 班级花名册管理</nav>
 <div class="page-container">
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" data-title="添加评价" data-href="<c:url value='/admin/class_list_add.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加花名册</a></span></div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" data-title="添加花名册" data-href="<c:url value='/admin/class_list_add.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加花名册</a></span>
+    <!--  <span class="r"><input type="text" name="searchName" id="" placeholder=" 班级名" style="width:250px" class="input-text"><a class="" data-title="查找名单" data-href="<c:url value='/class_list_Servlet?method=searchByName'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查找名单</button></a></span></div>-->
 </div>
 <table class="table table-border table-bordered table-hover table-bg">
     <thead>
     <tr class="text-c">
-        <th width="80">班级ID1</th>
+        <th width="80">班级ID</th>
         <th width="150">班级名称</th>
         <th width="150">所属专业</th>
         <th width="80">课程</th>
         <th width="60">名单表</th>
-        <th width="80">删除</th>
+        <th width="80">删除名单</th>
     </tr>
     </thead>
     <tbody>
@@ -47,9 +48,8 @@
             <td>${class_list.class_name}</td>
             <td>${class_list.major}</td>
             <td>${class_list.course}</td>
-            <td>${class_list.class_file}</td>
-            <td>${class_list.grade_file}</td>
-            <td class="f-14"><a title="删除" href="<c:url value='/EvalatorServlet?method=Delete_Evalator&evalator_id=${evalator.evalator_id}'/>"class="ml-5"
+            <td><a href="${class_list.class_file}" download="${class_list.class_file_name}">${class_list.class_file_name}</a></td>
+            <td class="f-14"><a title="删除" href="<c:url value='/class_list_Servlet?method=deleteClassList&class_id=${class_list.class_id}'/>"class="ml-5"
                                 style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
     </c:forEach>
@@ -67,7 +67,7 @@
         </c:if>
     </ul>
 </div>
-<div style="color: red">${info}</div>
+<div style="color: red">${info}</div><!-- 什么意思？ -->
 </div>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="<c:url value='/admin/lib/jquery/1.9.1/jquery.min.js'/>"></script>

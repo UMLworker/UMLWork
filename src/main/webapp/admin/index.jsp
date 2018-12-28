@@ -148,7 +148,7 @@
                 <ul>
 					<li><a data-href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showBack" data-title="开课计划" href="javascript:void(0)">开课计划</a></li>
                     <li><a data-href="<c:url value='/ClassInfoServlet?method=Admin_LoadClassInfo&classInfoPageQuery=1'/>" data-title="上课班级" href="javascript:void(0)">上课班级</a></li>
-                    <li><a data-href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
+                    <li><a data-href="<c:url value='/Student_ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
                     <li><a data-href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
                     <li><a data-href="_blank.html" data-title="学生作业案例" href="javascript:void(0)">学生作业案例</a></li>
                 </ul>
@@ -164,6 +164,7 @@
                     <li><a data-href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>" data-title="学生评价管理"
                            href="javascript:void(0)">校内学生评价</a>
                     </li>
+                    
                     <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">社会评价</a></li>
                     <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
                 </ul>
@@ -255,8 +256,8 @@
 				</dd>
 			</dl>
 
-		</div>
-	</aside>
+	<!-- </div> </aside>-->	
+	
 	<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 	<section class="Hui-article-box">
 		<div id="Hui-tabNav" class="Hui-tabNav hidden-xs">
