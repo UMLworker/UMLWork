@@ -42,3 +42,17 @@ INSERT INTO `student_score` VALUES ('68757', 'zyr', '网络工程', '16软件工
 INSERT INTO `student_score` VALUES ('1231', 'zyr', 'wlgc', '16软件工程', 'UML', '90');
 INSERT INTO `student_score` VALUES ('201641404201', '方静竹', '行政管理', '2018行政管理', '体育', '100');
 INSERT INTO `student_score` VALUES ('201641404205', 'zyr', '网络工程', '16软件工程', 'UML', '99');
+
+
+### 开课计划表 (陈松彬)
+CREATE TABLE `open_course_plan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `term` int(11) DEFAULT NULL,
+  `filePath` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+/*Data for the table `open_course_plan` */
+
+insert  into `open_course_plan`(`id`,`term`,`filePath`) values (15,200020011,'resource/open_course_plan_files/2000-2001年度 第一学期.pdf'),(16,200020012,'resource/open_course_plan_files/2000-2001年度 第二学期.pdf'),(17,201820192,'resource/open_course_plan_files/2018-2019年度 第二学期.pdf'),(18,201820191,'resource/open_course_plan_files/2018-2019年度 第一学期.pdf'),(19,201720182,'resource/open_course_plan_files/2017-2018年度 第二学期.pdf'),(20,201720181,'resource/open_course_plan_files/2017-2018年度 第一学期.pdf');
+

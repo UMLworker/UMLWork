@@ -158,7 +158,7 @@
                     <li class="detail"><a
                             href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>"
                             style="color: #fff;">学生成绩</a></li>
-                    <li class="detail"><a href="<c:url value ='/html/eduManageDetail-4.jsp'/>"
+                    <li class="detail"><a href="<c:url value ='/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1'/>"
                                           style="color: #fff;">班级名册</a></li>
                     <li class="detail"><a href="<c:url value ='/html/eduManageDetail-5.jsp'/>" style="color: #fff;">学生作业案例</a>
                     </li>

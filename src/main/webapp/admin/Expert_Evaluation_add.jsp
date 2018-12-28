@@ -23,12 +23,16 @@
 	<!--/meta 作为公共模版分离出去-->
 
 
+
 	<title>新增专家评价</title>
+
 
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" action="${pageContext.request.contextPath}/Expert_EvaluationServlet" method="post">
+
+	<form class="form form-horizontal" id="form-article-add" action="${pageContext.request.contextPath}/Expert_EvaluationServlet" method="post">
+		<input type="hidden" name="method" value="getContent">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -50,6 +54,15 @@
 			<label class="form-label col-xs-4 col-sm-2">文章内容：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<script id="Editor" type="text/plain" style="width:600px;height:300px;" ></script></div>
+		</div>
+				<textarea name="content" id="content" class="required span6" rows="6" title="* Please enter your message"></textarea>
+
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+				<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
+				<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+			</div>
 		</div>
 
 		<input type="hidden" name="method" value="addContent">

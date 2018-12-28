@@ -5,8 +5,8 @@ public class Class_List {
 	private String class_name;
 	private String major;
 	private String course;
+	private String class_file_name;
 	private String class_file;
-	private String grade_file;
 
 	public Long getClass_id() {
 		return class_id;
@@ -40,6 +40,14 @@ public class Class_List {
 		this.course = course;
 	}
 
+	public String getClass_file_name() {
+		return class_file_name;
+	}
+
+	public void setClass_file_name(String class_file_name) {
+		this.class_file_name = class_file_name;
+	}
+
 	public String getClass_file() {
 		return class_file;
 	}
@@ -48,11 +56,4 @@ public class Class_List {
 		this.class_file = class_file;
 	}
 
-	public String getGrade_file() {
-		return grade_file;
-	}
-
-	public void setGrade_file(String grade_file) {
-		this.grade_file = grade_file;
-	}
 }

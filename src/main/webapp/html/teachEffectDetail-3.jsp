@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -51,12 +52,50 @@
                 </article>
             </div>
             <div class="column_3" style="text-align: left;">
-                <ul>
-                    <li><a href="teachEffectDetail-3-show1.jsp">侯爱民自我评价</a><span style="float: right;">2018-10-29</span></li>
-                    <li><a href="teachEffectDetail-3-show2.jsp">周鹏自我评价</a><span style="float: right;">2018-10-29</span></li>
-                    <li><a href="teachEffectDetail-3-show3.jsp">何文斌自我评价</a><span style="float: right;">2018-10-29</span></li>
-                </ul>
-                
+
+                <table style="border-collapse:collapse;" border="1" bordercolor="#000000">
+                    <tbody>
+                    <tr>
+                        <td valign="top" width="112">
+                            <span>教师姓名</span>
+                        </td>
+                        <td valign="top" width="188">
+                            <span>评价标题</span>
+                        </td>
+                        <td valign="top" width="88">
+                            <span>评价内容</span>
+                        </td>
+                        <td valign="top" width="112">
+                            <span>评价时间</span>
+                        </td>
+                    </tr>
+
+                <c:forEach items="${list}" var="evalator">
+                    <tr>
+                        <td valign="top">
+                            <span>${evalator.teacherName}</span>
+                        </td>
+                        <td valign="top">
+                            <span>${evalator.evalutionTitle}</span>
+                        </td>
+                        <td valign="top">
+                            <span>${evalator.content}</span>
+                        </td>
+                        <td valign="top">
+                            <span>${evalator.evalutionTime}</span>
+                        </td>
+                    </tr>
+                </c:forEach>
+
+
+                    </tbody>
+                </table>
+
+
+
+
+
+
             </div>
         </div>
     </section>
