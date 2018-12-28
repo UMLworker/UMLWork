@@ -1,33 +1,54 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>教学管理</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../style/normal.css">
-	<link rel="stylesheet" type="text/css" href="../style/eduManage/eduManageDetail.css">
-    <link rel="stylesheet" type="text/css" href="../style/eduManage/normal.css">
-	<script type="text/javascript" src="../js/normal.js"></script>
-	<!-- 显示pdf容器样式 -->
+
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/normal.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/eduManage/eduManageDetail.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/eduManage/normal.css">
+
+	<!-- 开课计划列表样式 -->
 	<style>
-		.pdfobject-container {
-		    max-width: 100%;
-			width: 1000px;
-			height: 1000px;
-			border: 10px solid rgba(0,0,0,.2);
-			margin: 0;
+		table {
+			color: #015249;
+		}
+		tr{
+			height: 40px;
+		}
+		td{
+			padding: 0 20px;
+		}
+
+		.page{
+			width: 340px;
+			padding-left: 80px;
+			margin-top: 20px;
+			color: black;
+		}
+		table a, .page a{
+			margin: 0 10px;
+			cursor: pointer;
+		}
+		table a:hover, .page a:hover{
+			background-color: #04837e;
+			color: white;
 		}
 	</style>
-</head>
 </head>
 
 <body onload="Rendering();">
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="top"></div>
+	<div id="top">
+		<jsp:include page="/html/top.jsp"/>
+	</div>
 
 	<article class="content">
 	    <section id="banner">
-	        <img src="../images/index/abouttop_03.jpg">
+	        <img src="${pageContext.request.contextPath}/images/index/abouttop_03.jpg">
 	    </section>
 	    <section class="mainWrap relative">
 	        <div class="detailContent">
@@ -35,11 +56,11 @@
 	                <section class="leftNav">
 	                    <h3>教学管理</h3>
 	                    <ul>
-							<li class="current"><a href="eduManageDetail-1.jsp">开课计划</a></li>
-							<li><a href="eduManageDetail-2.jsp">上课班级</a></li>
-							<li><a href="eduManageDetail-3.jsp">学生成绩</a></li>
-							<li><a href="eduManageDetail-4.jsp">班级名册</a></li>
-							<li><a href="eduManageDetail-5.jsp">作业案例</a></li>
+							<li class="current"><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a></li>
+							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-2.jsp">上课班级</a></li>
+							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-3.jsp">学生成绩</a></li>
+							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-4.jsp">班级名册</a></li>
+							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-5.jsp">作业案例</a></li>
 						</ul>
 	                </section>
 	            </div>
@@ -47,18 +68,38 @@
 	                <article class="mainContent">
 	                    <header class="contentNav">
 	                        <nav class="nav">
-	                            <a href="index.html">首页</a>·
-	                            <a href="eduManageDetail-1.jsp">教学管理</a>·
-	                            <a href="eduManageDetail-1.jsp">开课计划</a>
+	                            <a href="${pageContext.request.contextPath}/html/index.html">首页</a>·
+	                            <a href="${pageContext.request.contextPath}/html/eduManageDetail-1.jsp">教学管理</a>·
+	                            <a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a>
 	                        </nav>
 	                        <h1>开课计划</h1>
 	                    </header>
 	                    <section class="article">
-							<div class="itemDetail newItemContent">
-								
-								<div id="my-pdf"></div>
 
+							<!--开课计划列表-->
+							<table>
+								<c:forEach items="${requestScope.plans}" var="plan">
+									<tr>
+										<td>${plan.termName}</td>
+										<td>
+											<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showPDFAtFront&term=${plan.termName}&filePath=${plan.filePath}">查看</a>
+											<a href="${pageContext.request.contextPath}/${plan.filePath}">下载</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</table>
+							<!--开课计划列表-->
+							<!--翻页-->
+							<div class="page">
+								<c:if test="${ requestScope.curPage != 0 }">
+									<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront&page=${requestScope.curPage - 1}&size=4">上一页</a>
+								</c:if>
+								第 ${requestScope.curPage + 1} 页
+								<c:if test="${ requestScope.nextPage }">
+									<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront&page=${requestScope.curPage + 1}&size=4">下一页</a>
+								</c:if>
 							</div>
+							<!--翻页-->
 	                    </section>
 	
 	                </article>
@@ -68,17 +109,13 @@
 	</article>
 
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp"/>
+	</div>
 
-<!-- 引入jq -->
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<!-- 引入 显示pdf js组件 -->
-<script type="text/javascript" src="../js/pdfobject.min.js"></script>
-<script>
-var $container = $("#my-pdf");
-PDFObject.embed("../resource/开课计划.pdf", $container);
-</script>
 </body>
 </html>

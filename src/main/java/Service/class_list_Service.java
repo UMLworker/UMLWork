@@ -26,5 +26,8 @@ public class class_list_Service {
 	    public void deleteClassList(String class_id){
 	    	class_list_dao.deleteClassList(class_id);
 	    }
-	
+	    
+	    public List<Class_List> searchByName(String name){
+	    	return class_list_dao.searchByName(name);
+	    }
 }

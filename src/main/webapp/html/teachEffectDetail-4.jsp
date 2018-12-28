@@ -9,11 +9,12 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachEffect/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/teachEffect/teachEffectDetail.css'/>">
-    <script type="text/javascript" src="<c:url value='/html/normal.jsp'/>"></script>
 </head>
 <body onload="Rendering();">
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"></div>
+<div id="top">
+    <jsp:include page="/html/top.jsp"/>
+</div>
 
 <article class="content">
 
@@ -118,8 +119,12 @@
 </article>
 
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="bottom"></div>
+<div id="bottom">
+    <jsp:include page="/html/bottom.jsp" />
+</div>
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="copyrights"></div>
+<div id="copyrights">
+    <jsp:include page="/html/copyright.jsp" />
+</div>
 </body>
 </html>

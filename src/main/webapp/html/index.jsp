@@ -9,12 +9,14 @@
 	<link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
     <link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
 	<link rel="stylesheet" type="text/css" href="<c:url value='/style/index/index.css'/>">
+
 </head>
 
 <body onload="Rendering();">
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="top"></div>
-    <jsp:include page="normal.jsp"></jsp:include>
+	<div id="top">
+		<jsp:include page="/html/top.jsp" />
+	</div>
 	<div id="banner">
 		<!--<div class="bannerImg"><img src="../images/index/bigimg.jpg">-->
 			<div class="summary">
@@ -83,8 +85,12 @@
     </div>
 
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp" />
+	</div>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp" />
+	</div>
 </body>
 </html>
