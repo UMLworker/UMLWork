@@ -118,23 +118,18 @@ public class class_list_Servlet extends BaseServlet {
     				 map.put("uuidname", new String[]{uuidname});//获取并封装随机文件名
     				 
     				 String randompath1 = FileUploadUtils.getRandomDirectory(filename);//两重地址，一重即可,修改函数
-    				 //String randompath="\\班级名单";
-    				 String randompath="upload";
-    				// String uploadpath = request.getServletContext().getRealPath("/upload");
-    				 //String uploadpath=System.getProperty("user.dir")+"\\wepapp\\upload";
-    				 String uploadpath = getServletContext().getRealPath("/") + File.separator + randompath;
-    				 //File parentFile = new File(uploadpath, randompath);
-    				 File parentFile = new File(uploadpath);
+    				 String randompath="\\班级名单";
+    				 String uploadpath = request.getServletContext().getRealPath("/upload");
+//    				 String uploadpath=System.getProperty("user.dir")+"\\upload";
+    				 File parentFile = new File(uploadpath, randompath);
     				 if(!parentFile.exists())
     					 parentFile.mkdirs();//创建文件保存的目录
     			     
-//    				 map.put("class_file", new String[]{uploadpath+randompath+"\\"+filename});//封装上传文件的保存路径
-    				 map.put("class_file", new String[]{uploadpath + File.separator + filename});
+    				 map.put("class_file", new String[]{uploadpath+randompath+"\\"+filename});//封装上传文件的保存路径
 
     				 
     				 //上传文件
-//    				 IOUtils.copy(fileItem.getInputStream(), new FileOutputStream(new File(parentFile, filename)));
-    				 IOUtils.copy(fileItem.getInputStream(), new FileOutputStream(new File(uploadpath + File.separator + filename)));
+    				 IOUtils.copy(fileItem.getInputStream(), new FileOutputStream(new File(parentFile, filename)));
     				 fileItem.delete();
     			}
     		}
