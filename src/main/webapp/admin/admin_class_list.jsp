@@ -48,7 +48,7 @@
             <td>${class_list.class_name}</td>
             <td>${class_list.major}</td>
             <td>${class_list.course}</td>
-            <td><a href="${class_list.class_file}" download="${class_list.class_file_name}">${class_list.class_file_name}</a></td>
+            <td><a href="..\WEB-INF\upload\班级名单" download="${class_list.class_file_name}">${class_list.class_file}</a></td>
             <td class="f-14"><a title="删除" href="<c:url value='/class_list_Servlet?method=deleteClassList&class_id=${class_list.class_id}'/>"class="ml-5"
                                 style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>

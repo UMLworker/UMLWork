@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
-@WebServlet("/EvalatorServlet")
+//@WebServlet("/EvalatorServlet")
 public class EvalatorServlet extends BaseServlet{
     EvalatorService evalatorService=new EvalatorService();
     public String LoadStudentEvalator(HttpServletRequest request, HttpServletResponse response){

@@ -90,7 +90,7 @@
                                 <span>${class_list.course}</span>
                             </td>
                             <td valign="top" width="50">
-                                <a href="../resource/16软卓一班.xlsx" download="16软卓一班.xlsx">下载</a>
+                                <a href="../WEB-INF/16软卓一班.xlsx" download="16软卓一班.xlsx">下载</a>
                             </td>
                            
                         </tr>
