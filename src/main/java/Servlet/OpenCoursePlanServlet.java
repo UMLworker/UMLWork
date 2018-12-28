@@ -64,7 +64,7 @@ public class OpenCoursePlanServlet extends BaseServlet {
     // 显示前台页面
     public String showFront(HttpServletRequest request, HttpServletResponse response){
         getPlanTable(request, response);
-        return "f:/OpenCoursePlanServlet?method=showFront";
+        return "f:/html/eduManageCoursePlan.jsp";
     }
     // 显示后台页面
     public String showBack(HttpServletRequest request, HttpServletResponse response){
