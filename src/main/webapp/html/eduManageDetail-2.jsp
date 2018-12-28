@@ -1,18 +1,20 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>教学管理</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../style/normal.css">
-	<link rel="stylesheet" type="text/css" href="../style/eduManage/eduManageDetail.css">
-    <link rel="stylesheet" type="text/css" href="../style/eduManage/normal.css">
-	<script type="text/javascript" src="../js/normal.js"></script>
+	<link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
+	<link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/eduManageDetail.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/normal.css'/>">
 </head>
 
 <body onload="Rendering();">
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="top"></div>
+	<div id="top">
+		<jsp:include page="/html/top.jsp"/>
+	</div>
 
 	<article class="content">
 
@@ -26,7 +28,7 @@
 	                    <h3>教学管理</h3>
 	                    <ul>
 							<li><a href="eduManageDetail-1.jsp">开课计划</a></li>
-							<li class="current"><a href="eduManageDetail-2.jsp">上课班级</a></li>
+							<li class="current"><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></li>
 							<li><a href="eduManageDetail-3.jsp">学生成绩</a></li>
 							<li><a href="eduManageDetail-4.jsp">班级名册</a></li>
 							<li><a href="eduManageDetail-5.jsp">作业案例</a></li>
@@ -39,7 +41,7 @@
 	                        <nav class="nav">
 	                            <a href="index.html">首页</a>·
 	                            <a href="eduManageDetail-1.jsp">教学管理</a>·
-	                            <a href="eduManageDetail-2.jsp">上课班级</a>
+	                            <a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a>
 	                        </nav>
 	                        <h1>上课班级</h1>
 	                    </header>
@@ -54,42 +56,33 @@
 								<br><br>
 								<table class="planTable disCenter">
 									<tbody>
+
 										<tr>
 											<td><h3>班级</h3></td>
 											<td><h3>专业</h3></td>
 											<td><h3>课程</h3></td>
-											<td><h3>操作</h3></td>
 										</tr>
-										<tr>
-											<td><h3>2016软件工程卓越1班</h3></td>
-											<td><h3>软件工程</h3></td>
-											<td><h3>面向对象分析与设计</h3></td>
-											<td><h3><a href="javascript:void(0)">查看</a></h3></td>
-										</tr>
-										<tr>
-											<td><h3>2016软件工程卓越2班</h3></td>
-											<td><h3>软件工程</h3></td>
-											<td><h3>面向对象分析与设计</h3></td>
-											<td><h3><a href="javascript:void(0)">查看</a></h3></td>
-										</tr>
-										<tr>
-											<td><h3>2016网络工程1班</h3></td>
-											<td><h3>网络工程</h3></td>
-											<td><h3>面向对象分析与设计</h3></td>
-											<td><h3><a href="javascript:void(0)">查看</a></h3></td>
-										</tr>
-										<tr>
-											<td><h3>2016网络工程2班</h3></td>
-											<td><h3>网络工程</h3></td>
-											<td><h3>面向对象分析与设计</h3></td>
-											<td><h3><a href="javascript:void(0)">查看</a></h3></td>
-										</tr>
+                                        <c:forEach items="${classInfoQuery.items}" var="classInfo">
+                                            <tr>
+                                                <td><h3>${classInfo.class_name}</h3></td>
+                                                <td><h3>${classInfo.specialty}</h3></td>
+                                                <td><h3>${classInfo.course_name}</h3></td>
+                                            </tr>
+                                        </c:forEach>
 									</tbody>
 								</table>
-								<br><br>
-								<div class="pages">
-									<p><a href="">首页&nbsp&nbsp&nbsp</a><a href="">上一页&nbsp&nbsp&nbsp</a><a href="">下一页&nbsp&nbsp&nbsp</a><a href="">尾页</a></p>
-								</div>
+                                <div class="pagination">
+                                    <ul style="margin: auto">
+                                        <c:if test="${classInfoQuery.currentPage!=1}">
+                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">首页</a></li>
+                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage-1}'/>">上一页</a></li>
+                                        </c:if>
+                                        <c:if test="${classInfoQuery.currentPage!=classInfoQuery.totalPage}">
+                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage+1}'/>">下一页</a></li>
+                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.totalPage}'/>">尾页</a></li>
+                                        </c:if>
+                                    </ul>
+                                </div>
 							</div>
 	                    </section>
 	
@@ -99,8 +92,12 @@
 	    </section>
 	</article>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp"/>
+	</div>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp"/>
+	</div>
 </body>
 </html>

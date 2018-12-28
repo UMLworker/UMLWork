@@ -7,14 +7,31 @@
 	<link rel="stylesheet" type="text/css" href="../style/eduManage/eduManageDetail.css">
     <link rel="stylesheet" type="text/css" href="../style/eduManage/normal.css">
 	<script type="text/javascript" src="../js/normal.js"></script>
-	<!-- 显示pdf容器样式 -->
+
+	<!-- 开课计划列表样式 -->
 	<style>
-		.pdfobject-container {
-		    max-width: 100%;
-			width: 1000px;
-			height: 1000px;
-			border: 10px solid rgba(0,0,0,.2);
-			margin: 0;
+		table {
+			color: #015249;
+		}
+		tr{
+			height: 40px;
+		}
+		td{
+			padding: 0 20px;
+		}
+		.page{
+			width: 340px;
+			padding-left: 80px;
+			margin-top: 20px;
+			color: black;
+		}
+		a{
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		a:hover{
+			background-color: #04837e;
+			color: white;
 		}
 	</style>
 </head>
@@ -53,11 +70,32 @@
 	                        <h1>开课计划</h1>
 	                    </header>
 	                    <section class="article">
-							<div class="itemDetail newItemContent">
-								
-								<div id="my-pdf"></div>
 
+							<!--开课计划-->
+							<table>
+								<tr>
+									<td>2018-2019学年 第一学期</td>
+									<td><a href="">查看</a> <a href="">下载</a> </td>
+								</tr>
+								<tr>
+									<td>2017-2018学年 第二学期</td>
+									<td><a href="">查看</a> <a href="">下载</a> </td>
+								</tr>
+								<tr>
+									<td>2017-2018学年 第一学期</td>
+									<td><a href="">查看</a> <a href="">下载</a> </td>
+								</tr>
+								<tr>
+									<td>2016-2017学年 第二学期</td>
+									<td><a href="">查看</a> <a href="">下载</a> </td>
+								</tr>
+							</table>
+
+							<div class="page">
+								<a>上一页</a><a>下一页</a> 总共 1 页
 							</div>
+
+
 	                    </section>
 	
 	                </article>
@@ -71,13 +109,5 @@
 	<!-- 通过js渲染，js代码在normal.js里 -->
 	<div id="copyrights"></div>
 
-<!-- 引入jq -->
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<!-- 引入 显示pdf js组件 -->
-<script type="text/javascript" src="../js/pdfobject.min.js"></script>
-<script>
-var $container = $("#my-pdf");
-PDFObject.embed("../resource/开课计划.pdf", $container);
-</script>
 </body>
 </html>
