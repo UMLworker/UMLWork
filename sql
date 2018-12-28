@@ -56,3 +56,21 @@ CREATE TABLE `open_course_plan` (
 
 insert  into `open_course_plan`(`id`,`term`,`filePath`) values (15,200020011,'resource/open_course_plan_files/2000-2001年度 第一学期.pdf'),(16,200020012,'resource/open_course_plan_files/2000-2001年度 第二学期.pdf'),(17,201820192,'resource/open_course_plan_files/2018-2019年度 第二学期.pdf'),(18,201820191,'resource/open_course_plan_files/2018-2019年度 第一学期.pdf'),(19,201720182,'resource/open_course_plan_files/2017-2018年度 第二学期.pdf'),(20,201720181,'resource/open_course_plan_files/2017-2018年度 第一学期.pdf');
 
+
+###上课班级表（刘世杰）
+DROP TABLE IF EXISTS `classinfo`;
+CREATE TABLE `classinfo` (
+  `class_name` varchar(20) NOT NULL,
+  `specialty` varchar(20) NOT NULL,
+  `course_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`class_name`,`specialty`,`course_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `classinfo` VALUES ('2016软卓1班', '软件工程', 'UML');
+INSERT INTO `classinfo` VALUES ('2016软卓2班', '软件工程', 'UML');
+INSERT INTO `classinfo` VALUES ('2016软工1班', '软件工程', 'UML');
+INSERT INTO `classinfo` VALUES ('2016软工2班', '软件工程', 'UML');
+INSERT INTO `classinfo` VALUES ('2016软工3班', '软件工程', 'UML');
+INSERT INTO `classinfo` VALUES ('2016软工4班', '软件工程', 'UML');
+
