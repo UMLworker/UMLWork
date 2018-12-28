@@ -150,7 +150,7 @@
             <li class="title" onmouseover="extend('6')" onmouseout="out('6')">
                 <a href="<c:url value = '/html/eduManageDetail-1.jsp'/>">教学管理</a>
                 <ul style="display: none; " id="sixth">
-                    <li class="detail"><a href="<c:url value ='/html/eduManageDetail-1.jsp'/>"
+                    <li class="detail"><a href="<c:url value ='${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront'/>"
                                           style="color: #fff;">开课计划</a></li>
                     <li class="detail"><a
                             href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>"

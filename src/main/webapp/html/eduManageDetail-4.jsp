@@ -27,7 +27,7 @@
                 <section class="leftNav">
                     <h3>教学管理</h3>
                     <ul>
-                        <li><a href="<c:url value='/html/eduManageDetail-1.jsp'/>">开课计划</a></li>
+                        <li><a href="<c:url value='/OpenCoursePlanServlet?method=showFront'/>">开课计划</a></li>
                         <li><a href="<c:url value='/html/eduManageDetail-2.jsp'/>">上课班级</a></li>
                         <li><a href="<c:url value='/html/eduManageDetail-3.jsp'/>">学生成绩</a></li>
                         <li class="current"><a href="<c:url value='/html/eduManageDetail-4.jsp'/>">班级名册</a></li>
@@ -41,7 +41,7 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="<c:url value ='/html/index.jsp'/>">首页</a>·
-                            <a href="<c:url value ='/html/eduManageDetail-1.jsp'/>">教学管理</a>·
+                            <a href="<c:url value ='/OpenCoursePlanServlet?method=showFront'/>">教学管理</a>·
                             <a href="#">班级名册</a>
                         </nav>
                         <h1>班级名册</h1>

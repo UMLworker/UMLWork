@@ -48,7 +48,7 @@
 	                    <header class="contentNav">
 	                        <nav class="nav">
 								<a href="${pageContext.request.contextPath}/html/index.html">首页</a>·
-								<a href="${pageContext.request.contextPath}/html/eduManageDetail-1.jsp">教学管理</a>·
+								<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">教学管理</a>·
 								<a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a>·
 								<a href="">查看详情</a>
 	                        </nav>
