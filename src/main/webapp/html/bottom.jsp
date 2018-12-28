@@ -143,7 +143,7 @@
             </li>
             <li><a href="admission.html">教学管理</a>
                 <div class="detail">
-                    <div><a href="admissionDetail-1.html">开课计划</a></div>
+                    <div><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a></div>
                     <div><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></div>
                     <div><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></div>
                     <div><a href="admissionDetail-4.html">班级名册</a></div>
