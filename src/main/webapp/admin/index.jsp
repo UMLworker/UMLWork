@@ -158,7 +158,7 @@
                     <li><a data-href="_blank.html" data-title="上课班级" href="javascript:void(0)">上课班级</a></li>
                     <li><a data-href="_blank.html" data-title="学生成绩" href="javascript:void(0)">学生成绩</a></li>
                     <li><a data-href="_blank.html" data-title="班级名册" href="javascript:void(0)">班级名册</a></li>
-                    <li><a data-href="_blank.html" data-title="学生作业案例" href="javascript:void(0)">学生作业案例</a></li>
+                    <li><a data-href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1'/>" data-title="学生作业案例" href="javascript:void(0)">学生作业案例</a></li>
                 </ul>
             </dd>
         </dl>
