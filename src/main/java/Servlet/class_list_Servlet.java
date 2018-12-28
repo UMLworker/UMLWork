@@ -178,7 +178,7 @@ public class class_list_Servlet extends BaseServlet {
     
     public String searchByName(HttpServletRequest request, HttpServletResponse response){
     	PageQuery<Class_List> classListpageQuery=new PageQuery<>();
-    	String nameString=request.getParameter("searchName")+"";
+    	String nameString=request.getParameter("searchName")+""；
     	List <Class_List> class_Lists=new ArrayList<Class_List>();
     	class_Lists=class_list_Service.searchByName(nameString);	
         //永远设为第一页
