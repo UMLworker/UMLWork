@@ -7,7 +7,7 @@ import Utils.JDBCutil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+//
 public class EvalatorDao {
     JDBCutil jdbcutil=new JDBCutil();
     public List<Online_Evalator> getEvalatorList(int QueryPage) {

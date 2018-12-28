@@ -150,10 +150,10 @@
                     <div><a href="<c:url value='admissionDetail-4.html'/>">班级名册</a></div>
                 </div>
             </li>
-            <li><a href="<c:url value ='employment.html'/>">教学效果</a>
+            <li><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">教学效果</a>
                 <div class="detail">
-                    <div><a href="<c:url value ='/html/teachEffectDetail-1.jsp'/>">校外专家评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-2.jsp'/>">校内督导评价</a></div>
+                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">校外专家评价</a></div>
+                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=2'/>">校内督导评价</a></div>
                     <div><a href="<c:url value ='/html/teachEffectDetail-3.jsp'/>">教师自我评价</a></div>
                     <div><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></div>
                     <div><a href="<c:url value ='/html/teachEffectDetail-1.jsp'/>">社会评价</a></div>
