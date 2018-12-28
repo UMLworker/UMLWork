@@ -67,8 +67,8 @@
                     <td>${n.index+1 }</td>
                     <td class="text-l"><a style="cursor:pointer" class="text-primary" href="<c:url value='/Expert_EvaluationServlet?method=showContentById&id=${i.evaluation_id }'/>" >${i.title }</a></td>
                     <td>
-                        <c:if test="${i.type eq 1}">校内督导评价</c:if>
-                        <c:if test="${i.type eq 2}">校外专家评价</c:if>
+                        <c:if test="${i.type eq '1'}">校内督导评价</c:if>
+                        <c:if test="${i.type eq '2'}">校外专家评价</c:if>
                     </td>
                     <td>${i.time }</td>
                     <td class="f-14 td-manage">
@@ -87,7 +87,7 @@
                     <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=1&type=${sessionScope.type }'/>">首页</a></li>
                     <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage-1}&type=${sessionScope.type }'/>">上一页</a></li>
                 </c:if>
-                <c:if test="${EvaluationpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
+                <c:if test="${EvaluationpageQuery.currentPage!=EvaluationpageQuery.totalPage}">
                     <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage+1}&type=${sessionScope.type }'/>">下一页</a></li>
                     <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.totalPage}&type=${sessionScope.type }'/>">尾页</a></li>
                 </c:if>
