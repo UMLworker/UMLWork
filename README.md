@@ -77,6 +77,10 @@ Map<String, Object> map=jdbcutil.findSimpleResult(sql,params);
 ```java
 Article article = (Article) BeanUtil.convertMap(Article.class, map);
 ```
+不过在使用这个类的时候可能会遇到反射失败的情况，如果出现了这种情况，只能够自己手动从map把字段一个一个取出来，然后
+手动设置在对象中。
+
+
 如果查询的返回多个结果
 返回的是一个List<Map>
 只需要写一个循环执行上面查询单个结果的代码即可
