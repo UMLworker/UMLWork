@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 @WebServlet("/ScoreServlet")
-public class Student_ScoreServlet extends BaseServlet {
+public class ScoreServlet extends BaseServlet {
     Student_ScoreService studentService=new Student_ScoreService();
     public String LoadStudentEvalator(HttpServletRequest request, HttpServletResponse response){
 
