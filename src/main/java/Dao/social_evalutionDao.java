@@ -1,22 +1,21 @@
 package Dao;
 
-import Domain.Expert_Evaluation;
-import Domain.teacher_evalution;
+import Domain.social_evalution;
 import Utils.JDBCutil;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class teacher_evalutionDao {
+public class social_evalutionDao {
     JDBCutil jdbcutil = new JDBCutil();
 
-    public int addEvalution(teacher_evalution evaluation){
-        String sql = "insert into teacher_evalution values(NULL,?,?,?,?,0)";
+    public int addEvalution(social_evalution evaluation){
+        String sql = "insert into social_evalution values(NULL,?,?,?,0)";
         List<Object> params = new ArrayList<>();
 
         params.add(evaluation.getEvalutionTitle());
-        params.add(evaluation.getTeacherName());
+
         params.add(evaluation.getContent());
         params.add(evaluation.getEvalutionTime());
 
@@ -30,19 +29,9 @@ public class teacher_evalutionDao {
         return 1;
     }
 
-    public List getAll() {
-        String sql="select * from teacher_evalution";
-        try {
-            List<Object> params=new ArrayList<>();
-            List<Map<String, Object>> list= (List<Map<String, Object>>) jdbcutil.findModeResult(sql,params);
-            return list;
-        }catch (Exception e){
-            throw new RuntimeException(e.getMessage());
-        }
-    }
 
     public void deleteEvalator(String evalator_id) {
-        String sql="delete from teacher_evalution where evalutionId =?";
+        String sql="delete from social_evalution where evalutionId =?";
         try {
             List<Object> params=new ArrayList<>();
             params.add(evalator_id);
@@ -53,19 +42,18 @@ public class teacher_evalutionDao {
         }
     }
 
-    public List<teacher_evalution> getEvalatorList(int QueryPage) {
-        String sql="select * from teacher_evalution limit ?,5";
+    public List<social_evalution> getEvalatorList(int QueryPage) {
+        String sql="select * from social_evalution limit ?,5";
         try {
             List<Object> params=new ArrayList<>();
             params.add(QueryPage);
             List<Map<String, Object>> list= (List<Map<String, Object>>)jdbcutil.findModeResult(sql,params);
-            List<teacher_evalution> evalators=new ArrayList<>();
+            List<social_evalution> evalators=new ArrayList<>();
             for(int i=0;i<list.size();i++){
                 Map<String,Object> map=list.get(i);
-                teacher_evalution temp=new teacher_evalution();
+                social_evalution temp=new social_evalution();
                 temp.setEvalutionId((int)map.get("evalutionId"));
                 temp.setEvalutionTitle((String)map.get("evalutionTitle"));
-                temp.setTeacherName((String)map.get("teacherName"));
                 temp.setContent((String)map.get("content"));
                 temp.setEvalutionTime((String)map.get("evalutionTime"));
                 temp.setStatus((int)map.get("status"));
@@ -79,7 +67,7 @@ public class teacher_evalutionDao {
     }
 
     public int getEvalatorTotal() {
-        String sql="select * from teacher_evalution";
+        String sql="select * from social_evalution";
         try {
             List<Object> params=new ArrayList<>();
             List<Map<String, Object>> list= (List<Map<String, Object>>) jdbcutil.findModeResult(sql,params);
@@ -90,7 +78,7 @@ public class teacher_evalutionDao {
     }
 
     public boolean editStatus(int evalutionId, int status){
-        String sql = "update teacher_evalution set status=? where evalutionId=?";
+        String sql = "update social_evalution set status=? where evalutionId=?";
         try {
             List<Object> params=new ArrayList<>();
             params.add(status);

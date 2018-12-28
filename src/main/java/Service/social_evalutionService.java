@@ -1,27 +1,23 @@
 package Service;
 
 
-import Dao.teacher_evalutionDao;
-import Domain.teacher_evalution;
+import Dao.social_evalutionDao;
+import Domain.social_evalution;
 
 import java.util.List;
 
-public class teacher_evalutionService {
-    teacher_evalutionDao evalutionDao = new teacher_evalutionDao();
+public class social_evalutionService {
+    social_evalutionDao evalutionDao = new social_evalutionDao();
 
-    public void addEvalution(teacher_evalution evalution){
+    public void addEvalution(social_evalution evalution){
         evalutionDao.addEvalution(evalution);
-    }
-
-    public List getAll(){
-        return evalutionDao.getAll();
     }
 
     public void deleteEvalator(String evalator_id){
         evalutionDao.deleteEvalator(evalator_id);
     }
 
-    public List<teacher_evalution> getEvalatorList(int page) {
+    public List<social_evalution> getEvalatorList(int page) {
         return evalutionDao.getEvalatorList(page);
     }
 
