@@ -29,7 +29,7 @@
 	                    <ul>
 							<li><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a></li>
 							<li class="current"><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></li>
-							<li><a href="eduManageDetail-3.jsp">学生成绩</a></li>
+							<li><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></li>
 							<li><a href="eduManageDetail-4.jsp">班级名册</a></li>
 							<li><a href="eduManageDetail-5.jsp">作业案例</a></li>
 						</ul>
@@ -71,18 +71,33 @@
                                         </c:forEach>
 									</tbody>
 								</table>
-                                <div class="pagination">
-                                    <ul style="margin: auto">
-                                        <c:if test="${classInfoQuery.currentPage!=1}">
-                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">首页</a></li>
-                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage-1}'/>">上一页</a></li>
-                                        </c:if>
-                                        <c:if test="${classInfoQuery.currentPage!=classInfoQuery.totalPage}">
-                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage+1}'/>">下一页</a></li>
-                                            <li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.totalPage}'/>">尾页</a></li>
-                                        </c:if>
-                                    </ul>
-                                </div>
+
+                                <%--<div class="pagination">--%>
+                                    <%--<ul style="margin: auto">--%>
+                                        <%--<c:if test="${classInfoQuery.currentPage!=1}">--%>
+                                            <%--<li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">首页</a></li>--%>
+                                            <%--<li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage-1}'/>">上一页</a></li>--%>
+                                        <%--</c:if>--%>
+                                        <%--<c:if test="${classInfoQuery.currentPage!=classInfoQuery.totalPage}">--%>
+                                            <%--<li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage+1}'/>">下一页</a></li>--%>
+                                            <%--<li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.totalPage}'/>">尾页</a></li>--%>
+                                        <%--</c:if>--%>
+                                    <%--</ul>--%>
+                                <%--</div>--%>
+								<br>
+								<div class="pages">
+									<div style="margin: auto">
+										<c:if test="${classInfoQuery.currentPage!=1}">
+											<span><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">首页</a></span>
+											<span><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage-1}'/>">上一页</a></span>
+										</c:if>
+										<c:if test="${classInfoQuery.currentPage!=classInfoQuery.totalPage}">
+											<span><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.currentPage+1}'/>">下一页</a></span>
+											<span><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=${classInfoQuery.totalPage}'/>">尾页</a></span>
+										</c:if>
+									</div>
+								</div>
+
 							</div>
 	                    </section>
 	

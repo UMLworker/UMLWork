@@ -36,7 +36,7 @@
 						<h3>教学管理</h3>
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a></li>
-							<li><a href="eduManageDetail-2.jsp">上课班级</a></li>
+							<li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></li>
 							<li class="current"><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></li>
 							<li><a href="eduManageDetail-4.jsp">班级名册</a></li>
 							<li><a href="eduManageDetail-5.jsp">作业案例</a></li>
