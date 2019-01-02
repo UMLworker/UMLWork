@@ -9,8 +9,9 @@ import java.util.Map;
 public class JDBCutil {
     //数据库用户名
     private static final String USERNAME = "root";
-    
+
     private static final String PASSWORD = "123456";
+
 
     //驱动信息
     private static final String DRIVER = "com.mysql.jdbc.Driver";
