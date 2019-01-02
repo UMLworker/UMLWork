@@ -56,12 +56,12 @@
 <div class="pagination" style="margin: auto">
     <ul style="margin: auto">
         <c:if test="${HomeworkpageQuery.currentPage!=1}">
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1'/>">首页</a></li>
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage-1}'/>">上一页</a></li>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1'/>">首页</a></li>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage-1}'/>">上一页</a></span>
         </c:if>
         <c:if test="${HomeworkpageQuery.currentPage!=HomeworkpageQuery.totalPage}">
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage+1}'/>">下一页</a></li>
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.totalPage}'/>">尾页</a></li>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage+1}'/>">下一页</a></span>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.totalPage}'/>">尾页</a></span>
         </c:if>
     </ul>
 </div>

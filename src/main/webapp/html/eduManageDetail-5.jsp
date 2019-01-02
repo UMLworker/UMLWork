@@ -11,27 +11,16 @@
 
 
 	
-	<script type="text/javascript" src="../js/normal.js"></script>
+<!-- 	<script type="text/javascript" src="../js/normal.js"></script> -->
 </head>
+ 
 
 
-        <script type="text/javascript">  
-			function a(){
-				$.ajax({  
-            		url:"/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1",//servlet文件的名称
-            		type:"POST",
-            		success:function(e){
-            			alert("servlet调用成功！");
-            		}
-            	});
-				
-			}
-        </script>  
-
-
-<body onload="Rendering(); a();">
+<body onload="Rendering();">
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="top"></div>
+	<div id="top">
+	<jsp:include page="/html/top.jsp" />
+	</div>
 
 	<article class="content">
 
@@ -56,7 +45,7 @@
 	                <article class="mainContent">
 	                    <header class="contentNav">
 	                        <nav class="nav">
-	                            <a href="index.html">首页</a>·
+	                            <a href="index.jsp">首页</a>·
 	                            <a href="eduManageDetail-1.jsp">教学管理</a>·
 	                            <a href="eduManageDetail-5.jsp">作业案例</a>
 	                        </nav>
@@ -86,12 +75,12 @@
                 <div class="pagination" style = "color:black;">
 				    <ul style="margin: auto">
 				        <c:if test="${HomeworkpageQuery.currentPage!=1}">
-				            <li><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1'/>">首页</a></li>
-				            <li><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage-1}'/>">上一页</a></li>
+				            <span><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=1'/>">首页</a></span>
+				            <span><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage-1}'/>">上一页</a></span>
 				        </c:if>
 				        <c:if test="${HomeworkpageQuery.currentPage!=HomeworkpageQuery.totalPage}">
-				            <li><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage+1}'/>">下一页</a></li>
-				            <li><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.totalPage}'/>">尾页</a></li>
+				            <span><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage+1}'/>">下一页</a></span>
+				            <span><a href="<c:url value='/HomeworkServlet?method=LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.totalPage}'/>">尾页</a></span>
 				        </c:if>
 				    </ul>
                 </div>
@@ -105,16 +94,14 @@
 	    </section>
 	</article>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="bottom"></div>
+	<div id="bottom">
+		<jsp:include page="/html/bottom.jsp" />
+	</div>
 	<!-- 通过js渲染，js代码在normal.js里 -->
-	<div id="copyrights"></div>
-</body>
-
-
-    <script type="text/javascript" src="../js/eduManage/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="../js/eduManage/bootstrap.js"></script>
-    <script type="text/javascript" src="../js/eduManage/bootstrap-table.js"></script>
-    
+	<div id="copyrights">
+		<jsp:include page="/html/copyright.jsp" />
+	</div>
+</body> 
 
 
 </html>
