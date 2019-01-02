@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>教学管理</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../style/normal.css">
+	<link rel="stylesheet" type="text/css" href="../style/eduManage/eduManageDetail.css">
+	<link rel="stylesheet" type="text/css" href="../style/eduManage/normal.css">
+	<script type="text/javascript" src="../js/normal.js"></script>
+
+</head>
+<script type="text/javascript">
+	function F_Open_dialog() 
+	{ 
+		document.getElementById("btn_file").click(); 
+	} 
+
+</script>
+<body onload="Rendering();">
+	<!-- 通过js渲染，js代码在normal.js里 -->
+	<div id="top"></div>
+
+	<article class="content">
+
+		<section id="banner">
+			<img src="../images/index/abouttop_03.jpg">
+		</section>
+		<section class="mainWrap relative">
+			<div class="detailContent">
+				<div class="column_1">
+					<section class="leftNav">
+						<h3>教学管理</h3>
+						<ul>
+							<li><a href="eduManageDetail-1.jsp">开课计划</a></li>
+							<li><a href="eduManageDetail-2.jsp">上课班级</a></li>
+							<li class="current"><a href="eduManageDetail-3.jsp">学生成绩</a></li>
+							<li><a href="eduManageDetail-4.jsp">班级名册</a></li>
+							<li><a href="eduManageDetail-5.jsp">作业案例</a></li>
+						</ul>
+					</section>
+				</div>
+				<div class="column_2 ">
+					<article class="mainContent">
+						<header class="contentNav">
+							<nav class="nav">
+								<a href="index.html">首页</a>·
+								<a href="eduManageDetail-1.jsp">教学管理</a>·
+								<a href="eduManageDetail-3.jsp">学生成绩</a>
+							</nav>
+							<h1>学生成绩</h1>
+						</header>
+						<section class="article">
+							<div class="itemDetail newItemContent">
+								<div class="bar6">
+									<form>
+										<input type="text" placeholder="请输入搜索班级" name="cname">
+										<button type="submit"></button>
+									</form>
+								</div
+								<br><br>
+								<table class="planTable disCenter">
+									<tbody>
+										<tr><td><h3>2016软件工程卓越1班</h3></td><td><h3>软件工程</h3></td><td><h3>面向对象分析与设计</h3></td><td><a href="../resource/16软卓一班.xlsx" download="《软件需求分析与设计》课程简介.pptx">下载</a>
+											<input type="file" id="btn_file" style="display:none"><a onclick="F_Open_dialog()">|上传</a>
+										</td></tr>
+										<tr><td><h3>2016软件工程卓越2班</h3></td><td><h3>软件工程</h3></td><td><h3>面向对象分析与设计</h3></td><td><a href="../resource/16软卓二班.xlsx" download="《软件需求分析与设计》课程简介.pptx">下载</a>
+											<input type="file" id="btn_file" style="display:none"><a onclick="F_Open_dialog()">|上传</a>
+										</td></tr>
+										<tr><td><h3>2016软件工程1班</h3></td><td><h3>软件工程</h3></td><td><h3>面向对象分析与设计</h3></td><td><a href="../resource/16软卓二班.xlsx" download="《软件需求分析与设计》课程简介.pptx">下载</a>
+											<input type="file" id="btn_file" style="display:none"><a onclick="F_Open_dialog()">|上传</a>
+										</td></tr>
+										<tr><td><h3>2016软件工程2班</h3></td><td><h3>软件工程</h3></td><td><h3>面向对象分析与设计</h3></td><td><a href="../resource/16软卓二班.xlsx" download="《软件需求分析与设计》课程简介.pptx">下载</a>
+											<input type="file" id="btn_file" style="display:none"><a onclick="F_Open_dialog()">|上传</a>
+										</td></tr>
+										<tr><td><h3>2016网络工程1班</h3></td><td><h3>网络工程</h3></td><td><h3>面向对象分析与设计</h3></td><td><a href="../resource/16软卓二班.xlsx" download="《软件需求分析与设计》课程简介.pptx">下载</a>
+											<input type="file" id="btn_file" style="display:none"><a onclick="F_Open_dialog()">|上传</a>
+										</td></tr>
+									</tbody>
+								</table>
+								<br><br>
+								<div class="pages">
+									<p><a href="">首页&nbsp&nbsp&nbsp</a><a href="">上一页&nbsp&nbsp&nbsp</a><a href="">下一页&nbsp&nbsp&nbsp</a><a href="">尾页</a></p>
+								</div>
+							</div>
+						</section>
+
+					</article>
+				</div>
+			</div>
+		</section>
+	</article>
+	<!-- 通过js渲染，js代码在normal.js里 -->
+	<div id="bottom"></div>
+	<!-- 通过js渲染，js代码在normal.js里 -->
+	<div id="copyrights"></div>
+</body>
+</html>

@@ -63,7 +63,6 @@ public class teacher_evalution_servlet extends BaseServlet {
         EvalatorpageQuery.setTotalRows(evalutionService.getEvalatorTotal());
         request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
 
-        System.out.println(EvalatorpageQuery);
         return "r:/html/teachEffectDetail-3.jsp";
     }
 
@@ -83,6 +82,7 @@ public class teacher_evalution_servlet extends BaseServlet {
         EvalatorpageQuery.setItems(evalutionService.getEvalatorList(EvalatorpageQuery.getCurrentfirst()));
         EvalatorpageQuery.setTotalRows(evalutionService.getEvalatorTotal());
         System.out.println(EvalatorpageQuery);
+        System.out.println("abc");
         request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
         System.out.println("dlf");
 

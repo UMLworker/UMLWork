@@ -154,9 +154,9 @@
                 <div class="detail">
                     <div><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">校外专家评价</a></div>
                     <div><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=2'/>">校内督导评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-3.jsp'/>">教师自我评价</a></div>
+                    <div><a href="<c:url value='/teacher_evalution_servlet?method=Admin_LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></div>
                     <div><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-1.jsp'/>">社会评价</a></div>
+                    <div><a href="<c:url value='/social_evalution_servlet?method=Admin_LoadSocialEvalator&EvalatorpageQuery=1'/>">社会评价</a></div>
                     <div><a href="<c:url value ='/html/teachEffectDetail-2.jsp'/>">教学评估及相关文件</a></div>
                 </div>
             </li>
