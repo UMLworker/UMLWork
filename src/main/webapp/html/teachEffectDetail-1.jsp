@@ -28,8 +28,8 @@
                 <section class="leftNav">
                     <h3>教学效果</h3>
                     <ul>
-                        <li class="current"><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">校外专家评价</a></li>
-                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=2'/>">校内督导评价</a></li>
+                        <li class="current"><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></li>
+                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></li>
                         <li><a href="teachEffectDetail-3.jsp">教师自我评价</a></li>
                         <li><a href="teachEffectDetail-4.jsp">校内学生评价</a></li>
                         <li><a href="teachEffectDetail-5.jsp">社会评价</a></li>
@@ -42,23 +42,25 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="index.html">首页</a>·
-                            <a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">教学效果</a>·
+                            <a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">教学效果</a>·
                             <a href="#">校外专家评价</a>
                         </nav>
                         <h1>校外专家评价</h1>
                     </header>
                     <section class="article">
                         <div style="overflow-y: auto;overflow-x: auto;width: 580px;height: 450px;">
-                            <c:forEach items="${sessionScope.list }" var="i" varStatus="n">
-                                <c:if test="${i.type eq '2'}">
-                                    <h2>${i.title}</h2>
+
+                                <h2>${sessionScope.evaluation.title }</h2>
                                     <br>
-                                    ${i.content }
-                                </c:if>
-                            </c:forEach>
+                                    ${sessionScope.evaluation.content }
                         </div>
                     </section>
-
+                    <c:if test="${sessionScope.number != 0}">
+                        <span><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=${sessionScope.number-1}&type=2&n=1'/>">上一篇</a></span>
+                    </c:if>
+                    <c:if test="${sessionScope.number != sessionScope.total}">
+                        <span><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=${sessionScope.number+1}&type=2&n=1'/>">下一篇</a></span>
+                    </c:if>
                 </article>
             </div>
             <div class="column_3">

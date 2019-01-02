@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +26,8 @@
                 <section class="leftNav">
                     <h3>教学效果</h3>
                     <ul>
-                        <li><a href="teachEffectDetail-1.jsp">校外专家评价</a></li>
-                        <li><a href="teachEffectDetail-2.jsp">校内督导评价</a></li>
+                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></li>
+                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></li>
                         <li><a href="teachEffectDetail-3.jsp">教师自我评价</a></li>
                         <li><a href="teachEffectDetail-4.jsp">校内学生评价</a></li>
                         <li><a href="teachEffectDetail-5.jsp">社会评价</a></li>
@@ -39,7 +40,7 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="index.html">首页</a>·
-                            <a href="teachEffectDetail-1.jsp">教学效果</a>·
+                            <a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">教学效果</a>·
                             <a href="#">教学评估及相关文件</a>
                         </nav>
                         <h1>教学评估及相关文件</h1>

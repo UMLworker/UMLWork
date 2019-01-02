@@ -165,11 +165,11 @@
                 </ul>
             </li>
             <li class="title" onmouseover="extend('7')" onmouseout="out('7')">
-                <a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">教学效果</a>
+                <a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">教学效果</a>
                 <ul style="display: none; " id="seven">
-                    <li class="detail"><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>" style="color: #fff;">校外专家评价</a>
+                    <li class="detail"><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>" style="color: #fff;">校外专家评价</a>
                     </li>
-                    <li class="detail"><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=2'/>" style="color: #fff;">校内督导评价</a>
+                    <li class="detail"><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>" style="color: #fff;">校内督导评价</a>
                     </li>
                     <li class="detail"><a href="<c:url value ='/html/teachEffectDetail-3.jsp'/>" style="color: #fff;">教师自我评价</a>
                     </li>

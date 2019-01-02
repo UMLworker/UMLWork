@@ -80,12 +80,15 @@ public class Expert_EvaluationDao {
 
     public List<Expert_Evaluation> getEvaluationList(int QueryPage, String type) {
         String sql=null;
-        if("0".equals(type))
-            sql="select * from expert_evaluation limit ?,5";
-        else
-            sql="select * from expert_evaluation where type ='" + type + "' limit ?,5";
+        List<Object> params=new ArrayList<>();
+        if("0".equals(type)) {
+            sql = "select * from expert_evaluation limit ?,5";
+        }
+        else {
+            sql = "select * from expert_evaluation where type=? limit ?,5";
+            params.add(type);
+        }
         try {
-            List<Object> params=new ArrayList<>();
             params.add(QueryPage);
             List<Map<String, Object>> list= (List<Map<String, Object>>)jdbcutil.findModeResult(sql,params);
             List<Expert_Evaluation> evaluation=new ArrayList<>();
@@ -110,15 +113,45 @@ public class Expert_EvaluationDao {
 
     public int getEvaluationTotal(String type) {
         String sql = null;
-        if("0".equals(type))
+        List<Object> params=new ArrayList<>();
+        if("0".equals(type)){
             sql="select * from expert_evaluation";
-        else
-            sql="select * from expert_evaluation where type='" + type + "'";
+        }
+        else {
+            sql = "select * from expert_evaluation where type=?";
+            params.add(type);
+        }
         try {
-            List<Object> params=new ArrayList<>();
+
             List<Map<String, Object>> list= (List<Map<String, Object>>) jdbcutil.findModeResult(sql,params);
             return list.size();
         }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public Expert_Evaluation getOneEvaluation(int number, String type) {
+        String sql=null;
+        List<Object> params=new ArrayList<>();
+        sql = "select * from expert_evaluation where type=? limit ?,1";
+        try {
+            params.add(type);
+            params.add(number);
+            List<Map<String, Object>> list= (List<Map<String, Object>>)jdbcutil.findModeResult(sql,params);
+            Expert_Evaluation evaluation=new Expert_Evaluation();
+            for(int i=0;i<list.size();i++){
+                Map<String,Object> map=list.get(i);
+                evaluation.setEvaluation_id((String)map.get("id"));
+                evaluation.setTitle((String)map.get("title"));
+                evaluation.setType((String)map.get("type"));
+                evaluation.setContent((String)map.get("content"));
+                SimpleDateFormat simpleDateFormat= new SimpleDateFormat("yyyy-MM-dd HH:MM");
+                String time = simpleDateFormat.format(map.get("time"));
+                evaluation.setTime(time);
+            }
+            return evaluation;
+        }catch (Exception e){
+            e.printStackTrace();
             throw new RuntimeException(e.getMessage());
         }
     }
