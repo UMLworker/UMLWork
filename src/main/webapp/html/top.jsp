@@ -98,7 +98,7 @@
     </section>
     <section class="nav yahei">
         <ul id="nav">
-            <li class="title"><a href="index.jsp">首页</a></li>
+            <li class="title"><a href="${pageContext.request.contextPath}/html/index.jsp">首页</a></li>
             <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
                 <a href="courseDetail-1.html">课程概况</a>
                 <ul style="display: none;" id="first">
@@ -148,7 +148,7 @@
                 </ul>
             </li>
             <li class="title" onmouseover="extend('6')" onmouseout="out('6')">
-                <a href="<c:url value = '/html/eduManageDetail-1.jsp'/>">教学管理</a>
+                <a href="<c:url value ='/OpenCoursePlanServlet?method=showFront'/>">教学管理</a>
                 <ul style="display: none; " id="sixth">
                     <li class="detail"><a href="<c:url value ='/OpenCoursePlanServlet?method=showFront'/>"
                                           style="color: #fff;">开课计划</a></li>
