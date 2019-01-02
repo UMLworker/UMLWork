@@ -33,6 +33,7 @@
                         <li><a href="<c:url value='/html/teachEffectDetail-4.jsp'/>">校内学生评价</a></li>
                         <li><a href="<c:url value='/html/teachEffectDetail-5.jsp'/>">社会评价</a></li>
                         <li class="current"><a href="<c:url value='/html/teachEffectDetail-6.jsp'/>">教学评估及相关文件</a></li>
+
                     </ul>
                 </section>
             </div>

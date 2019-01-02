@@ -95,7 +95,7 @@ CREATE TABLE `online_evalator` (
 insert  into `online_evalator`(`evalator_id`,`course_teacher_name`,`course_time`,`course_name`,`course_property`,`course_grade`,`course_level`) values ('5','侯爱民','2015——2016第二学期','面向对象分析与设计','必修课',93.47,'优秀');
 
 
-专家评价表
+专家评价表(林海彬)
 CREATE TABLE `expert_evaluation` (
   `id` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,

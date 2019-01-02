@@ -114,7 +114,6 @@ public class Expert_EvaluationServlet extends BaseServlet {
 
     public String LoadExpert_Evaluation(HttpServletRequest request, HttpServletResponse response){
         String type = request.getParameter("type");
-        System.out.println(type);
         PageQuery<Expert_Evaluation> EvaluationpageQuery=new PageQuery<>();
         //想要查询的页数
         String qp=request.getParameter("EvaluationpageQuery");

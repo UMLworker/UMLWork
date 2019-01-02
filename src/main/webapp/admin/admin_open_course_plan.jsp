@@ -23,75 +23,29 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>空白页</title>
-  <style>
-    .table-container{
-      width: 600px;
-    }
-    .div-title{
-      height: 40px;
-      border-left: 4px solid #0f9ae0;
-      line-height: 40px;
-      font-size: 20px;
-    }
-    .addDiv .btn{
-      margin-left: 180px;
-      height: 24px;
-      font-size: 14px;
-      background-color: lightskyblue;
-      padding: 4px 10px;
-      cursor: pointer;
-      border: 0px;
-    }
-    .table-header{
-      margin: 20px auto;
-      height: 30px;
-    }
-    .table-header button{
-      height: 30px;
-      font-size: 14px;
-      background-color: lightskyblue;
-      padding: 4px 10px;
-      cursor: pointer;
-      border: 0px;
-    }
-    .search-div{
-      float: right;
-    }
-    .table-header input{
-      width: 160px;
-      height: 30px;
-      border: 1px solid lightgrey;
-    }
-
-    .table-container td{
-      height: 30px;
-      font-size: 16px;
-      text-align: center;
-      border-bottom: 1px solid lightgrey;
-    }
-    .table-container table{
-      width: 600px;
-    }
-    .table-container table a{
-      font-size: 14px;
-    }
-
-    .page{
-      width: 140px;
-      margin: 20px auto;
-      text-align: center;
-    }
-
-  </style>
+<title>开课计划</title>
+<style type="text/css">
+	.pages {
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+    height: 100px;
+}
+a, a:link {
+    text-decoration: none;
+    color: #4f608c;
+}
+</style>
 </head>
 <body>
-<div class="pd-20">
-  <div class="table-container">
-    <div class="addDiv">
-      <div class="div-title"><span style="padding-left: 10px;">添加开课计划</span></div>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 开课计划</nav>
+
+
+
+  
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
       <form action="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=add"  method="post" enctype ="multipart/form-data">
-        <div style="padding: 10px 20px;">
+       
             <select name="termValue">
             <c:forEach items="${requestScope.termArray}" var="item">
               <option value="${item.value}">${item.name}</option>
@@ -99,58 +53,53 @@
           </select>
           请上传pdf格式的文件
           <input type="file" name="pdf" accept="application/pdf" >
-        </div>
-
-        <div>
-          <input class="btn" type="submit" value="添加">
-        </div>
+          
+          <input class="btn btn-primary radius" type="submit" value="添加">
       </form>
     </div>
 
-    <div class="table-header">
-      <!--
-      <div class="search-div">
-        <form action="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=search" method="post">
-          <input type="text" name="keyword">
-          <button>搜索</button>
-        </form>
-      </div>
-      -->
-    </div>
-    <table>
-      <tr style="background-color: lightgrey">
-        <td>学期</td>
-        <td>操作</td>
-      </tr>
-
-      <c:forEach items="${requestScope.plans}" var="plan">
-        <tr>
-          <td>${plan.termName}</td>
-          <td>
-            <a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showPDFAtBack&term=${plan.termName}&filePath=${plan.filePath}">查看</a>
-            <a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=delete&id=${plan.id}">删除</a>
-          </td>
-        </tr>
-      </c:forEach>
-    </table>
+<div style="margin-top:20px">
+    <table class="table table-border table-bordered table-hover table-bg">
+	    <thead>
+	    <tr class="text-c">
+	        <th width="200">学期</th>
+	        <th width="150">查看</th>
+	        <th width="150">删除</th>
+	    </tr>
+	    </thead>
+	    <tbody>
+	    <c:forEach items="${requestScope.plans}" var="plan">
+	        <tr class="text-c">
+	            <td>${plan.termName}</td>
+	            <td><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showPDFAtBack&term=${plan.termName}&filePath=${plan.filePath}">查看</a></td>
+	            <td class="f-14"><a title="删除" href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=delete&id=${plan.id}" class="ml-5"
+	                                style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+	        </tr>
+	    </c:forEach>
+	    </tbody>
+	</table>
 
     <!--翻页-->
-    <div class="page">
-      <c:if test="${ requestScope.curPage != 0 }">
-        <a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showBack&page=${requestScope.curPage - 1}&size=4">上一页</a>
-      </c:if>
-      第 ${requestScope.curPage + 1} 页
-      <c:if test="${ requestScope.nextPage }">
-        <a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showBack&page=${requestScope.curPage + 1}&size=4">下一页</a>
-      </c:if>
-    </div>
+    <div class="pages">
+    	<div style="margin: auto">
+        <c:if test="${ requestScope.curPage != 0 }">
+            <span><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showBack&page=${requestScope.curPage - 1}&size=4">上一页</a></span>
+        </c:if>
+        <span>当前第  ${requestScope.curPage + 1} 页</span>
+        <c:if test="${ requestScope.nextPage }">
+            <span><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showBack&page=${requestScope.curPage + 1}&size=4">下一页</a></span>
+        </c:if>
+    	</div>
+	</div>
+    
     <!--翻页-->
+    
+    
   </div>
 
 
 
 
-</div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/admin/lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/admin/lib/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
