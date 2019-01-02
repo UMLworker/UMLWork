@@ -147,7 +147,7 @@
                     <div><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></div>
                     <div><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></div>
                     <div><a href="admissionDetail-4.html">班级名册</a></div>
-                    <div><a href="<c:url value='admissionDetail-4.html'/>">班级名册</a></div>
+                    <div><a href="<c:url value='/html/eduManageDetail-5.jsp'/>">学生作业案例</a></div>
                 </div>
             </li>
             <li><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">教学效果</a>
