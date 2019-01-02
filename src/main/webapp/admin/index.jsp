@@ -188,12 +188,9 @@
                         <a data-href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>"
                            data-title="学生评价管理"
                            href="javascript:void(0)">校内学生评价</a>
-                    </li>
-
-                    <li>
-                        <a data-href="<c:url value='/social_evalution_servlet?method=Admin_LoadSocialEvalator&EvalatorpageQuery=1'/>"
-                           data-title="产品管理" href="javascript:void(0)">社会评价</a></li>
-                    <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
+                    </li>                    
+                    <li><a data-href="<c:url value='/social_evalution_servlet?method=Admin_LoadSocialEvalator&EvalatorpageQuery=1'/>" data-title="产品管理" href="javascript:void(0)">社会评价</a></li>
+                    <li><a data-href="<c:url value='/TeachFileServlet?method=Admin_LoadHomework&TeachFilepageQuery=1'/>" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
                 </ul>
             </dd>
         </dl>
