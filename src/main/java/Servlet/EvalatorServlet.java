@@ -54,7 +54,7 @@ public class EvalatorServlet extends BaseServlet{
         try{
             Double grade=Double.parseDouble(course_grade);
         }catch (Exception e){
-            request.setAttribute("info","分数必须是正数");
+            request.setAttribute("info","请输入正确格式的分数");
             return "/admin/admin-evalator.jsp";
         }
         Double grade=Double.parseDouble(course_grade);
@@ -80,12 +80,35 @@ public class EvalatorServlet extends BaseServlet{
         evalator.setCourse_grade(grade);
         evalator.setCourse_name(course_name);
         evalatorService.addEvalator(evalator);
+
+        PageQuery<Online_Evalator> EvalatorpageQuery=new PageQuery<>();
+        //想要查询的页数
+        String qp="1";
+        EvalatorpageQuery.setCurrentPage(Integer.parseInt(qp));
+        //想要查询页数的第一个评论的位置
+        EvalatorpageQuery.setCurrentfirst((EvalatorpageQuery.getCurrentPage()-1)*PageQuery.getDefaultPageSize());
+        //获取查询页的全部评论
+        EvalatorpageQuery.setItems(evalatorService.getEvalatorList(EvalatorpageQuery.getCurrentfirst()));
+        EvalatorpageQuery.setTotalRows(evalatorService.getEvalatorTotal());
+        request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
+
         return "r:/admin/admin-evalator.jsp";
     }
 
     public String Delete_Evalator(HttpServletRequest request, HttpServletResponse response){
         String evalator_id=request.getParameter("evalator_id")+"";
         evalatorService.deleteEvalator(evalator_id);
+
+        PageQuery<Online_Evalator> EvalatorpageQuery=new PageQuery<>();
+        //想要查询的页数
+        String qp="1";
+        EvalatorpageQuery.setCurrentPage(Integer.parseInt(qp));
+        //想要查询页数的第一个评论的位置
+        EvalatorpageQuery.setCurrentfirst((EvalatorpageQuery.getCurrentPage()-1)*PageQuery.getDefaultPageSize());
+        //获取查询页的全部评论
+        EvalatorpageQuery.setItems(evalatorService.getEvalatorList(EvalatorpageQuery.getCurrentfirst()));
+        EvalatorpageQuery.setTotalRows(evalatorService.getEvalatorTotal());
+        request.getSession().setAttribute("EvalatorpageQuery",EvalatorpageQuery);
 
         return "r:/admin/admin-evalator.jsp";
     }

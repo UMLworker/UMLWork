@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/html5shiv.js"></script>
     <script type="text/javascript" src="lib/respond.min.js"></script>
@@ -15,21 +16,26 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui/css/H-ui.min.css'/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/H-ui.admin.css'/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/lib/Hui-iconfont/1.0.8/iconfont.css'/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/skin/default/skin.css'/>" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/skin/default/skin.css'/>"
+          id="skin"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/style.css'/>"/>
     <!--[if IE 6]>
-    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
     <title>专家评价</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 教学效果 <span class="c-gray en">&gt;</span> 专家评价 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 教学效果 <span
+        class="c-gray en">&gt;</span> 专家评价 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px"
+                                              href="javascript:location.replace(location.href);" title="刷新"><i
+        class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
     <div class="text-c">
-        <form class="form form-horizontal" action="${pageContext.request.contextPath}/Expert_EvaluationServlet" method="post">
-        <button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
-        <span class="select-box inline">
+        <form class="form form-horizontal" action="${pageContext.request.contextPath}/Expert_EvaluationServlet"
+              method="post">
+            <button onclick="removeIframe()" class="btn btn-primary radius">关闭选项卡</button>
+            <span class="select-box inline">
 		<select name="type" class="select">
 			<option value="0">全部分类</option>
 			<option value="1">校内督导评价</option>
@@ -38,12 +44,13 @@
 		</span>
             <input type="hidden" name="method" value="LoadExpert_Evaluation">
             <input type="hidden" name="EvaluationpageQuery" value="1">
-        <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
-
+            <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+        </form>
     </div>
     <div class="cl pd-5 bg-1 bk-gray mt-20">
         <span class="l">
-            <a class="btn btn-primary radius" data-title="添加评价" data-href="Expert_Evaluation_add.jsp" onclick="Hui_admin_tab(this)" href="javascript:;">
+            <a class="btn btn-primary radius" data-title="添加评价" data-href="Expert_Evaluation_add.jsp"
+               onclick="Hui_admin_tab(this)" href="javascript:;">
                 <i class="Hui-iconfont">&#xe600;</i> 添加评价</a>
         </span>
         <span class="r">共有数据：<strong>54</strong> 条</span>
@@ -65,16 +72,22 @@
                 <tr class="text-c">
                     <td><input type="checkbox" value="" name=""></td>
                     <td>${n.index+1 }</td>
-                    <td class="text-l"><a style="cursor:pointer" class="text-primary" href="<c:url value='/Expert_EvaluationServlet?method=showContentById&id=${i.evaluation_id }'/>" >${i.title }</a></td>
+                    <td class="text-l"><a style="cursor:pointer" class="text-primary"
+                                          href="<c:url value='/Expert_EvaluationServlet?method=showContentById&id=${i.evaluation_id }'/>">${i.title }</a>
+                    </td>
                     <td>
                         <c:if test="${i.type eq '1'}">校内督导评价</c:if>
                         <c:if test="${i.type eq '2'}">校外专家评价</c:if>
                     </td>
                     <td>${i.time }</td>
                     <td class="f-14 td-manage">
-                        <a style="text-decoration:none" class="ml-5"  href="<c:url value='/Expert_EvaluationServlet?method=editContentById&id=${i.evaluation_id }'/>" title="编辑">
+                        <a style="text-decoration:none" class="ml-5"
+                           href="<c:url value='/Expert_EvaluationServlet?method=editContentById&id=${i.evaluation_id }'/>"
+                           title="编辑">
                             <i class="Hui-iconfont">&#xe6df;</i></a>
-                        <a style="text-decoration:none" class="ml-5"  href="<c:url value='/Expert_EvaluationServlet?method=deleteContent&id=${i.evaluation_id }'/>" title="删除">
+                        <a style="text-decoration:none" class="ml-5"
+                           href="<c:url value='/Expert_EvaluationServlet?method=deleteContent&id=${i.evaluation_id }'/>"
+                           title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i></a>
                     </td>
                 </tr>
@@ -84,12 +97,20 @@
         <div style="margin-left: 500px">
             <ul style="margin: auto">
                 <c:if test="${EvaluationpageQuery.currentPage!=1}">
-                    <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=1&type=${sessionScope.type }'/>">首页</a></li>
-                    <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage-1}&type=${sessionScope.type }'/>">上一页</a></li>
+                    <li>
+                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=1&type=${sessionScope.type }'/>">首页</a>
+                    </li>
+                    <li>
+                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage-1}&type=${sessionScope.type }'/>">上一页</a>
+                    </li>
                 </c:if>
                 <c:if test="${EvaluationpageQuery.currentPage!=EvaluationpageQuery.totalPage}">
-                    <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage+1}&type=${sessionScope.type }'/>">下一页</a></li>
-                    <li><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.totalPage}&type=${sessionScope.type }'/>">尾页</a></li>
+                    <li>
+                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage+1}&type=${sessionScope.type }'/>">下一页</a>
+                    </li>
+                    <li>
+                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.totalPage}&type=${sessionScope.type }'/>">尾页</a>
+                    </li>
                 </c:if>
             </ul>
         </div>
@@ -99,24 +120,25 @@
 <script type="text/javascript" src="<c:url value='/admin/lib/jquery/1.9.1/jquery.min.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/admin/lib/layer/2.4/layer.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/admin/static/h-ui/js/H-ui.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/admin/static/h-ui.admin/js/H-ui.admin.js'/>"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="<c:url value='/admin/static/h-ui.admin/js/H-ui.admin.js'/>"></script>
+<!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="<c:url value='/admin/lib/My97DatePicker/4.8/WdatePicker.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/admin/lib/laypage/1.2/laypage.js'/>"></script>
 <script type="text/javascript">
     $('.table-sort').dataTable({
-        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+        "aaSorting": [[1, "desc"]],//默认第几个排序
         "bStateSave": true,//状态保存
-        "pading":false,
+        "pading": false,
         "aoColumnDefs": [
             //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-            {"orderable":false,"aTargets":[0,5]}// 不参与排序的列
+            {"orderable": false, "aTargets": [0, 5]}// 不参与排序的列
         ]
     });
 
     /*资讯-添加*/
-    function article_add(title,url,w,h){
+    function article_add(title, url, w, h) {
         var index = layer.open({
             type: 2,
             title: title,
@@ -124,8 +146,9 @@
         });
         layer.full(index);
     }
+
     /*资讯-编辑*/
-    function article_edit(title,url,id,w,h){
+    function article_edit(title, url, id, w, h) {
         var index = layer.open({
             type: 2,
             title: title,
@@ -133,24 +156,24 @@
         });
         layer.full(index);
     }
+
     /*资讯-删除*/
-    function article_del(obj,id){
-        layer.confirm('确认要删除吗？',function(index){
+    function article_del(obj, id) {
+        layer.confirm('确认要删除吗？', function (index) {
             $.ajax({
                 type: 'POST',
-                url: <c:url value='/Expert_EvaluationServlet?method=deleteContent&id=' /> + id,
+                url: <c:url value='/Expert_EvaluationServlet?method=deleteContent&id=' /> +id,
                 dataType: 'json',
-                success: function(data){
+                success: function (data) {
                     $(obj).parents("tr").remove();
-                    layer.msg('已删除!',{icon:1,time:1000});
+                    layer.msg('已删除!', {icon: 1, time: 1000});
                 },
-                error:function(data) {
+                error: function (data) {
                     console.log(data.msg);
                 },
             });
         });
     }
-
 
 
 </script>
