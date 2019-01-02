@@ -102,16 +102,16 @@
                     </tbody>
                 </table>
                 <div class="pagination">
-                    <ul style="margin: auto">
+                    <div style="margin: auto">
                         <c:if test="${EvalatorpageQuery.currentPage!=1}">
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></li>
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></li>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></span>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></span>
                         </c:if>
                         <c:if test="${EvalatorpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></li>
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></li>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></span>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></span>
                         </c:if>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -89,7 +89,7 @@
 <div class="header">
     <div class="topLine"></div>
     <section class="topwrap">
-        <a href="index.html" class="logo"><img src="<c:url value='/images/logo.png'/>">
+        <a href="index.jsp" class="logo"><img src="<c:url value='/images/logo.png'/>">
             <h2 class="title">在线开放课程平台</h2></a>
     </section>
     <section class="logininAndUp">
@@ -98,7 +98,7 @@
     </section>
     <section class="nav yahei">
         <ul id="nav">
-            <li class="title"><a href="index.html">首页</a></li>
+            <li class="title"><a href="${pageContext.request.contextPath}/html/index.jsp">首页</a></li>
             <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
                 <a href="courseDetail-1.html">课程概况</a>
                 <ul style="display: none;" id="first">
@@ -148,9 +148,9 @@
                 </ul>
             </li>
             <li class="title" onmouseover="extend('6')" onmouseout="out('6')">
-                <a href="<c:url value = '/html/eduManageDetail-1.jsp'/>">教学管理</a>
+                <a href="<c:url value ='/OpenCoursePlanServlet?method=showFront'/>">教学管理</a>
                 <ul style="display: none; " id="sixth">
-                    <li class="detail"><a href="<c:url value ='${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront'/>"
+                    <li class="detail"><a href="<c:url value ='/OpenCoursePlanServlet?method=showFront'/>"
                                           style="color: #fff;">开课计划</a></li>
                     <li class="detail"><a
                             href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>"
@@ -171,12 +171,12 @@
                     </li>
                     <li class="detail"><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>" style="color: #fff;">校内督导评价</a>
                     </li>
-                    <li class="detail"><a href="<c:url value ='/html/teachEffectDetail-3.jsp'/>" style="color: #fff;">教师自我评价</a>
+                    <li class="detail"><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>" style="color: #fff;">教师自我评价</a>
                     </li>
                     <li class="detail"><a
                             href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>"
                             style="color: #fff;">校内学生评价</a></li>
-                    <li class="detail"><a href="<c:url value ='/html/teachEffectDetail-5.jsp'/>" style="color: #fff;">社会评价</a>
+                    <li class="detail"><a href="<c:url value='/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1'/>" style="color: #fff;">社会评价</a>
                     </li>
                     <li class="detail"><a href="<c:url value ='/html/teachEffectDetail-6.jsp'/>" style="color: #fff;">教学评估及相关文件</a>
                     </li>
