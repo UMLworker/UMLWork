@@ -150,14 +150,14 @@
                     <div><a href="<c:url value='/html/eduManageDetail-5.jsp'/>">学生作业案例</a></div>
                 </div>
             </li>
-            <li><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">教学效果</a>
+            <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">教学效果</a>
                 <div class="detail">
-                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">校外专家评价</a></div>
-                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=2'/>">校内督导评价</a></div>
+                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></div>
+                    <div><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></div>
                     <div><a href="<c:url value='/teacher_evalution_servlet?method=Admin_LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></div>
                     <div><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></div>
                     <div><a href="<c:url value='/social_evalution_servlet?method=Admin_LoadSocialEvalator&EvalatorpageQuery=1'/>">社会评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-2.jsp'/>">教学评估及相关文件</a></div>
+                    <div><a href="<c:url value ='/html/teachEffectDetail-6.jsp'/>">教学评估及相关文件</a></div>
                 </div>
             </li>
             <li><a href="QQ.html">教学互动</a>
