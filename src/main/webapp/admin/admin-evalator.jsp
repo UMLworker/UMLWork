@@ -16,7 +16,8 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui/css/H-ui.min.css'/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/H-ui.admin.css'/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/lib/Hui-iconfont/1.0.8/iconfont.css'/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/skin/default/skin.css'/>" id="skin"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/skin/default/skin.css'/>"
+          id="skin"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/style.css'/>"/>
     <!--[if IE 6]>
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
@@ -27,7 +28,10 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 学生评价管理</nav>
 <div class="page-container">
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" data-title="添加评价" data-href="<c:url value='/admin/admin-evalator-add.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加评价</a></span></div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"><span class="l"><a class="btn btn-primary radius" data-title="添加评价"
+                                                               data-href="<c:url value='/admin/admin-evalator-add.jsp'/>"
+                                                               onclick="Hui_admin_tab(this)" href="javascript:;"><i
+            class="Hui-iconfont">&#xe600;</i> 添加评价</a></span></div>
 </div>
 <table class="table table-border table-bordered table-hover table-bg">
     <thead>
@@ -50,23 +54,29 @@
             <td>${evalator.course_property}</td>
             <td>${evalator.course_grade}</td>
             <td>${evalator.course_level}</td>
-            <td class="f-14"><a title="删除" href="<c:url value='/EvalatorServlet?method=Delete_Evalator&evalator_id=${evalator.evalator_id}'/>"class="ml-5"
+            <td class="f-14"><a title="删除"
+                                href="<c:url value='/EvalatorServlet?method=Delete_Evalator&evalator_id=${evalator.evalator_id}'/>"
+                                class="ml-5"
                                 style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<div class="pagination" style="margin: auto">
-    <ul style="margin: auto">
+<div class="pages" style="padding-left:500px;">
+    <div style="margin: auto">
         <c:if test="${EvalatorpageQuery.currentPage!=1}">
-            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></li>
-            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></li>
+            <span><a
+                    href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></span>
+            <span><a
+                    href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></span>
         </c:if>
         <c:if test="${EvalatorpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
-            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></li>
-            <li><a href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></li>
+            <span><a
+                    href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></span>
+            <span><a
+                    href="<c:url value='/EvalatorServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></span>
         </c:if>
-    </ul>
+    </div>
 </div>
 <div style="color: red">${info}</div>
 </div>
@@ -74,7 +84,8 @@
 <script type="text/javascript" src="<c:url value='/admin/lib/jquery/1.9.1/jquery.min.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/admin/lib/layer/2.4/layer.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/admin/static/h-ui/js/H-ui.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/admin/static/h-ui.admin/js/H-ui.admin.js'/>"></script> <!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="<c:url value='/admin/static/h-ui.admin/js/H-ui.admin.js'/>"></script>
+<!--/_footer 作为公共模版分离出去-->
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="<c:url value='/admin/lib/datatables/1.10.0/jquery.dataTables.min.js'/>"></script>
 </body>

@@ -31,7 +31,7 @@
                         <li class="current"><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=1'/>">校外专家评价</a></li>
                         <li><a href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnFront&n=2'/>">校内督导评价</a></li>
                         <li><a href="teachEffectDetail-3.jsp">教师自我评价</a></li>
-                        <li><a href="teachEffectDetail-4.jsp">校内学生评价</a></li>
+                        <li><a href="<c:url value='/html/teachEffectDetail-4.jsp'/>">校内学生评价</a></li>
                         <li><a href="teachEffectDetail-5.jsp">社会评价</a></li>
                         <li><a href="teachEffectDetail-6.jsp">教学评估及相关文件</a></li>
                     </ul>
