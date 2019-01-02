@@ -39,7 +39,7 @@
 							<li><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></li>
 							<li class="current"><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></li>
 							<li><a href="eduManageDetail-4.jsp">班级名册</a></li>
-							<li><a href="eduManageDetail-5.jsp">作业案例</a></li>
+							<li><a href="<c:url value ='/html/eduManageDetail-5.jsp'/>">作业案例</a></li>
 						</ul>
 					</section>
 				</div>

@@ -89,7 +89,7 @@
 <div class="header">
     <div class="topLine"></div>
     <section class="topwrap">
-        <a href="index.html" class="logo"><img src="<c:url value='/images/logo.png'/>">
+        <a href="index.jsp" class="logo"><img src="<c:url value='/images/logo.png'/>">
             <h2 class="title">在线开放课程平台</h2></a>
     </section>
     <section class="logininAndUp">
@@ -98,7 +98,7 @@
     </section>
     <section class="nav yahei">
         <ul id="nav">
-            <li class="title"><a href="index.html">首页</a></li>
+            <li class="title"><a href="index.jsp">首页</a></li>
             <li class="title" onmouseover="extend('1')" onmouseout="out('1')">
                 <a href="courseDetail-1.html">课程概况</a>
                 <ul style="display: none;" id="first">
@@ -150,7 +150,7 @@
             <li class="title" onmouseover="extend('6')" onmouseout="out('6')">
                 <a href="<c:url value = '/html/eduManageDetail-1.jsp'/>">教学管理</a>
                 <ul style="display: none; " id="sixth">
-                    <li class="detail"><a href="<c:url value ='${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront'/>"
+                    <li class="detail"><a href="<c:url value ='/OpenCoursePlanServlet?method=showFront'/>"
                                           style="color: #fff;">开课计划</a></li>
                     <li class="detail"><a
                             href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>"
