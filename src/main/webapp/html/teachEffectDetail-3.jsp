@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +29,9 @@
                     <ul>
                         <li><a href="teachEffectDetail-1.jsp">校外专家评价</a></li>
                         <li><a href="teachEffectDetail-2.jsp">校内督导评价</a></li>
-                        <li class="current"><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></li>
+                        <li class="current"><a href="<c:url value='/html/teachEffectDetail-3.jsp'/>">教师自我评价</a></li>
                         <li><a href="<c:url value='/html/teachEffectDetail-4.jsp'/>">校内学生评价</a></li>
-                        <li><a href="teachEffectDetail-5.jsp">社会评价</a></li>
+                        <li><a href="<c:url value='/html/teachEffectDetail-5.jsp'/>">社会评价</a></li>
                         <li><a href="teachEffectDetail-6.jsp">教学评估及相关文件</a></li>
                     </ul>
                 </section>
