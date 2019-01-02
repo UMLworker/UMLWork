@@ -58,7 +58,7 @@
 	                    <ul>
 							<li class="current"><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a></li>
 							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-2.jsp">上课班级</a></li>
-							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-3.jsp">学生成绩</a></li>
+							<li><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></li>
 							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-4.jsp">班级名册</a></li>
 							<li><a href="${pageContext.request.contextPath}/html/eduManageDetail-5.jsp">作业案例</a></li>
 						</ul>
