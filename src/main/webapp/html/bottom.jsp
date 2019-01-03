@@ -117,11 +117,12 @@
             </li>
             <li><a href="educationalDetail-1.html">教学安排</a>
                 <div class="detail">
-                    <div><a href="educationalDetail-2.html">教学日历</a></div>
-                    <div><a href="educationalDetail-3.html">教学内容</a></div>
-                    <div><a href="educationalDetail-4.html">授课计划</a></div>
-                    <div><a href="educationalDetail-5.html">教学重难点</a></div>
-                    <div><a href="educationalDetail-6.html">教学方法与手段</a></div>
+                    <div><a href="../html/educationalDetail-1.jsp">教学大纲</a></div>
+                    <div><a href="../servlet/CalendarServlet?method=show">教学日历</a></div>
+                    <div><a href="../html/educationalDetail-3.jsp">教学内容</a></div>
+                    <div><a href="../html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></div>
+                    <div><a href="../html/educationalDetail-5.jsp">教学重难点</a></div>
+                    <div><a href="../html/educationalDetail-6.jsp">教学方法与手段</a></div>
                 </div>
             </li>
             <li><a href="educationReformDetail-1.html">教学研究改革</a>

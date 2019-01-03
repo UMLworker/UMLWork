@@ -118,14 +118,14 @@
                 </ul>
             </li>
             <li class="title" onmouseover="extend('3')" onmouseout="out('3')">
-                <a href="educationalDetail-1.html">教学安排</a>
+                <a href="../html/educationalDetail-1.jsp">教学安排</a>
                 <ul style="display: none;" id="third">
-                    <li class="detail"><a href="educationalDetail-2.html" style="color: #fff;">教学大纲</a></li>
-                    <li class="detail"><a href="educationalDetail-3.html" style="color: #fff;">教学日历</a></li>
-                    <li class="detail"><a href="educationalDetail-4.html" style="color: #fff;">教学内容</a></li>
-                    <li class="detail"><a href="educationalDetail-5.html" style="color: #fff;">授课计划</a></li>
-                    <li class="detail"><a href="educationalDetail-6.html" style="color: #fff;">教学难重点</a></li>
-                    <li class="detail"><a href="educationalDetail-7.html" style="color: #fff;">教学方法与手段</a></li>
+                    <li class="detail"><a href="../html/educationalDetail-1.jsp" style="color: #fff;">教学大纲</a></li>
+                    <li class="detail"><a href="../servlet/CalendarServlet?method=show" style="color: #fff;">教学日历</a></li>
+                    <li class="detail"><a href="../html/educationalDetail-3.jsp" style="color: #fff;">教学内容</a></li>
+                    <li class="detail"><a href="../html/educationalDetail-4.jsp" style="color: #fff;">授课计划</a></li>
+                    <li class="detail"><a href="../html/educationalDetail-5.jsp" style="color: #fff;">教学难重点</a></li>
+                    <li class="detail"><a href="../html/educationalDetail-6.jsp" style="color: #fff;">教学方法与手段</a></li>
                 </ul>
             </li>
             <li class="title" onmouseover="extend('4')" onmouseout="out('4')">
