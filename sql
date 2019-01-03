@@ -143,3 +143,14 @@ INSERT INTO `resources` VALUES ('12', 'b5806eb1-0108-4e37-8af5-b4fd71e65de3.png'
 INSERT INTO `resources` VALUES ('13', '983e9ec7-f6aa-4b64-becc-9a963bfdedaa.png', 'test.png', 'F:\\J2EE(workspace)\\.metadata\\.me_tcat85\\webapps\\UMLWork\\WEB-INF\\upload/13/12', '2018-12-27 14:44:53', '截图');
 INSERT INTO `resources` VALUES ('14', '21cb6c0f-b6df-44b1-8fb1-0f12fae4e7f8.png', 'test.png', 'F:\\J2EE(workspace)\\.metadata\\.me_tcat85\\webapps\\UMLWork\\WEB-INF\\upload/13/12', '2018-12-27 14:45:05', '图图图');
 
+
+##文聪
+CREATE TABLE `teachfile` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uuidname` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `realname` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `savepath` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `description` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

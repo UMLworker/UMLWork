@@ -40,7 +40,7 @@
                     <header class="contentNav">
                         <nav class="nav">
                             <a href="index.html">首页</a>·
-                            <a href="teachEffectDetail-3.jsp">教学效果</a>·
+                            <a href="<c:url value='/html/teachEffectDetail-3.jsp'/>">教学效果</a>·
                             <a href="#">教师自我评价</a>
                         </nav>
                         <h1>教师自我评价</h1>
@@ -61,8 +61,8 @@
 </article>
 
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"><jsp:include page="/html/bottom.jsp"/></div>
+<div id="bottom"><jsp:include page="/html/bottom.jsp"/></div>
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"><jsp:include page="/html/copyrights.jsp"/></div>
+<div id="copyright"><jsp:include page="/html/copyright.jsp"/></div>
 </body>
 </html>

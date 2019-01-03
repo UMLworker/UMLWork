@@ -38,6 +38,7 @@ import java.util.Map;
 public class class_list_Servlet extends BaseServlet {
 	Service.class_list_Service class_list_Service=new Service.class_list_Service();
 
+
 	public String Add_LoadStudentClassList(HttpServletRequest request, HttpServletResponse response){
 		PageQuery<Class_List> classListpageQuery=new PageQuery<>();
 		//想要查询的页数
@@ -223,7 +224,6 @@ public class class_list_Servlet extends BaseServlet {
 				response.setHeader("Content-Disposition", "attachment;filename=" + filename);
 				byte[] bs =FileUtils.readFileToByteArray(file);
 				response.getOutputStream().write(bs);
-
 				return;
 			}
 			else {

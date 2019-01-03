@@ -138,7 +138,6 @@ public class class_list_Dao {
 			throw new RuntimeException(e.getMessage());
 		}
 	}
-	//
 	public List<Class_List> searchByName(String name) {
 		String sql = "select * from class_list where class_name like '%" + name + "%' ";
 		try {

@@ -96,6 +96,4 @@ public class TeachFileDao {
             throw new RuntimeException(e.getMessage());
         }
     }
-
-
 }

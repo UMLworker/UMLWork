@@ -171,12 +171,12 @@
                     </li>
                     <li class="detail"><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>" style="color: #fff;">校内督导评价</a>
                     </li>
-                    <li class="detail"><a href="<c:url value ='/html/teachEffectDetail-3.jsp'/>" style="color: #fff;">教师自我评价</a>
+                    <li class="detail"><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>" style="color: #fff;">教师自我评价</a>
                     </li>
                     <li class="detail"><a
                             href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>"
                             style="color: #fff;">校内学生评价</a></li>
-                    <li class="detail"><a href="<c:url value ='/html/teachEffectDetail-5.jsp'/>" style="color: #fff;">社会评价</a>
+                    <li class="detail"><a href="<c:url value='/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1'/>" style="color: #fff;">社会评价</a>
                     </li>
                     <li class="detail"><a href="<c:url value='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">教学评估及相关文件</a>
                     </li>

@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,8 +107,8 @@
 </article>
 
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"><jsp:include page="/html/bottom.jsp"/></div>
-<div id="top"><jsp:include page="/html/copyrights.jsp"/></div>
+<div id="bottom"><jsp:include page="/html/bottom.jsp"/></div>
+<div id="copyright"><jsp:include page="/html/copyright.jsp"/></div>
 </body>
 <script type="text/javascript">
     $(document).ready(function () {

@@ -106,9 +106,9 @@
 </article>
 
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"><jsp:include page="/html/bottom.jsp"/></div>
+<div id="bottom"><jsp:include page="/html/bottom.jsp"/></div>
 <!-- 通过js渲染，js代码在normal.js里 -->
-<div id="top"><jsp:include page="/html/copyrights.jsp"/></div>
+<div id="copyright"><jsp:include page="/html/copyright.jsp"/></div>
 </body>
 
 <script type="text/javascript">
