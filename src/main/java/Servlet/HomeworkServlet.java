@@ -136,7 +136,7 @@ public class HomeworkServlet extends BaseServlet{
     		// TODO Auto-generated catch block
     		e.printStackTrace();
     	}
-		return "r:/admin/admin-homework.jsp";
+		return "r:/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1";
     	
     }       
     
