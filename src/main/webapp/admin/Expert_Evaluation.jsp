@@ -83,9 +83,10 @@
                            title="编辑">
                             <i class="Hui-iconfont">&#xe6df;</i></a>
                         <a style="text-decoration:none" class="ml-5"
-                           href="<c:url value='/Expert_EvaluationServlet?method=deleteContent&id=${i.evaluation_id }'/>"
+                           href="javascript:deleteContent('${i.evaluation_id }')"
                            title="删除">
                             <i class="Hui-iconfont">&#xe6e2;</i></a>
+
                     </td>
                 </tr>
             </c:forEach>
@@ -116,6 +117,14 @@
 <script type="text/javascript" src="<c:url value='/admin/lib/My97DatePicker/4.8/WdatePicker.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/admin/lib/laypage/1.2/laypage.js'/>"></script>
 <script type="text/javascript">
+    function deleteContent(id) {
+        var flag = window.confirm("您确定要删除该评价吗?");
+        if (flag) {
+            window.location.href = "${pageContext.request.contextPath}/Expert_EvaluationServlet?method=deleteContent&id=" + id;
+        }
+
+    }
+
     $('.table-sort').dataTable({
         "aaSorting": [[1, "desc"]],//默认第几个排序
         "bStateSave": true,//状态保存
@@ -125,6 +134,10 @@
             {"orderable": false, "aTargets": [0, 5]}// 不参与排序的列
         ]
     });
+
+
 </script>
+
+
 </body>
 </html>

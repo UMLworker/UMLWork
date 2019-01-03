@@ -16,10 +16,9 @@ public class Expert_EvaluationService {
         expert_evaluationDao.editContent(evaluation);
         return;
     }
-    public ArrayList getAllContent() {
-        ArrayList<Expert_Evaluation> list = new ArrayList();
-        list = expert_evaluationDao.getAllContent();
-        return list;
+
+    public Expert_Evaluation getContentById(String id){
+        return expert_evaluationDao.getContentById(id);
     }
 
     public void deleteContent(String id){
