@@ -1,8 +1,6 @@
-package Servlet;
+package servlet;
 
-import Domain.Class_List;
-import Domain.FileBean;
-import Service.HomeworkService;
+import domain.Class_List;
 import Utils.BaseServlet;
 import Utils.FileUploadUtils;
 import Utils.PageQuery;
@@ -21,22 +19,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URLEncoder;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @WebServlet("/class_list_Servlet")
 public class class_list_Servlet extends BaseServlet {
-	Service.class_list_Service class_list_Service=new Service.class_list_Service();
+	service.class_list_Service class_list_Service=new service.class_list_Service();
 
 
 	public String Add_LoadStudentClassList(HttpServletRequest request, HttpServletResponse response){

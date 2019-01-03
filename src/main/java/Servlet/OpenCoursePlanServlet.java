@@ -1,8 +1,8 @@
-package Servlet;
+package servlet;
 
-import Domain.OpenCoursePlan;
-import Domain.Term;
-import Service.OpenCoursePlanService;
+import domain.OpenCoursePlan;
+import domain.Term;
+import service.OpenCoursePlanService;
 import Utils.BaseServlet;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadBase;
@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet("/OpenCoursePlanServlet")

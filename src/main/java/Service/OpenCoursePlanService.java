@@ -1,10 +1,9 @@
-package Service;
+package service;
 
-import Dao.OpenCoursePlanDao;
-import Domain.OpenCoursePlan;
+import dao.OpenCoursePlanDao;
+import domain.OpenCoursePlan;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class OpenCoursePlanService {

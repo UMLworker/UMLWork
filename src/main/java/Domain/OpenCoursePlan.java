@@ -1,4 +1,4 @@
-package Domain;
+package domain;
 
 /*
     开课计划实体类

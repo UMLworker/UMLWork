@@ -1,8 +1,8 @@
-package Servlet;
+package servlet;
 
 
-import Domain.social_evalution;
-import Service.social_evalutionService;
+import domain.social_evalution;
+import service.social_evalutionService;
 import Utils.BaseServlet;
 import Utils.PageQuery;
 

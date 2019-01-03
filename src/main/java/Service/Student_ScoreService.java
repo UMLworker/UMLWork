@@ -1,8 +1,8 @@
-package Service;
+package service;
 
 
-import Dao.Student_ScoreDao;
-import Domain.Student_Score;
+import dao.Student_ScoreDao;
+import domain.Student_Score;
 
 import java.util.List;
 

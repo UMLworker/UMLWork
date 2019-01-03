@@ -1,7 +1,7 @@
-package Service;
+package service;
 
-import Domain.TeachEvalFile;
-import Dao.TeachFileDao;
+import domain.TeachEvalFile;
+import dao.TeachFileDao;
 
 import java.sql.SQLException;
 import java.util.List;

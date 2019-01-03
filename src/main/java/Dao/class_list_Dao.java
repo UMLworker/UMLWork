@@ -1,4 +1,4 @@
-package Dao;
+package dao;
 
 //查找，优化删除，优化增加
 import java.sql.SQLException;
@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import Domain.Class_List;
-import Domain.FileBean;
-import Domain.Online_Evalator;
+import domain.Class_List;
 import Utils.BeanUtil;
 import Utils.JDBCutil;
 

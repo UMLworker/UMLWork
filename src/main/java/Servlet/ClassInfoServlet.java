@@ -1,15 +1,13 @@
-package Servlet;
+package servlet;
 
-import Domain.ClassInfo;
-import Domain.Online_Evalator;
-import Service.ClassInfoService;
-import Service.EvalatorService;
+import domain.ClassInfo;
+import service.ClassInfoService;
+import service.EvalatorService;
 import Utils.BaseServlet;
 import Utils.PageQuery;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.UUID;
 
 @WebServlet("/ClassInfoServlet")
 public class ClassInfoServlet extends BaseServlet {

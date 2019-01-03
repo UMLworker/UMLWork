@@ -1,10 +1,10 @@
-package Dao;
+package dao;
 //跟class_list_Dao一样，考虑合并
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import Domain.Class_List;
+import domain.Class_List;
 import Utils.BeanUtil;
 import Utils.JDBCutil;
 

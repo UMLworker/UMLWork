@@ -1,7 +1,7 @@
-package Dao;
+package dao;
 
 
-import Domain.TeachEvalFile;
+import domain.TeachEvalFile;
 import Utils.BeanUtil;
 import Utils.JDBCutil;
 

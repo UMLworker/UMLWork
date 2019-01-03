@@ -1,7 +1,7 @@
-package Service;
+package service;
 
-import Dao.Expert_EvaluationDao;
-import Domain.Expert_Evaluation;
+import dao.Expert_EvaluationDao;
+import domain.Expert_Evaluation;
 
 import java.util.ArrayList;
 import java.util.List;

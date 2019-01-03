@@ -1,8 +1,8 @@
-package Service;
+package service;
 
 
-import Dao.EvalatorDao;
-import Domain.Online_Evalator;
+import dao.EvalatorDao;
+import domain.Online_Evalator;
 
 import java.util.List;
 

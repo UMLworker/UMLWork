@@ -1,15 +1,11 @@
-package Service;
+package service;
 
 //查找，
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
-import Dao.EvalatorDao;
-import Dao.class_list_Dao;
-import Domain.Class_List;
-import Domain.FileBean;
-import Domain.Online_Evalator;
+import dao.class_list_Dao;
+import domain.Class_List;
 
 public class class_list_Service {
 	class_list_Dao class_list_dao = new class_list_Dao();

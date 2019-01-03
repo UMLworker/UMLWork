@@ -1,7 +1,7 @@
-package Servlet;
+package servlet;
 
-import Domain.FileBean;
-import Service.HomeworkService;
+import domain.FileBean;
+import service.HomeworkService;
 import Utils.BaseServlet;
 import Utils.FileUploadUtils;
 import Utils.PageQuery;
@@ -23,7 +23,6 @@ import org.apache.commons.io.IOUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URLEncoder;
 import java.sql.SQLException;
@@ -32,7 +31,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 @WebServlet("/HomeworkServlet")
 public class HomeworkServlet extends BaseServlet{

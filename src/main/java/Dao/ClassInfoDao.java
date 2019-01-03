@@ -1,7 +1,6 @@
-package Dao;
+package dao;
 
-import Domain.ClassInfo;
-import Domain.Online_Evalator;
+import domain.ClassInfo;
 import Utils.JDBCutil;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package Domain;
+package domain;
 
 public class Online_Evalator {
     private String evalator_id;

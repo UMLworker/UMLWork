@@ -1,8 +1,8 @@
-package Service;
+package service;
 
 
-import Dao.teacher_evalutionDao;
-import Domain.teacher_evalution;
+import dao.teacher_evalutionDao;
+import domain.teacher_evalution;
 
 import java.util.List;
 

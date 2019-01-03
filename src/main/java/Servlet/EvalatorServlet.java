@@ -1,7 +1,7 @@
-package Servlet;
+package servlet;
 
-import Domain.Online_Evalator;
-import Service.EvalatorService;
+import domain.Online_Evalator;
+import service.EvalatorService;
 import Utils.BaseServlet;
 import Utils.PageQuery;
 

@@ -1,14 +1,13 @@
-package Servlet;
+package servlet;
 
 
-import Domain.teacher_evalution;
-import Service.teacher_evalutionService;
+import domain.teacher_evalution;
+import service.teacher_evalutionService;
 import Utils.BaseServlet;
 import Utils.PageQuery;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

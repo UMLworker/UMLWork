@@ -1,7 +1,7 @@
-package Dao;
+package dao;
 
 
-import Domain.FileBean;
+import domain.FileBean;
 import Utils.BeanUtil;
 import Utils.JDBCutil;
 

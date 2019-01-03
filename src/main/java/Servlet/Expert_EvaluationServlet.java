@@ -1,8 +1,7 @@
-package Servlet;
+package servlet;
 
-import Domain.Expert_Evaluation;
-import Domain.Online_Evalator;
-import Service.Expert_EvaluationService;
+import domain.Expert_Evaluation;
+import service.Expert_EvaluationService;
 import Utils.BaseServlet;
 import Utils.PageQuery;
 

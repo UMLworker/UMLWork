@@ -1,8 +1,8 @@
-package Service;
+package service;
 
 
-import Dao.social_evalutionDao;
-import Domain.social_evalution;
+import dao.social_evalutionDao;
+import domain.social_evalution;
 
 import java.util.List;
 

@@ -1,10 +1,9 @@
-package Dao;
+package dao;
 
 
-import Domain.Student_Score;
+import domain.Student_Score;
 import Utils.JDBCutil;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package Domain;
+package domain;
 
 /*
     学期实体类

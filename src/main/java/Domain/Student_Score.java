@@ -1,4 +1,4 @@
-package Domain;
+package domain;
 
 public class Student_Score {
     private String StudentNo;

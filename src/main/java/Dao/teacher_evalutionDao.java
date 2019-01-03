@@ -1,7 +1,6 @@
-package Dao;
+package dao;
 
-import Domain.Expert_Evaluation;
-import Domain.teacher_evalution;
+import domain.teacher_evalution;
 import Utils.JDBCutil;
 
 import java.util.ArrayList;

@@ -1,14 +1,13 @@
-package Servlet;
+package servlet;
 
-import Domain.Student_Score;
-import Service.Student_ScoreService;
+import domain.Student_Score;
+import service.Student_ScoreService;
 import Utils.BaseServlet;
 import Utils.PageQuery;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.UUID;
 
 @WebServlet("/ScoreServlet")
 public class ScoreServlet extends BaseServlet {

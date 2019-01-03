@@ -1,6 +1,6 @@
-package Dao;
+package dao;
 
-import Domain.Expert_Evaluation;
+import domain.Expert_Evaluation;
 import Utils.JDBCutil;
 
 import java.sql.SQLException;

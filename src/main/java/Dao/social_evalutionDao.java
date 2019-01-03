@@ -1,6 +1,6 @@
-package Dao;
+package dao;
 
-import Domain.social_evalution;
+import domain.social_evalution;
 import Utils.JDBCutil;
 
 import java.util.ArrayList;

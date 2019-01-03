@@ -1,7 +1,7 @@
-package Service;
+package service;
 
-import Domain.FileBean;
-import Dao.HomeworkDao;
+import domain.FileBean;
+import dao.HomeworkDao;
 
 import java.sql.SQLException;
 import java.util.List;

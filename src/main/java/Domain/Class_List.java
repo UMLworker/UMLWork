@@ -1,4 +1,4 @@
-package Domain;
+package domain;
 
 public class Class_List {
 	private Long class_id;

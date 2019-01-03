@@ -1,7 +1,6 @@
-package Dao;
+package dao;
 
-import Domain.OpenCoursePlan;
-import Utils.BeanUtil;
+import domain.OpenCoursePlan;
 import Utils.JDBCutil;
 
 import java.sql.SQLException;

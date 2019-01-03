@@ -1,10 +1,8 @@
-package Service;
+package service;
 
 
-import Dao.ClassInfoDao;
-import Dao.EvalatorDao;
-import Domain.ClassInfo;
-import Domain.Online_Evalator;
+import dao.ClassInfoDao;
+import domain.ClassInfo;
 
 import java.util.List;
 
