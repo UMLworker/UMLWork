@@ -28,15 +28,15 @@
 </head>
 <body>
 <article class="page-container">
-        <div style="width: 700px; height: 500px; margin:0 auto;">
-            <div style="width: 700px; height: 50px; text-align:center;">
-                ${sessionScope.editContent.title }
-            </div>
-            <br>
-            <div style="width: 700px; height: 500px;">
-                ${sessionScope.editContent.content }
-            </div>
+    <div style="width: 700px; height: 500px; margin:0 auto;">
+        <div style="width: 700px; height: 50px; text-align:center;">
+            ${sessionScope.editContent.title }
         </div>
+        <br>
+        <div style="width: 700px; height: 500px;">
+            ${sessionScope.editContent.content }
+        </div>
+    </div>
 
 
 </article>

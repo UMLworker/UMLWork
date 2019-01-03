@@ -193,7 +193,7 @@
                     <li>
                         <a data-href="<c:url value='/social_evalution_servlet?method=Admin_LoadSocialEvalator&EvalatorpageQuery=1'/>"
                            data-title="产品管理" href="javascript:void(0)">社会评价</a></li>
-                    <li><a data-href="_blank.html" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
+                    <li><a data-href="<c:url value='/TeachFileServlet?method=Admin_LoadHomework&TeachFilepageQuery=1'/>" data-title="产品管理" href="javascript:void(0)">教学评估及相关文件</a></li>
                 </ul>
             </dd>
         </dl>
@@ -250,7 +250,7 @@
     <dt><i class="Hui-iconfont">&#xe620;</i> 教学效果<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
     <dd>
         <ul>
-            <li><a data-href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnBackground'/>"
+            <li><a data-href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=1&type=0'/>"
                    data-title="校外专家评价" href="javascript:void(0)">校外专家评价</a></li>
             <li><a data-href="<c:url value='/Expert_EvaluationServlet?method=getAllContentReturnBackground'/>"
                    data-title="校内督导评价" href="javascript:void(0)">校内督导评价</a></li>

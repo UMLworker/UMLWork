@@ -66,7 +66,7 @@
             </c:forEach>
             </tbody>
         </table>
-        <div class="pagination" style="margin: auto">
+        <div class="pagination" style="width:100%;">
             <ul style="margin: auto">
                 <c:if test="${classInfoQuery.currentPage!=1}">
                     <li><a href="<c:url value='/ClassInfoServlet?method=Admin_LoadClassInfo&classInfoPageQuery=1'/>">首页</a></li>
