@@ -95,7 +95,7 @@ CREATE TABLE `online_evalator` (
 insert  into `online_evalator`(`evalator_id`,`course_teacher_name`,`course_time`,`course_name`,`course_property`,`course_grade`,`course_level`) values ('5','侯爱民','2015——2016第二学期','面向对象分析与设计','必修课',93.47,'优秀');
 
 
-专家评价表(林海彬)
+专家评价表
 CREATE TABLE `expert_evaluation` (
   `id` varchar(50) NOT NULL,
   `title` varchar(50) NOT NULL,
@@ -154,3 +154,26 @@ CREATE TABLE `teachfile` (
   `description` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+(思焕)
+
+CREATE TABLE `class_list` (
+  `class_id` int(6) unsigned NOT NULL AUTO_INCREMENT COMMENT '仅仅是序号',
+  `class_name` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '班级名称',
+  `major` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '专业',
+  `course` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '课程',
+  `class_file_name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `class_file_uuidname` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `class_file` varchar(255) CHARACTER SET utf8 NOT NULL COMMENT '班级文件（文件地址）',
+  PRIMARY KEY (`class_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
+
+-- ----------------------------
+-- Records of class_list
+-- ----------------------------
+INSERT INTO `class_list` VALUES ('29', '16软卓1班', '软件工程', '《面向对象分析与设计（UML）》', '16软卓一班.xlsx', '648292b6-9b65-49cf-8adf-1a324bc052b4.xlsx', 'E:\\tomcat9\\apache-tomcat-9.0.8\\webapps\\UMLWork\\WEB-INF\\upload/1/15');
+INSERT INTO `class_list` VALUES ('30', '16软卓2班', '软件工程', '《面向对象分析与设计（UML）》', '16软卓一班.xlsx', '2298574d-9530-4e40-9de6-db9b3b48e3af.xlsx', 'E:\\tomcat9\\apache-tomcat-9.0.8\\webapps\\UMLWork\\WEB-INF\\upload/1/15');
+INSERT INTO `class_list` VALUES ('31', '15软卓1班', '软件工程', '《面向对象分析与设计（UML）》', '16软卓二班.xlsx', '74524bdb-3611-418f-bf07-2ebe0a41d61a.xlsx', 'E:\\tomcat9\\apache-tomcat-9.0.8\\webapps\\UMLWork\\WEB-INF\\upload/13/7');
+INSERT INTO `class_list` VALUES ('32', '17软卓1班', '软件工程', '《面向对象分析与设计（UML）》', '16软卓一班.xlsx', 'fb156b10-66a1-4cd0-b6f5-254c1c9948af.xlsx', 'E:\\tomcat9\\apache-tomcat-9.0.8\\webapps\\UMLWork\\WEB-INF\\upload/1/15');
+INSERT INTO `class_list` VALUES ('33', '18网络1班', '网络工程', '《面向对象分析与设计（UML）》', '16软卓一班.xlsx', '9df1303c-776d-4ae7-9b5d-7a8d53eece5d.xlsx', 'E:\\tomcat9\\apache-tomcat-9.0.8\\webapps\\UMLWork\\WEB-INF\\upload/1/15');
+INSERT INTO `class_list` VALUES ('35', '16软件1班', '软件工程', '《面向对象分析与设计（UML）》', '16软卓一班.xlsx', 'd9bc7efc-cadb-4010-894a-05bc98ba550c.xlsx', 'E:\\tomcat9\\apache-tomcat-9.0.8\\webapps\\UMLWork\\WEB-INF\\upload/1/15');
