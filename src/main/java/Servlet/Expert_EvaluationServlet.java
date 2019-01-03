@@ -17,28 +17,11 @@ import java.util.ArrayList;
 @WebServlet("/Expert_EvaluationServlet")
 public class Expert_EvaluationServlet extends BaseServlet {
     Expert_EvaluationService expert_evaluation = new Expert_EvaluationService();
-    ArrayList<Expert_Evaluation> list = new ArrayList();
-
-    public String getAllContentReturnBackground(HttpServletRequest request, HttpServletResponse response) {
-        getAllContent(request, response);
-        request.getSession().setAttribute("list", list);
-        return "r:/admin/Expert_Evaluation.jsp";
-    }
-
-    public String getAllContentReturnFront(HttpServletRequest request, HttpServletResponse response) {
-        String n = request.getParameter("n");
-        getAllContent(request, response);
-        request.getSession().setAttribute("list", list);
-        return "r:/html/teachEffectDetail-" + n + ".jsp";
-    }
-
-    public String getAllContent(HttpServletRequest request, HttpServletResponse response) {
-        list = expert_evaluation.getAllContent();
-        return null;
-    }
 
     public String addContent(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Expert_Evaluation evaluation = new Expert_Evaluation();
+        String qp = (String) request.getSession().getAttribute("CurrentPage");
+        String type = (String) request.getSession().getAttribute("type");
         evaluation.setTitle(request.getParameter("articletitle"));
         evaluation.setType(request.getParameter("articlecolumn"));
         evaluation.setContent(request.getParameter("content"));
@@ -50,24 +33,21 @@ public class Expert_EvaluationServlet extends BaseServlet {
         evaluation.setTime(time);
         evaluation.setEvaluation_id(java.util.UUID.randomUUID().toString());
         expert_evaluation.addContent(evaluation);
-        return "r:/Expert_EvaluationServlet?method=getAllContentReturnBackground";
+        return "/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=" + qp + "&type=" + type;
     }
 
     public String deleteContent(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");
+        String qp = (String) request.getSession().getAttribute("CurrentPage");
+        String type = (String) request.getSession().getAttribute("type");
         expert_evaluation.deleteContent(id);
-        return "r:/Expert_EvaluationServlet?method=getAllContentReturnBackground";
+        return "/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=" + qp + "&type=" + type;
     }
 
     public String getContentById(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");
-        getAllContent(request, response);
-        for (Expert_Evaluation evaluation : list) {
-            if (evaluation.getEvaluation_id().equals(id)) {
-                request.getSession().setAttribute("editContent", evaluation);
-                break;
-            }
-        }
+        Expert_Evaluation evaluation = expert_evaluation.getContentById(id);
+        request.getSession().setAttribute("editContent", evaluation);
         return null;
     }
 
@@ -83,6 +63,8 @@ public class Expert_EvaluationServlet extends BaseServlet {
 
     public String editContent(HttpServletRequest request, HttpServletResponse response) {
         Expert_Evaluation evaluation = (Expert_Evaluation) request.getSession().getAttribute("editContent");
+        String qp = (String) request.getSession().getAttribute("CurrentPage");
+        String type = (String) request.getSession().getAttribute("type");
         evaluation.setTitle(request.getParameter("articletitle"));
         evaluation.setType(request.getParameter("articlecolumn"));
         evaluation.setContent(request.getParameter("content"));
@@ -93,23 +75,7 @@ public class Expert_EvaluationServlet extends BaseServlet {
         String time = simpleDateFormat.format(timeStamp);
         evaluation.setTime(time);
         expert_evaluation.editContent(evaluation);
-        return "r:/Expert_EvaluationServlet?method=getAllContentReturnBackground";
-    }
-
-    public String searchByType(HttpServletRequest request, HttpServletResponse response) {
-        String type = request.getParameter("type");
-        if ("0".equals(type)) {
-            request.getSession().setAttribute("list", list);
-        } else {
-            ArrayList<Expert_Evaluation> listByType = new ArrayList();
-            for (Expert_Evaluation evaluation : list) {
-                if (evaluation.getType().equals(type)) {
-                    listByType.add(evaluation);
-                }
-            }
-            request.getSession().setAttribute("list", listByType);
-        }
-        return "r:/admin/Expert_Evaluation.jsp";
+        return "/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=" + qp + "&type=" + type;
     }
 
     public String LoadExpert_Evaluation(HttpServletRequest request, HttpServletResponse response) {
@@ -124,6 +90,7 @@ public class Expert_EvaluationServlet extends BaseServlet {
         EvaluationpageQuery.setItems(expert_evaluation.getEvaluationList(EvaluationpageQuery.getCurrentfirst(), type));
         EvaluationpageQuery.setTotalRows(expert_evaluation.getEvaluationTotal(type));
         request.getSession().setAttribute("EvaluationpageQuery", EvaluationpageQuery);
+        request.getSession().setAttribute("CurrentPage", String.valueOf(EvaluationpageQuery.getCurrentPage()));
         request.getSession().setAttribute("type", type);
 
         return "r:/admin/Expert_Evaluation.jsp";

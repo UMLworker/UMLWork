@@ -56,7 +56,7 @@
                     <c:if test="${sessionScope.number != 0}">
                         <span><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=${sessionScope.number-1}&type=1&n=2'/>">上一篇</a></span>
                     </c:if>
-                    <c:if test="${sessionScope.number != sessionScope.total}">
+                    <c:if test="${sessionScope.number != sessionScope.total-1}">
                         <span><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=${sessionScope.number+1}&type=1&n=2'/>">下一篇</a></span>
                     </c:if>
 

@@ -28,11 +28,11 @@ public class Expert_EvaluationDao {
         return 1;
     }
 
-    public ArrayList getAllContent() {
-        String sql = "select * from expert_evaluation";
-        ArrayList<Expert_Evaluation> evaluationlist = new ArrayList();
+    public Expert_Evaluation getContentById(String id) {
+        String sql = "select * from expert_evaluation where id=?";
         try {
             List<Object> params = new ArrayList<>();
+            params.add(id);
             List<Map<String, Object>> list = (List<Map<String, Object>>) jdbcutil.findModeResult(sql, params);
             for (Map<String, Object> map : list) {
                 Expert_Evaluation expert_evaluation = new Expert_Evaluation();
@@ -43,12 +43,12 @@ public class Expert_EvaluationDao {
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:MM");
                 String time = simpleDateFormat.format(map.get("time"));
                 expert_evaluation.setTime(time);
-                evaluationlist.add(expert_evaluation);
+                return expert_evaluation;
             }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
-        return evaluationlist;
+        return null;
     }
 
     public void deleteContent(String id) {
