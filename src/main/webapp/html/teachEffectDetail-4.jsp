@@ -27,8 +27,8 @@
                 <section class="leftNav">
                     <h3>教学效果</h3>
                     <ul>
-                        <li><a href="<c:url value='/html/teachEffectDetail-1.jsp'/>">校外专家评价</a></li>
-                        <li><a href="<c:url value='/html/teachEffectDetail-2.jsp'/>">校内督导评价</a></li>
+                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></li>
+                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></li>
                         <li><a href="<c:url value='/html/teachEffectDetail-3.jsp'/>">教师自我评价</a></li>
                         <li class="current"><a href="<c:url value='/html/teachEffectDetail-4.jsp'/>">校内学生评价</a></li>
                         <li><a href="<c:url value='/html/teachEffectDetail-5.jsp'/>">社会评价</a></li>
@@ -102,16 +102,16 @@
                     </tbody>
                 </table>
                 <div class="pagination">
-                    <ul style="margin: auto">
+                    <div style="margin: auto">
                         <c:if test="${EvalatorpageQuery.currentPage!=1}">
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></li>
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></li>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></span>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></span>
                         </c:if>
                         <c:if test="${EvalatorpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></li>
-                            <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></li>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></span>
+                            <span><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></span>
                         </c:if>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>

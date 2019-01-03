@@ -114,7 +114,6 @@ public class Expert_EvaluationServlet extends BaseServlet {
 
     public String LoadExpert_Evaluation(HttpServletRequest request, HttpServletResponse response){
         String type = request.getParameter("type");
-        System.out.println(type);
         PageQuery<Expert_Evaluation> EvaluationpageQuery=new PageQuery<>();
         //想要查询的页数
         String qp=request.getParameter("EvaluationpageQuery");
@@ -129,5 +128,16 @@ public class Expert_EvaluationServlet extends BaseServlet {
 
         return "r:/admin/Expert_Evaluation.jsp";
     }
-
+    public String getOneContent(HttpServletRequest request, HttpServletResponse response){
+        Expert_Evaluation evaluation = new Expert_Evaluation();
+        String  n = request.getParameter("n");
+        String number=request.getParameter("number");
+        String type=request.getParameter("type");
+        String total = String.valueOf(expert_evaluation.getEvaluationTotal(type));
+        evaluation = expert_evaluation.getOneEvaluation(Integer.parseInt(number), type);
+        request.getSession().setAttribute("evaluation",evaluation);
+        request.getSession().setAttribute("number",number);
+        request.getSession().setAttribute("total",total);
+        return "r:/html/teachEffectDetail-" + n + ".jsp";
+    }
 }

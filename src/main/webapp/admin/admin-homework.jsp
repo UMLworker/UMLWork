@@ -22,7 +22,7 @@
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
     <![endif]-->
-    <title>角色管理</title>
+    <title>作业管理</title>
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 学生作业案例管理</nav>
@@ -56,12 +56,12 @@
 <div class="pagination" style="margin: auto">
     <ul style="margin: auto">
         <c:if test="${HomeworkpageQuery.currentPage!=1}">
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1'/>">首页</a></li>
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage-1}'/>">上一页</a></li>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1'/>">首页</a></li>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage-1}'/>">上一页</a></span>
         </c:if>
         <c:if test="${HomeworkpageQuery.currentPage!=HomeworkpageQuery.totalPage}">
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage+1}'/>">下一页</a></li>
-            <li><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.totalPage}'/>">尾页</a></li>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.currentPage+1}'/>">下一页</a></span>
+            <span><a href="<c:url value='/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=${HomeworkpageQuery.totalPage}'/>">尾页</a></span>
         </c:if>
     </ul>
 </div>
