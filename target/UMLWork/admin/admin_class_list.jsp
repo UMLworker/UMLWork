@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/lib/Hui-iconfont/1.0.8/iconfont.css'/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/skin/default/skin.css'/>" id="skin"/>
     <link rel="stylesheet" type="text/css" href="<c:url value='/admin/static/h-ui.admin/css/style.css'/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/eduManageDetail.css'/>"/>
     <!--[if IE 6]>
     <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js"></script>
     <script>DD_belatedPNG.fix('*');</script>
@@ -28,7 +29,7 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 班级花名册管理</nav>
 <div class="page-container">
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" data-title="添加花名册" data-href="<c:url value='/admin/class_list_add.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加花名册</a></span>
-    <!--  <span class="r"><input type="text" name="searchName" id="" placeholder=" 班级名" style="width:250px" class="input-text"><a class="" data-title="查找名单" data-href="<c:url value='/class_list_Servlet?method=searchByName'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查找名单</button></a></span></div>-->
+        <span class="r"><form action="<c:url value='/class_list_Servlet?method=searchByName&addr=jsp'/>" method="post"><input type="text" name="searchName" id="" placeholder=" 班级名" style="width:250px" class="input-text"><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查找名单</button></form></span></div>
 </div>
 <table class="table table-border table-bordered table-hover table-bg">
     <thead>
@@ -48,24 +49,24 @@
             <td>${class_list.class_name}</td>
             <td>${class_list.major}</td>
             <td>${class_list.course}</td>
-            <td><a href="${class_list.class_file}" download="${class_list.class_file_name}">${class_list.class_file_name}</a></td>
+            <td><a title="下载查看" href="<c:url value='/class_list_Servlet?method=Download_Class_File&class_id=${class_list.class_id}'/>" download="${class_list.class_file_name}">${class_list.class_file_name}</a></td>
             <td class="f-14"><a title="删除" href="<c:url value='/class_list_Servlet?method=deleteClassList&class_id=${class_list.class_id}'/>"class="ml-5"
                                 style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<div class="pagination" style="margin: auto">
-    <ul style="margin: auto">
+<div class="pages">
+    <div style="margin: auto">
         <c:if test="${classListpageQuery.currentPage!=1}">
-            <li><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>">首页</a></li>
-            <li><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage-1}'/>">上一页</a></li>
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>">首页</a></span>
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage-1}'/>">上一页</a></span>
         </c:if>
-        <c:if test="${classListpageQuery.currentPage!=classListpageQuery.totalPage}">
-            <li><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage+1}'/>">下一页</a></li>
-            <li><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.totalPage}'/>">尾页</a></li>
+        <c:if test="${classListpageQuery.currentPage!=StudentpageQuery.totalPage}">
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage+1}'/>">下一页</a></span>
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.totalPage}'/>">尾页</a></span>
         </c:if>
-    </ul>
+    </div>
 </div>
 <div style="color: red">${info}</div><!-- 什么意思？ -->
 </div>

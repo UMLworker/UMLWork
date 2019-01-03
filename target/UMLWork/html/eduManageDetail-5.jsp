@@ -5,13 +5,13 @@
 <head>
 	<title>教学管理</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../style/normal.css">
-	<link rel="stylesheet" type="text/css" href="../style/eduManage/eduManageDetail.css">
-    <link rel="stylesheet" type="text/css" href="../style/eduManage/normal.css">
+	<link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
+	<link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/eduManageDetail.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/normal.css'/>">
 
 
 	
-<!-- 	<script type="text/javascript" src="../js/normal.js"></script> -->
+<!-- 	 -->
 </head>
  
 
@@ -25,7 +25,7 @@
 	<article class="content">
 
 	    <section id="banner">
-	        <img src="../images/index/abouttop_03.jpg">
+	        <img src="<c:url value='/images/index/abouttop_03.jpg'/>">
 	    </section>
 	    <section class="mainWrap relative">
 	        <div class="detailContent">
@@ -34,10 +34,10 @@
 	                    <h3>教学管理</h3>
 	                    <ul>
 							<li><a href="${pageContext.request.contextPath}/OpenCoursePlanServlet?method=showFront">开课计划</a></li>
-							<li><a href="eduManageDetail-2.jsp">上课班级</a></li>
-							<li><a href="eduManageDetail-3.jsp">学生成绩</a></li>
-							<li><a href="eduManageDetail-4.jsp">班级名册</a></li>
-							<li class="current"><a href="eduManageDetail-5.jsp">作业案例</a></li>
+							<li><a href="<c:url value ='/html/eduManageDetail-2.jsp'/>">上课班级</a></li>
+							<li><a href="<c:url value ='/html/eduManageDetail-3.jsp'/>">学生成绩</a></li>
+							<li><a href="<c:url value="/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1"/>">班级名册</a></li>
+							<li class="current"><a href="<c:url value ='/html/eduManageDetail-5.jsp'/>">作业案例</a></li>
 						</ul>
 	                </section>
 	            </div>
@@ -46,8 +46,8 @@
 	                    <header class="contentNav">
 	                        <nav class="nav">
 	                            <a href="index.jsp">首页</a>·
-	                            <a href="eduManageDetail-1.jsp">教学管理</a>·
-	                            <a href="eduManageDetail-5.jsp">作业案例</a>
+	                            <a href="<c:url value ='/html/eduManageDetail-1.jsp'/>">教学管理</a>·
+	                            <a href="<c:url value ='/html/eduManageDetail-5.jsp'/>">作业案例</a>
 	                        </nav>
 	                        <h1>作业案例</h1>
 	                    </header>
