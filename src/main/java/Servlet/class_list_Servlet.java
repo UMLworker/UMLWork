@@ -42,6 +42,7 @@ public class class_list_Servlet extends BaseServlet {
     	 PageQuery<Class_List> classListpageQuery=new PageQuery<>();
 	        //想要查询的页数
 	        classListpageQuery.setCurrentPage(1);
+	        //
 	        //想要查询页数的第一个评论的位置
 	        classListpageQuery.setCurrentfirst((classListpageQuery.getCurrentPage()-1)*PageQuery.getDefaultPageSize());
 	        //获取查询页的全部评论
