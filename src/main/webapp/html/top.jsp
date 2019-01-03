@@ -178,7 +178,7 @@
                             style="color: #fff;">校内学生评价</a></li>
                     <li class="detail"><a href="<c:url value='/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1'/>" style="color: #fff;">社会评价</a>
                     </li>
-                    <li class="detail"><a href="<c:url value ='/html/teachEffectDetail-6.jsp'/>" style="color: #fff;">教学评估及相关文件</a>
+                    <li class="detail"><a href="<c:url value='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">教学评估及相关文件</a>
                     </li>
                 </ul>
             </li>

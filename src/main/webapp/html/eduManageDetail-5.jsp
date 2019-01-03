@@ -5,13 +5,13 @@
 <head>
 	<title>教学管理</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../style/normal.css">
-	<link rel="stylesheet" type="text/css" href="../style/eduManage/eduManageDetail.css">
-    <link rel="stylesheet" type="text/css" href="../style/eduManage/normal.css">
+	<link rel="stylesheet" type="text/css" href="<c:url value='/style/normal.css'/>">
+	<link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/eduManageDetail.css'/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value='/style/eduManage/normal.css'/>">
 
 
 	
-<!-- 	<script type="text/javascript" src="../js/normal.js"></script> -->
+<!-- 	 -->
 </head>
  
 
@@ -25,7 +25,7 @@
 	<article class="content">
 
 	    <section id="banner">
-	        <img src="../images/index/abouttop_03.jpg">
+	        <img src="<c:url value='/images/index/abouttop_03.jpg'/>">
 	    </section>
 	    <section class="mainWrap relative">
 	        <div class="detailContent">

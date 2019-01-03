@@ -49,7 +49,6 @@ public class Class_List {
 		this.class_file_name = class_file_name;
 	}
 
-	
 	public String getClass_file_uuidname() {
 		return class_file_uuidname;
 	}

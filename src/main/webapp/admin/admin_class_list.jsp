@@ -29,7 +29,7 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 班级花名册管理</nav>
 <div class="page-container">
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a class="btn btn-primary radius" data-title="添加花名册" data-href="<c:url value='/admin/class_list_add.jsp'/>" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加花名册</a></span>
-    <span class="r"><form action="<c:url value='/class_list_Servlet?method=searchByName&addr=jsp'/>" method="post"><input type="text" name="searchName" id="" placeholder=" 班级名" style="width:250px" class="input-text"><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查找名单</button></form></span></div>
+        <span class="r"><form action="<c:url value='/class_list_Servlet?method=searchByName&addr=jsp'/>" method="post"><input type="text" name="searchName" id="" placeholder=" 班级名" style="width:250px" class="input-text"><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查找名单</button></form></span></div>
 </div>
 <table class="table table-border table-bordered table-hover table-bg">
     <thead>
@@ -56,18 +56,18 @@
     </c:forEach>
     </tbody>
 </table>
- <div class="pages">
-										<div style="margin: auto">
-											<c:if test="${classListpageQuery.currentPage!=1}">
-												<span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>">首页</a></span>
-												<span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage-1}'/>">上一页</a></span>
-											</c:if>
-											<c:if test="${classListpageQuery.currentPage!=StudentpageQuery.totalPage}">
-												<span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage+1}'/>">下一页</a></span>
-												<span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.totalPage}'/>">尾页</a></span>
-											</c:if>
-										</div>
-									</div>
+<div class="pages">
+    <div style="margin: auto">
+        <c:if test="${classListpageQuery.currentPage!=1}">
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=1'/>">首页</a></span>
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage-1}'/>">上一页</a></span>
+        </c:if>
+        <c:if test="${classListpageQuery.currentPage!=StudentpageQuery.totalPage}">
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.currentPage+1}'/>">下一页</a></span>
+            <span><a href="<c:url value='/class_list_Servlet?method=Admin_LoadClassList&classListpageQuery=${classListpageQuery.totalPage}'/>">尾页</a></span>
+        </c:if>
+    </div>
+</div>
 <div style="color: red">${info}</div><!-- 什么意思？ -->
 </div>
 <!--_footer 作为公共模版分离出去-->

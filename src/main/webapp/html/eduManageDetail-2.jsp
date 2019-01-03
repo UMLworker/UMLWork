@@ -19,7 +19,7 @@
 	<article class="content">
 
 	    <section id="banner">
-	        <img src="../images/index/abouttop_03.jpg">
+	        <img src="<c:url value='/images/index/abouttop_03.jpg'/>">
 	    </section>
 	    <section class="mainWrap relative">
 	        <div class="detailContent">
