@@ -27,12 +27,12 @@
                 <section class="leftNav">
                     <h3>教学效果</h3>
                     <ul>
-                        <li><a href="<c:url value='/html/teachEffectDetail-1.jsp'/>">校外专家评价</a></li>
-                        <li><a href="<c:url value='/html/teachEffectDetail-2.jsp'/>">校内督导评价</a></li>
-                        <li><a href="<c:url value='/html/teachEffectDetail-3.jsp'/>">教师自我评价</a></li>
-                        <li><a href="<c:url value='/html/teachEffectDetail-4.jsp'/>">校内学生评价</a></li>
-                        <li><a href="<c:url value='/html/teachEffectDetail-5.jsp'/>">社会评价</a></li>
-                        <li class="current"><a href="<c:url value='/html/teachEffectDetail-6.jsp'/>">教学评估及相关文件</a></li>
+                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></li>
+                        <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></li>
+                        <li><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></li>
+                        <li><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></li>
+                        <li><a href="<c:url value='/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1'/>">社会评价</a></li>
+                        <li class="current"><a href="<c:url value='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">教学评估及相关文件</a></li>
                     </ul>
                 </section>
             </div>

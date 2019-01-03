@@ -124,7 +124,7 @@ public class HomeworkServlet extends BaseServlet{
     		 service.addHomework(fileBean);
     		 
     		 //response.sendRedirect(request.getContextPath()+"/index.jsp");
-    		 return "r:/admin/admin-homework.jsp";
+    		 return "r:/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1";
     		
     	} catch (FileUploadException e) {
     		// TODO Auto-generated catch block
@@ -145,7 +145,7 @@ public class HomeworkServlet extends BaseServlet{
         String id=request.getParameter("id")+"";
         homeworkService.deleteHomework(id);
 
-        return "f:/admin/admin-homework.jsp";
+        return "r:/HomeworkServlet?method=Admin_LoadHomework&HomeworkpageQuery=1";
     }
     
     public void Download_Homework(HttpServletRequest request, HttpServletResponse response) throws IOException   {
