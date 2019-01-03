@@ -6,6 +6,7 @@ public class Class_List {
 	private String major;
 	private String course;
 	private String class_file_name;
+	private String class_file_uuidname;
 	private String class_file;
 
 	public Long getClass_id() {
@@ -46,6 +47,15 @@ public class Class_List {
 
 	public void setClass_file_name(String class_file_name) {
 		this.class_file_name = class_file_name;
+	}
+
+	
+	public String getClass_file_uuidname() {
+		return class_file_uuidname;
+	}
+
+	public void setClass_file_uuidname(String class_file_uuidname) {
+		this.class_file_uuidname = class_file_uuidname;
 	}
 
 	public String getClass_file() {

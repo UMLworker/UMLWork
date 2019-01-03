@@ -1,16 +1,22 @@
 package Servlet;
 
 import Domain.Class_List;
+import Domain.FileBean;
+import Service.HomeworkService;
 import Utils.BaseServlet;
 import Utils.FileUploadUtils;
 import Utils.PageQuery;
+import sun.misc.BASE64Encoder;
+
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +25,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URLEncoder;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,12 +37,6 @@ import java.util.Map;
 @WebServlet("/class_list_Servlet")
 public class class_list_Servlet extends BaseServlet {
 	Service.class_list_Service class_list_Service=new Service.class_list_Service();
-//    /**
-//     * Default constructor. 
-//     */
-//    public class_list_Servlet() {
-//        // TODO Auto-generated constructor stub
-//    }
 	
 	 public String Add_LoadStudentClassList(HttpServletRequest request, HttpServletResponse response){
     	 PageQuery<Class_List> classListpageQuery=new PageQuery<>();
@@ -79,52 +83,49 @@ public class class_list_Servlet extends BaseServlet {
         
     }
     
-    public String AddClassList(HttpServletRequest request, HttpServletResponse response) throws FileNotFoundException, IOException, IllegalAccessException, InvocationTargetException{
+    public String AddClassList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException{
     	Map<String, String[]> map = new HashMap<String,String[]>();
     	//		1.创建一个DiskFileItemFactory
     	DiskFileItemFactory factory = new DiskFileItemFactory();
 //    	2.创建ServletFileUpload类	
     	ServletFileUpload upload = new ServletFileUpload(factory);
-    	upload.setHeaderEncoding("utf-8");//
+    	upload.setHeaderEncoding("utf-8");
 //    	3.解析所有上传数据
     	try {
     		List<FileItem> items = upload.parseRequest(request);
     		for(FileItem fileItem : items) {
     			if(fileItem.isFormField()) {
-    				   if("class_name".equals(fileItem.getFieldName())){
-    					   map.put("class_name", new String[] {fileItem.getString("utf-8")});
-    				   }
-    				   else if("major".equals(fileItem.getFieldName())){
-    					   map.put("major", new String[] {fileItem.getString("utf-8")});
-    				   }
-    				   else if("course".equals(fileItem.getFieldName())){
-    					   map.put("course", new String[] {fileItem.getString("utf-8")});
-    				   }
+    				if("class_name".equals(fileItem.getFieldName())){
+ 					   map.put("class_name", new String[] {fileItem.getString("utf-8")});
+ 				   }
+ 				   else if("major".equals(fileItem.getFieldName())){
+ 					   map.put("major", new String[] {fileItem.getString("utf-8")});
+ 				   }
+ 				   else if("course".equals(fileItem.getFieldName())){
+ 					   map.put("course", new String[] {fileItem.getString("utf-8")});
+ 				   }
     				}
     			else {
-    				 String filename = fileItem.getName();//获取文件名，保存在数据库
-    				 //
+    				 String filename = fileItem.getName();
     				 filename = FileUploadUtils.getRealName(filename);//获取文件的真实文件名
-    				 map.put("class_file_name",new String[]{filename});
-    		
-    				 String uuidname = FileUploadUtils.getUUIDFileName(filename);
-    				 map.put("uuidname", new String[]{uuidname});//获取并封装随机文件名
+    				 map.put("class_file_name",new String[] { filename });
     				 
-    				 String randompath1 = FileUploadUtils.getRandomDirectory(filename);//两重地址，一重即可,修改函数
-    				 String randompath="\\班级名单";
+    				 String uuidname = FileUploadUtils.getUUIDFileName(filename);
+    				 map.put("class_file_uuidname", new String[] { uuidname });//获取并封装随机文件名
+    				 
+    				 String randompath = FileUploadUtils.getRandomDirectory(filename);
     				 String uploadpath = request.getServletContext().getRealPath("/WEB-INF/upload");
     				 File parentFile = new File(uploadpath, randompath);
     				 if(!parentFile.exists())
     					 parentFile.mkdirs();//创建文件保存的目录
-    				 map.put("class_file", new String[]{uploadpath+randompath+"\\"+filename});//封装上传文件的保存路径
+    				 map.put("class_file", new String[] {uploadpath+randompath});//封装上传文件的保存路径
 
     				 
     				 //上传文件
-    				 IOUtils.copy(fileItem.getInputStream(), new FileOutputStream(new File(parentFile, filename)));
+    				 IOUtils.copy(fileItem.getInputStream(), new FileOutputStream(new File(parentFile, uuidname)));
     				 fileItem.delete();
     			}
     		}
-    		// 将数据封装到javaBean
     		Class_List class_List=new Class_List();
     		BeanUtils.populate(class_List, map);
     		class_list_Service.addClassList(class_List);
@@ -137,15 +138,20 @@ public class class_list_Servlet extends BaseServlet {
             classListpageQuery.setItems(class_list_Service.getClassLists(classListpageQuery.getCurrentfirst()));
             classListpageQuery.setTotalRows(class_list_Service.getClassListTotal());
             request.getSession().setAttribute("classListpageQuery",classListpageQuery);
-            return "r:/admin/admin_class_list.jsp";//
-    		
+            return "r:/admin/admin_class_list.jsp";
     	} catch (FileUploadException e) {
     		// TODO Auto-generated catch block
     		e.printStackTrace();
-    	} 
-    	 return "r:/admin/admin_class_list.jsp";//
-    }
-
+    	} catch (IllegalAccessException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	} catch (InvocationTargetException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
+    	return "r:/admin/admin_class_list.jsp";
+    	
+    }   
     public String deleteClassList(HttpServletRequest request, HttpServletResponse response){
         String class_id=request.getParameter("class_id")+"";//why
         class_list_Service.deleteClassList(class_id);
@@ -165,6 +171,7 @@ public class class_list_Servlet extends BaseServlet {
     public String searchByName(HttpServletRequest request, HttpServletResponse response){
     	PageQuery<Class_List> classListpageQuery=new PageQuery<>();
     	String nameString=request.getParameter("searchName")+"";
+    	String addr=request.getParameter("addr");
     	List <Class_List> class_Lists=new ArrayList<Class_List>();
     	class_Lists=class_list_Service.searchByName(nameString);	
         //永远设为第一页
@@ -175,9 +182,57 @@ public class class_list_Servlet extends BaseServlet {
         classListpageQuery.setItems(class_Lists);
         classListpageQuery.setTotalRows(class_Lists.size());
         request.getSession().setAttribute("classListpageQuery",classListpageQuery);
-        if(classListpageQuery.getItems().size()==0){
-        	return "r:/admin/test.jsp";
+        if("html".equals(addr)){
+        	return "r:/html/eduManageDetail-4.jsp";
+        }else{
+        	return "r:/admin/admin_class_list.jsp";
         }
-    	return "r:/admin/admin_class_list.jsp";
+    	
+    }
+    
+    public void Download_Class_File(HttpServletRequest request, HttpServletResponse response) throws IOException   {
+		//获取id
+		String class_id = request.getParameter("class_id")+"";
+		//调用service，得到resource对象
+		//HomeworkService service = new HomeworkService();
+		try {
+			 System.out.println(class_id); 
+			Class_List class_List=class_list_Service.getById(class_id);
+			
+			File file = new File(class_List.getClass_file(), class_List.getClass_file_uuidname());
+			if(file.exists()) {
+				String filename = class_List.getClass_file_name();
+				String mimeType = this.getServletContext().getMimeType(filename);
+				response.setContentType(mimeType);//设置下载类型
+				String agent = request.getHeader("user-agent");
+				if (agent.contains("MSIE")) {
+					// IE浏览器
+					filename = URLEncoder.encode(filename, "utf-8");
+
+				} else if (agent.contains("Firefox")) {
+					// 火狐浏览器
+					BASE64Encoder base64Encoder = new BASE64Encoder();
+					filename = "=?utf-8?B?"
+							+ base64Encoder.encode(filename.getBytes("utf-8"))
+							+ "?=";
+				} else {
+					// 其它浏览器
+					filename = URLEncoder.encode(filename, "utf-8");
+				}
+				//设置永远是下载而不直接打开
+				response.setHeader("Content-Disposition", "attachment;filename=" + filename);
+				byte[] bs =FileUtils.readFileToByteArray(file);
+				response.getOutputStream().write(bs);
+				
+				return;
+			}
+			else {
+				throw new RuntimeException("资源已过期");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return;
     }
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import Domain.Class_List;
+import Domain.FileBean;
 import Domain.Online_Evalator;
 import Utils.BeanUtil;
 import Utils.JDBCutil;
@@ -14,6 +15,19 @@ import Utils.JDBCutil;
 ////
 public class class_list_Dao {
 	JDBCutil jdbcutil = new JDBCutil();
+
+	public Class_List getById(String class_id) throws SQLException {
+		String sql = "select * from class_list where class_id=?";
+		try {
+			List<Object> params = new ArrayList<>();
+			params.add(class_id);
+			Map<String, Object> map = jdbcutil.findSimpleResult(sql, params);
+			Class_List class_List = (Class_List) BeanUtil.convertMap(Class_List.class, map);
+			return class_List;
+		} catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+	}
 
 	public List<Class_List> getClassLists(int QueryPage) {
 		String sql = "select * from class_list limit ?,5";
@@ -29,9 +43,10 @@ public class class_list_Dao {
 				temp.setClass_name((String) map.get("class_name"));
 				temp.setMajor((String) map.get("major"));
 				temp.setCourse((String) map.get("course"));
-				String class_file_name=(String)map.get("class_file_name");
-				class_file_name=class_file_name.substring(0,class_file_name.lastIndexOf("."));
+				String class_file_name = (String) map.get("class_file_name");
+				// class_file_name=class_file_name.substring(0,class_file_name.lastIndexOf("."));
 				temp.setClass_file_name(class_file_name);
+				temp.setClass_file_uuidname((String)map.get("class_file_uuidname"));
 				temp.setClass_file((String) map.get("class_file"));
 				class_Lists.add(temp);
 			}
@@ -43,13 +58,14 @@ public class class_list_Dao {
 	}
 
 	public void addClassList(Class_List class_List) {
-		String sql = "insert into class_list(class_name,major,course,class_file_name,class_file) values(?,?,?,?,?)";// file
+		String sql = "insert into class_list(class_name,major,course,class_file_name,class_file_uuidname,class_file) values(?,?,?,?,?,?)";// file
 		try {
 			List<Object> params = new ArrayList<>();
 			params.add(class_List.getClass_name());
 			params.add(class_List.getMajor());
 			params.add(class_List.getCourse());
 			params.add(class_List.getClass_file_name());
+			params.add(class_List.getClass_file_uuidname());
 			params.add(class_List.getClass_file());
 			// file
 			jdbcutil.updateByPreparedStatement(sql, params);
@@ -122,12 +138,13 @@ public class class_list_Dao {
 			throw new RuntimeException(e.getMessage());
 		}
 	}
-	public List<Class_List> searchByName(String name){
-		String sql="select * from class_list where class_name like '%"+name+"%' ";
+//
+	public List<Class_List> searchByName(String name) {
+		String sql = "select * from class_list where class_name like '%" + name + "%' ";
 		try {
 			List<Object> params = new ArrayList<>();
-//			params.add(name);
-//			jdbcutil.findSimpleResult(sql,params);
+			// params.add(name);
+			// jdbcutil.findSimpleResult(sql,params);
 			List<Map<String, Object>> list = (List<Map<String, Object>>) jdbcutil.findModeResult(sql, params);
 			List<Class_List> class_Lists = new ArrayList<>();
 			for (int i = 0; i < list.size(); i++) {
@@ -137,9 +154,10 @@ public class class_list_Dao {
 				temp.setClass_name((String) map.get("class_name"));
 				temp.setMajor((String) map.get("major"));
 				temp.setCourse((String) map.get("course"));
-				String class_file_name=(String)map.get("class_file_name");
-				class_file_name=class_file_name.substring(0,class_file_name.lastIndexOf("."));
+				String class_file_name = (String) map.get("class_file_name");
+				//class_file_name = class_file_name.substring(0, class_file_name.lastIndexOf("."));
 				temp.setClass_file_name(class_file_name);
+				temp.setClass_file_uuidname((String)map.get("class_file_uuidname"));
 				temp.setClass_file((String) map.get("class_file"));
 				class_Lists.add(temp);
 			}
