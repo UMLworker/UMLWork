@@ -11,7 +11,7 @@ public class JDBCutil {
     private static final String USERNAME = "root";
 
 
-    private static final String PASSWORD = "123456";
+    private static final String PASSWORD = "313976009";
 
 
     //驱动信息
