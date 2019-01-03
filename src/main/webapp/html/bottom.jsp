@@ -147,17 +147,17 @@
                     <div><a href="<c:url value='/ClassInfoServlet?method=LoadClassInfo&classInfoPageQuery=1'/>">上课班级</a></div>
                     <div><a href="<c:url value='/ScoreServlet?method=LoadStudentEvalator&StudentpageQuery=1'/>">学生成绩</a></div>
                     <div><a href="<c:url value='/class_list_Servlet?method=LoadStudentClassList&classListpageQuery=1'/>">班级名册</a></div>
-                    <div><a href="<c:url value='/html/eduManageDetail-5.jsp'/>">学生作业案例</a></div>
+                    <div><a href="<c:url value ='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">学生作业案例</a></div>
                 </div>
             </li>
             <li><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">教学效果</a>
                 <div class="detail">
                     <div><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1'/>">校外专家评价</a></div>
                     <div><a href="<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>">校内督导评价</a></div>
-                    <div><a href=" '/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></div>
+                    <div><a href="<c:url value='/teacher_evalution_servlet?method=LoadTeacherEvalator&EvalatorpageQuery=1'/>">教师自我评价</a></div>
                     <div><a href="<c:url value='/EvalatorServlet?method=LoadStudentEvalator&EvalatorpageQuery=1'/>">校内学生评价</a></div>
                     <div><a href="<c:url value='/social_evalution_servlet?method=LoadSocialEvalator&EvalatorpageQuery=1'/>">社会评价</a></div>
-                    <div><a href="<c:url value ='/html/teachEffectDetail-6.jsp'/>">教学评估及相关文件</a></div>
+                    <div><a href="<c:url value='/TeachFileServlet?method=LoadHomework&TeachFilepageQuery=1'/>">教学评估及相关文件</a></div>
                 </div>
             </li>
             <li><a href="QQ.html">教学互动</a>
