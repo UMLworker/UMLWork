@@ -33,4 +33,8 @@ public class Expert_EvaluationService {
     public int getEvaluationTotal(String type) {
         return expert_evaluationDao.getEvaluationTotal(type);
     }
+
+    public Expert_Evaluation getOneEvaluation(int number, String type){
+        return expert_evaluationDao.getOneEvaluation(number, type);
+    }
 }
