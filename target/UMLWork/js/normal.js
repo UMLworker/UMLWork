@@ -141,10 +141,10 @@ function Rendering() {
 						</ul>\
 					</li>\
 					<li class=\"title\" onmouseover=\"extend('7')\" onmouseout=\"out('7')\">\
-						<a href=\"teachEffectDetail-1.jsp\">教学效果</a>\
+						<a href=\"/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1\">教学效果</a>\
 						<ul style=\"display: none; \" id=\"seven\">\
-							<li class=\"detail\"><a href=\"teachEffectDetail-1.jsp\" style=\"color: #fff;\">校外专家评价</a></li>\
-							<li class=\"detail\"><a href=\"teachEffectDetail-2.jsp\" style=\"color: #fff;\">校内督导评价</a></li>\
+							<li class=\"detail\"><a href=\"/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1\" style=\"color: #fff;\">校外专家评价</a></li>\
+							<li class=\"detail\"><a href=\"<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>\" style=\"color: #fff;\">校内督导评价</a></li>\
 							<li class=\"detail\"><a href=\"teachEffectDetail-3.jsp\" style=\"color: #fff;\">教师自我评价</a></li>\
 							<li class=\"detail\"><a href=\"teachEffectDetail-4.jsp\" style=\"color: #fff;\">校内学生评价</a></li>\
 							<li class=\"detail\"><a href=\"teachEffectDetail-5.jsp\" style=\"color: #fff;\">社会评价</a></li>\
@@ -217,8 +217,8 @@ function Rendering() {
 				</li>\
 				<li><a href=\"employment.html\">教学效果</a>\
 					<div class=\"detail\">\
-						<div><a href=\"teachEffectDetail-1.jsp\">校外专家评价</a></div>\
-    					<div><a href=\"teachEffectDetail-2.jsp\">校内督导评价</a></div>\
+						<div><a href=\"/Expert_EvaluationServlet?method=getOneContent&number=0&type=2&n=1\">校外专家评价</a></div>\
+    					<div><a href=\"<c:url value='/Expert_EvaluationServlet?method=getOneContent&number=0&type=1&n=2'/>\">校内督导评价</a></div>\
     					<div><a href=\"teachEffectDetail-3.jsp\">教师自我评价</a></div>\
     					<div><a href=\"teachEffectDetail-4.jsp\">校内学生评价</a></div>\
     					<div><a href=\"teachEffectDetail-1.jsp\">社会评价</a></div>\

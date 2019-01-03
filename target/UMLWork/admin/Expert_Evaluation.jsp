@@ -53,13 +53,11 @@
                onclick="Hui_admin_tab(this)" href="javascript:;">
                 <i class="Hui-iconfont">&#xe600;</i> 添加评价</a>
         </span>
-        <span class="r">共有数据：<strong>54</strong> 条</span>
     </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
             <thead>
             <tr class="text-c">
-                <th width="25"><input type="checkbox" name="" value=""></th>
                 <th width="80">编号</th>
                 <th>标题</th>
                 <th width="80">分类</th>
@@ -70,14 +68,13 @@
             <tbody>
             <c:forEach items="${sessionScope.EvaluationpageQuery.items }" var="i" varStatus="n">
                 <tr class="text-c">
-                    <td><input type="checkbox" value="" name=""></td>
                     <td>${n.index+1 }</td>
                     <td class="text-l"><a style="cursor:pointer" class="text-primary"
                                           href="<c:url value='/Expert_EvaluationServlet?method=showContentById&id=${i.evaluation_id }'/>">${i.title }</a>
                     </td>
                     <td>
-                        <c:if test="${i.type eq '1'}">校内督导评价</c:if>
-                        <c:if test="${i.type eq '2'}">校外专家评价</c:if>
+                        <c:if test="${i.type eq 1}">校内督导评价</c:if>
+                        <c:if test="${i.type eq 2}">校外专家评价</c:if>
                     </td>
                     <td>${i.time }</td>
                     <td class="f-14 td-manage">
@@ -94,25 +91,17 @@
             </c:forEach>
             </tbody>
         </table>
-        <div style="margin-left: 500px">
-            <ul style="margin: auto">
+        <div style="text-align:center;margin:0 auto;width:400px;height:100px;">
+            <div style="margin: auto">
                 <c:if test="${EvaluationpageQuery.currentPage!=1}">
-                    <li>
-                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=1&type=${sessionScope.type }'/>">首页</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage-1}&type=${sessionScope.type }'/>">上一页</a>
-                    </li>
+                    <span><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=1&type=${sessionScope.type }'/>">首页</a></span>
+                    <span><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage-1}&type=${sessionScope.type }'/>">上一页</a></span>
                 </c:if>
                 <c:if test="${EvaluationpageQuery.currentPage!=EvaluationpageQuery.totalPage}">
-                    <li>
-                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage+1}&type=${sessionScope.type }'/>">下一页</a>
-                    </li>
-                    <li>
-                        <a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.totalPage}&type=${sessionScope.type }'/>">尾页</a>
-                    </li>
+                    <span><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.currentPage+1}&type=${sessionScope.type }'/>">下一页</a></span>
+                    <span><a href="<c:url value='/Expert_EvaluationServlet?method=LoadExpert_Evaluation&EvaluationpageQuery=${EvaluationpageQuery.totalPage}&type=${sessionScope.type }'/>">尾页</a></span>
                 </c:if>
-            </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -136,46 +125,6 @@
             {"orderable": false, "aTargets": [0, 5]}// 不参与排序的列
         ]
     });
-
-    /*资讯-添加*/
-    function article_add(title, url, w, h) {
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
-    }
-
-    /*资讯-编辑*/
-    function article_edit(title, url, id, w, h) {
-        var index = layer.open({
-            type: 2,
-            title: title,
-            content: url
-        });
-        layer.full(index);
-    }
-
-    /*资讯-删除*/
-    function article_del(obj, id) {
-        layer.confirm('确认要删除吗？', function (index) {
-            $.ajax({
-                type: 'POST',
-                url: <c:url value='/Expert_EvaluationServlet?method=deleteContent&id=' /> +id,
-                dataType: 'json',
-                success: function (data) {
-                    $(obj).parents("tr").remove();
-                    layer.msg('已删除!', {icon: 1, time: 1000});
-                },
-                error: function (data) {
-                    console.log(data.msg);
-                },
-            });
-        });
-    }
-
-
 </script>
 </body>
 </html>

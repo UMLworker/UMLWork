@@ -84,21 +84,22 @@
     </c:forEach>
     </tbody>
 </table>
-<div class="pages">
-    <div style="margin: auto">
+<br/>
+<div class="pagination" style="width:100%;">
+    <ul style="margin: auto">
         <c:if test="${EvalatorpageQuery.currentPage!=1}">
-            <span><a
-                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></span>
-            <span><a
-                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></span>
+            <li><a
+                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=1'/>">首页</a></li>
+            <li><a
+                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage-1}'/>">上一页</a></li>
         </c:if>
         <c:if test="${EvalatorpageQuery.currentPage!=EvalatorpageQuery.totalPage}">
-            <span><a
-                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></span>
-            <span><a
-                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></span>
+            <li><a
+                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.currentPage+1}'/>">下一页</a></li>
+            <li><a
+                    href="<c:url value='/ScoreServlet?method=Admin_LoadStudentEvalator&EvalatorpageQuery=${EvalatorpageQuery.totalPage}'/>">尾页</a></li>
         </c:if>
-    </div>
+    </ul>
 </div>
 <div style="color: red">${info}</div>
 </div>
